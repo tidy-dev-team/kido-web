@@ -1,4 +1,4 @@
-<img src="https://tidy-dev-team.github.io/kido-web/kido.svg" />
+<img src="https://tidy-dev-team.github.io/kido-web/images/wearekido.svg" />
 
 # kido-web
 
