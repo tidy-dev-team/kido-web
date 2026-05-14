@@ -1,6 +1,6 @@
-<a href="#">
-<img src="https://tidy-dev-team.github.io/kido-web/images/wearekido.svg" />
-</a>
+<picture>
+    <img src="https://tidy-dev-team.github.io/kido-web/images/wearekido.svg" />
+</picture>
 
 # kido-web
 
