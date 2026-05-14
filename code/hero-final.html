@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Animation</title>
+    <link rel="stylesheet" href="hero-final.css">
+    <script src="hero-final.js"></script>
+    <link rel="prefetch" href="tri-timed.png" />
+</head>
+<body onpointermove="moveFunc(event);">
+    <div class="wrapper textWrapper" id="wrapperLogo">
+        <div id="kFont">K</div>
+        <div id="iFont" class="i-text">I</div>
+        <div id="dFont" class="i-text">D</div>
+        <div id="oFont" class="o-text">O</div>
+    </div>
+    <div class="wrapper triWrapper">
+        <div class="darkDiv"></div>
+        <img id="triImg" src="tri-timed.png" alt="" loading="eager" />
+        <div class="darkDiv"></div>
+    </div>
+    <div class="wrapper textWrapper" style="color:rgba(255, 255, 255, 0.7);">
+        <div>K</div>
+        <div class="i-text">I</div>
+        <div class="i-text">D</div>
+        <div class="o-text">O</div>
+    </div>
+</body>
+</html>

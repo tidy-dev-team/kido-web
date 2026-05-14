@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "haas-text";
+    src: url("fonts/haas-grotesk-text/NHaasGroteskTXPro-55Rg.ttf") format("truetype");
+    font-weight: 100 200 300 400 500;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "haas-text";
+    src: url("fonts/haas-grotesk-text/NHaasGroteskTXPro-65Md.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "haas-text";
+    src: url("fonts/haas-grotesk-text/NHaasGroteskTXPro-75Bd.ttf") format("truetype");
+    font-weight: 700 800;
+    font-style: normal;
+    font-display: block;
+}

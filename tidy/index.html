@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tidy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <script src="play.js"></script>
+    <script src="join.js"></script>
+    <script src="../code/sal.js"></script>
+    <link rel="stylesheet" href="../code/sal.css">
+    <script src="hijack.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="wrapper" onscroll="resethijack();">
+
+        <section class="flex-center m-15">
+            <img src="images/tidy.svg" class="logoDiv" />
+            <h1 class="font-pt text-bold text-center">Automation platform for creative processes</h1>
+            <p class="font-inter text-medium text-center">Tidy aims to increase productivity, reduce manual effort, and improve consistency and quality in creative outputs by automating repetitive tasks. With Tidy, creative teams can focus more on the actual creative work, resulting in faster project delivery, increased efficiency, and improved overall performance</p>
+            <a href="#join" class="button font-inter text-bold" onmouseover="reloadSparks(event);">Join the waiting list<img src="" /></a>
+        </section>
+
+        <section>
+            <video poster="images/cover.jpg" class="cover-video full-width" onclick="playFunc(event);">
+                <source src="videos/cover.mp4" type="video/mp4">
+            </video>
+            <div class="play-button"></div>
+        </section>
+
+        <section class="full-width">
+            <div class="flex-container">
+                <div class="flex-video">
+                    <div class="videos-flex">
+                        <div id="gif-videos">
+                            <video src="videos/anatomy.mp4" muted playsinline autoplay loop></video>
+                            <video src="videos/dos_n_donts.mp4" muted playsinline autoplay loop></video>
+                            <video src="videos/release-notes.mp4" muted playsinline autoplay loop></video>
+                            <video src="videos/variants.mp4" muted playsinline autoplay loop></video>
+                        </div>
+                    </div>
+
+                    <div class="details-div">
+                        <details open onclick="resetDetails(event);">
+                            <summary>
+                                <h2 class="font-pt text-bold">Anatomy</h2>
+                            </summary>
+                            <p class="font-inter text-medium">Auto-generate guidelines and specifications, that present the structure and use of each design element within your system. Get all of your s**t in order: typography, color palettes, spacing, icons and other design elements.</p>
+                        </details>
+
+                        <details onclick="resetDetails(event);">
+                            <summary>
+                                <h2 class="font-pt text-bold">Do’s and Don’ts</h2>
+                            </summary>
+                            <p class="font-inter text-medium">Powered by the leading design systems in the world. This feature gives you access to a set of rules tailored to your designs. That way your team will know exactly what’s allowed and what’s not, where to use each element, and why. Tidy up your designs effortlessly and make them consistent.</p>
+                        </details>
+
+                        <details onclick="resetDetails(event);">
+                            <summary>
+                                <h2 class="font-pt text-bold">Release Notes</h2>
+                            </summary>
+                            <p class="font-inter text-medium">Auto-release notes table. Keep your team informed and up-to-date on design changes. Streamline your workflow in a breeze.</p>
+                        </details>
+
+                        <details onclick="resetDetails(event);">
+                            <summary>
+                                <h2 class="font-pt text-bold">Variants</h2>
+                            </summary>
+                            <p class="font-inter text-medium">Easily build and display all of your different variants and properties in one click. Don’t worry about missing variants tidy will generate them on the fly. So instead of playing ping-pong with your R&D team, why not actually play some ping-pong?</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-container"></div>
+            <div class="flex-container"></div>
+            <div class="flex-container"></div>
+            <div class="flex-container"></div>
+                
+        </section>
+
+        <a id="join"></a>
+        <section class="white-bg m-0 form-section flex-video" data-sal="slide-up" style="--sal-duration: 300ms;">
+            <h1 class="h1-width h1-size font-pt text-bold">Get Early Access</h1>
+            <form class="form-div flex-center" onsubmit="return false">
+
+                <label for="form-name">Name<span>*</span></label>
+                <input type="text" id="form-name" required />
+
+                <label for="form-mail">Email<span>*</span></label>
+                <input type="email" id="form-mail" required />
+
+                <label for="form-position">Position<span>*</span></label>
+                <input type="text" id="form-position" required />
+
+                <label for="form-company required-input">Company</label>
+                <input type="text" id="form-company" />
+
+                <input type="submit" id="submit-button" class="button font-inter text-bold" onclick="notionAPI(document.getElementById('form-name').value, document.getElementById('form-mail').value, document.getElementById('form-position').value, document.getElementById('form-company').value);" value="Join the waiting list" />
+            </form>
+        </section>
+
+        <section class="text-center font-inter smaller-text p-20 white-section">
+            Tidy 2023. All rights reserved.
+        </section>
+
+    </div>
+
+    <script>
+        sal({
+            threshold: 0.2,
+            once: false,
+        });
+        sal();
+    </script>
+</body>
+</html>

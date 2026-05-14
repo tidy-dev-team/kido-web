@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIDO - ABOUT</title>
+    <link rel="icon" type="image/x-icon" href="../images/kido-icon.png">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="apple-touch-icon" href="../images/kido-icon.png">
+    <link rel="canonical" href="https://wearekido.com/about" />
+
+    <style>
+      body { overflow-x: clip; }
+      #wrapper { overflow-x: clip; }
+
+      header {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 clamp(24px, 3.75vw, 72px);
+        height: 100px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #ffffff;
+        filter: none;
+        mix-blend-mode: normal;
+      }
+      header * { transform: none; }
+
+      .header__logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 72px;
+        height: 26px;
+        background: url("../images/kido.svg") no-repeat center / contain;
+      }
+      .header__logo a { display: block; width: 100%; height: 100%; }
+
+      .header__nav { display: flex; gap: 8px; transition: opacity 0.25s ease; }
+
+      .header__nav a,
+      .nav__services-btn,
+      .header__cta {
+        font-family: "haas", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #f5f5f0;
+        background: #2c2c2c;
+        text-decoration: none;
+        border: none;
+        border-radius: 999px;
+        padding: 12px 16px 10px;
+        white-space: nowrap;
+        cursor: pointer;
+        width: fit-content;
+      }
+      .header__nav a:hover,
+      .nav__services-btn:hover,
+      .header__cta:hover { background: #e4e4e4; color: #181818; }
+
+      .header__cta { margin-left: auto; transition: opacity 0.25s ease; }
+
+      .nav__dropdown-wrap { position: relative; }
+      .nav__services-btn.open { background: #e4e4e4; color: #181818; }
+
+      .nav__dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        opacity: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .nav__dropdown.open { opacity: 1; pointer-events: all; }
+
+      .mobile-header {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 24px;
+        height: 72px;
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        background: #ffffff;
+      }
+      .mobile-header__logo {
+        width: 60px; height: 22px;
+        background: url("../images/kido.svg") no-repeat center / contain;
+      }
+      .mobile-header__logo a { display: block; width: 100%; height: 100%; }
+
+      .mobile-menu-btn {
+        font-family: "haas", sans-serif;
+        font-size: 15px; font-weight: 500; letter-spacing: 0.06em;
+        color: #181818; background: #e4e4e4;
+        border: none; border-radius: 999px; padding: 10px 18px 8px; cursor: pointer;
+      }
+
+      .mobile-menu {
+        display: flex; flex-direction: column;
+        position: fixed; inset: 0; z-index: 300;
+        background: #f5f5f0; padding: 0 24px 40px;
+        overflow-y: auto; overscroll-behavior: contain;
+        clip-path: inset(0 0 100% 0); visibility: hidden; pointer-events: none;
+        transition: clip-path 0.55s cubic-bezier(0.4,0,0.2,1), visibility 0s 0.55s;
+      }
+      .mobile-menu.open {
+        clip-path: inset(0 0 0% 0); visibility: visible; pointer-events: auto;
+        transition: clip-path 0.55s cubic-bezier(0.4,0,0.2,1), visibility 0s 0s;
+      }
+      .mobile-menu__top {
+        display: flex; align-items: center; justify-content: space-between;
+        height: 72px; flex-shrink: 0;
+      }
+      .mobile-menu__logo {
+        width: 60px; height: 22px;
+        background: url("../images/kido.svg") no-repeat center / contain;
+      }
+      .mobile-menu__logo a { display: block; width: 100%; height: 100%; }
+      .mobile-menu-btn--open { background: #181818; color: #f5f5f0; }
+
+      .mobile-menu__nav { display: flex; flex-direction: column; margin-top: 24px; }
+      .mobile-menu__nav > a, .mobile-menu__services-label, .mobile-menu__sub {
+        opacity: 0; transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      .mobile-menu.open .mobile-menu__nav > a,
+      .mobile-menu.open .mobile-menu__services-label,
+      .mobile-menu.open .mobile-menu__sub { opacity: 1; transform: translateY(0); }
+      .mobile-menu.open .mobile-menu__nav > a:nth-child(1) { transition-delay: 0.25s; }
+      .mobile-menu.open .mobile-menu__nav > *:nth-child(2) { transition-delay: 0.32s; }
+      .mobile-menu.open .mobile-menu__nav > *:nth-child(3) { transition-delay: 0.39s; }
+      .mobile-menu.open .mobile-menu__nav > *:nth-child(4) { transition-delay: 0.46s; }
+      .mobile-menu.open .mobile-menu__nav > *:nth-child(5) { transition-delay: 0.53s; }
+
+      .mobile-menu__nav > a, .mobile-menu__services-label {
+        font-family: "haas", sans-serif; font-size: 28px; font-weight: 500;
+        letter-spacing: 0.01em; color: #181818; text-decoration: none;
+        padding: 16px 0; text-transform: uppercase; display: block;
+      }
+      .mobile-menu__services-label { padding-bottom: 8px; }
+      .mobile-menu__sub {
+        border-left: 2px solid #181818; padding-left: 20px;
+        margin-bottom: 8px; display: flex; flex-direction: column;
+      }
+      .mobile-menu__sub a {
+        font-family: "haas", sans-serif; font-size: 18px; font-weight: 400;
+        letter-spacing: 0.01em; color: #181818; text-decoration: none;
+        padding: 10px 0; text-transform: uppercase;
+      }
+
+      @media (max-width: 767px) {
+        header { display: none; }
+        .mobile-header { display: flex; }
+      }
+
+      footer.whiteSection {
+        color: #000000;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer__kido {
+        width: 96%;
+        height: 18vw;
+        background-image: url("../images/wearekido.svg");
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: 120px;
+        margin-bottom: 60px;
+      }
+
+      .footer__links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 7vw);
+        font-family: "haas", sans-serif;
+        font-weight: 400;
+        font-size: 0.8em;
+        gap: 1em;
+      }
+
+      .footer__links-col {
+        text-align: left;
+        font-size: 1.5em;
+        line-height: 1.4;
+      }
+
+      .footer__links-col a {
+        display: block;
+        font-size: 1.7em;
+        color: #1c1c1c;
+        text-decoration: none;
+        letter-spacing: -0.03em;
+      }
+
+      .footer__links-col a:hover { color: #888888; }
+
+      .footer__links-col span {
+        font-family: "haas-text", sans-serif;
+        font-weight: 600;
+        font-size: 1em;
+      }
+
+      .footer__hr {
+        width: calc(100% - 7vw);
+        margin-top: 4em;
+        border: none;
+        border-top: 1px solid #1c1c1c;
+      }
+
+      .footer__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 7vw);
+        padding: 1.5em 0 3em;
+        font-family: "haas-text", sans-serif;
+        font-size: 0.8em;
+        color: #1c1c1c;
+      }
+
+      .footer__bottom-nav {
+        display: flex;
+        gap: 1em;
+      }
+
+      .footer__bottom-nav a {
+        font-family: "haas", sans-serif;
+        font-weight: 400;
+        font-size: 1.5em;
+        color: #1c1c1c;
+        text-decoration: none;
+      }
+
+      .footer__bottom-nav a:hover { color: #888888; }
+
+      .footer__copy { font-size: 1.4em; }
+
+      @media (max-width: 767px) {
+        .footer__kido { height: 24vw; width: 90%; margin-top: 0; margin-bottom: 0; }
+        .footer__links { flex-direction: column; align-items: flex-start; width: 90%; margin: 0 5%; }
+        .footer__links-col { margin-top: 32px; }
+        .footer__links-col span { font-size: 16px; font-weight: 100; }
+        .footer__links-col a { font-size: 26px; letter-spacing: 0; }
+        .footer__hr { width: 90%; margin-left: 5%; margin-top: 32px; }
+        .footer__bottom { flex-direction: column; align-items: flex-start; gap: 20px; width: 90%; margin: 0 5%; padding-top: 1.5em; padding-bottom: 40px; }
+        .footer__copy { font-size: 12px; }
+      }
+
+      @media screen and (min-width: 1800px) {
+        .footer__links { gap: 8em; }
+      }
+    </style>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+    <!-- Hotjar Tracking Code for wearekido.com -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 5228847, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="wearekido.com">
+    <meta property="twitter:title" content="Kido">
+    <meta property="twitter:description"
+        content="We Are Kido. We help companies accelerate and optimize their design process.">
+    <meta property="twitter:creator" content="@adircode">
+    <meta name="twitter:image" content="https://wearekido.com/../images/kido-social.jpg">
+    <meta property="og:title" content="Kido">
+    <meta property="og:description"
+        content="We Are Kido. We help companies accelerate and optimize their design process.">
+    <meta name="description" content="We Are Kido. We help companies accelerate and optimize their design process.">
+    <meta property="og:image" content="https://wearekido.com/../images/kido-social.jpg">
+
+</head>
+
+<body class="whitePage">
+
+    <!-- ── Mobile menu overlay ── -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+      <div class="mobile-menu__top">
+        <div class="mobile-menu__logo"><a href="../" aria-label="Kido home"></a></div>
+        <button class="mobile-menu-btn mobile-menu-btn--open" id="mobileMenuClose" type="button">MENU</button>
+      </div>
+      <nav class="mobile-menu__nav">
+        <a href="../about">ABOUT</a>
+        <span class="mobile-menu__services-label">SERVICES</span>
+        <div class="mobile-menu__sub">
+          <a href="../services/design_infrastructure.html">DESIGN INFRASTRUCTURE</a>
+          <a href="../services/product_design.html">PRODUCT DESIGN</a>
+          <a href="../services/design_ops.html">DESIGN OPS</a>
+          <a href="../services/lean_branding.html">LEAN BRANDING</a>
+          <a href="../services/frontend_dev.html">FRONT END DEVELOPMENT &amp; AUTOMATIONS</a>
+        </div>
+        <a href="../case-studies">CASE STUDIES</a>
+        <a href="mailto:hello@wearekido.com">LET'S TALK</a>
+      </nav>
+    </div>
+
+    <div id="wrapper">
+
+    <!-- ── Mobile Header ── -->
+    <header class="mobile-header">
+      <div class="mobile-header__logo"><a href="../" aria-label="Kido home"></a></div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" type="button">MENU</button>
+    </header>
+
+    <!-- ── Desktop Header ── -->
+    <header>
+      <nav class="header__nav">
+        <div class="nav__dropdown-wrap">
+          <button class="nav__services-btn" id="servicesBtn" type="button">SERVICES</button>
+          <div class="nav__dropdown" id="servicesDropdown">
+            <a href="../services/design_infrastructure.html">DESIGN INFRASTRUCTURE</a>
+            <a href="../services/product_design.html">PRODUCT DESIGN</a>
+            <a href="../services/design_ops.html">DESIGN OPS</a>
+            <a href="../services/lean_branding.html">LEAN BRANDING</a>
+            <a href="../services/frontend_dev.html">FRONT END DEVELOPMENT &amp; AUTOMATIONS</a>
+          </div>
+        </div>
+        <a href="../case-studies">CASE STUDIES</a>
+        <a href="../about">ABOUT</a>
+      </nav>
+      <div class="header__logo"><a href="../" aria-label="Kido home"></a></div>
+      <a class="header__cta" href="mailto:hello@wearekido.com">LET'S TALK</a>
+    </header>
+
+        <section class="iconSection rowDiv less-bottom almost-full-mobile">
+            <h2 class="left-align line-double team-title">We Are the A-team</h2>
+        </section>
+
+        <section class="rowDiv almost-full-mobile">
+            <!-- <img src="../images/team.png" /> -->
+            <video src="../images/Kido_Team.mp4" autoplay loop muted preload="auto" playsinline=""></video>
+        </section>
+
+        <hr />
+
+        <section class="almost-full-mobile">
+            <h2 class="smaller-h2 left-align big-font-size">
+                At Kido, we are pioneers in design and technology,
+                with over 22 years of experience in crafting innovative, user-centric solutions that scale with your
+                business.
+                <br /><br />
+            </h2>
+            <img src="../images/filming.png" class="third-off almost-full-mobile" />
+        </section>
+
+        <section class="line-double third-off">
+            <h3 class="smaller-h3">
+                Our expert team, which includes 18 seasoned Designers and Developers, specializes in building robust
+                design infrastructur that seamlessly integrate with the latest technologies, ensuring exceptional user
+                experiences across all platforms.
+            </h3>
+            <h3 class="smaller-h3">
+                We take pride in our collaborative approach, having partnered with over 40 leading companies to
+                transform their design processes and drive growth. Our work includes the successful migration of over
+                500 designers to advanced design tools, setting new standards in the industry.
+            </h3>
+            <h3 class="smaller-h3">
+                Beyond our design expertise, we are deeply committed to advancing the industry. We have trained over
+                2,000 students and established Israel's largest official Figma community, which includes over 8,000
+                design professionals. Through education and community building, we are shaping the future of design and
+                setting new industry benchmarks.
+            </h3>
+            <h2 class="left-align unique-big-font">
+                At Kido, we don't just design—we lead, innovate, and inspire.
+                <br /><br />
+            </h2>
+        </section>
+
+        <hr />
+
+        <footer class="whiteSection">
+          <div class="footer__kido" role="img" aria-label="We Are Kido"></div>
+
+          <div class="footer__links">
+            <div class="footer__links-col">
+              <span>Visit DesOps Israel</span>
+              <a href="https://www.desops.co.il" target="_blank">Learn about DesOps</a>
+            </div>
+            <div class="footer__links-col">
+              <span>Follow on LinkedIn</span>
+              <a href="https://www.linkedin.com/company/kido-design-operation-partners" target="_blank">Read weekly updates</a>
+            </div>
+            <div class="footer__links-col">
+              <span>Check out Tidy</span>
+              <a href="https://tidy.guide" target="_blank">Integrate Figma automations</a>
+            </div>
+          </div>
+
+          <hr class="footer__hr" />
+
+          <div class="footer__bottom">
+            <nav class="footer__bottom-nav">
+              <a href="../case-studies">Case studies</a>
+              <a href="../about">About</a>
+            </nav>
+            <p class="footer__copy">© All rights reserved. Kido 2026</p>
+          </div>
+        </footer>
+
+    </div>
+
+    <script>
+      window.addEventListener("scroll", () => {
+        servicesDropdown?.classList.remove("open");
+        servicesBtn?.classList.remove("open");
+      }, { passive: true });
+
+      const servicesBtn = document.getElementById("servicesBtn");
+      const servicesDropdown = document.getElementById("servicesDropdown");
+
+      servicesBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = servicesDropdown.classList.toggle("open");
+        servicesBtn.classList.toggle("open", isOpen);
+      });
+
+      document.addEventListener("click", () => {
+        servicesDropdown.classList.remove("open");
+        servicesBtn.classList.remove("open");
+      });
+
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenuClose = document.getElementById("mobileMenuClose");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileMenuBtn.addEventListener("click", () => mobileMenu.classList.add("open"));
+      mobileMenuClose.addEventListener("click", () => mobileMenu.classList.remove("open"));
+    </script>
+</body>
+
+</html>
