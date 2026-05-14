@@ -7,111 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../code/headerScroll.css">
-    <title>KIDO - AMDOCS</title>
+    <title>Amdocs Case Study</title>
     <link rel="canonical" href="https://wearekido.com/amdocs" />
     <script src="../code/headerScroll.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <style>
-      footer.whiteSection {
-        background-color: #f5f5f0;
-        color: #000000;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .footer__kido {
-        width: 96%;
-        height: 18vw;
-        background-image: url("../images/wearekido.svg");
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-size: contain;
-        margin-top: 120px;
-        margin-bottom: 60px;
-      }
-
-      .footer__links {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: calc(100% - 7vw);
-        font-family: "haas", sans-serif;
-        font-weight: 400;
-        font-size: 0.8em;
-        gap: 1em;
-      }
-
-      .footer__links-col {
-        text-align: left;
-        font-size: 1.5em;
-        line-height: 1.4;
-      }
-
-      .footer__links-col a {
-        display: block;
-        font-size: 1.7em;
-        color: #1c1c1c;
-        text-decoration: none;
-        letter-spacing: -0.03em;
-      }
-
-      .footer__links-col a:hover { color: #888888; }
-
-      .footer__links-col span {
-        font-family: "haas-text", sans-serif;
-        font-weight: 600;
-        font-size: 1em;
-      }
-
-      .footer__hr {
-        width: calc(100% - 7vw);
-        margin-top: 4em;
-        border: none;
-        border-top: 1px solid #1c1c1c;
-      }
-
-      .footer__bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: calc(100% - 7vw);
-        padding: 1.5em 0 3em;
-        font-family: "haas-text", sans-serif;
-        font-size: 0.8em;
-        color: #1c1c1c;
-      }
-
-      .footer__bottom-nav { display: flex; gap: 1em; }
-
-      .footer__bottom-nav a {
-        font-family: "haas", sans-serif;
-        font-weight: 400;
-        font-size: 1.5em;
-        color: #1c1c1c;
-        text-decoration: none;
-      }
-
-      .footer__bottom-nav a:hover { color: #888888; }
-
-      .footer__copy { font-size: 1.4em; }
-
-      @media (max-width: 767px) {
-        .footer__kido { height: 24vw; width: 90%; margin-top: 0; margin-bottom: 0; }
-        .footer__links { flex-direction: column; align-items: flex-start; width: 90%; margin: 0 5%; }
-        .footer__links-col { margin-top: 32px; }
-        .footer__links-col span { font-size: 16px; font-weight: 100; }
-        .footer__links-col a { font-size: 26px; letter-spacing: 0; }
-        .footer__hr { width: 90%; margin-left: 5%; margin-top: 32px; }
-        .footer__bottom { flex-direction: column; align-items: flex-start; gap: 20px; width: 90%; margin: 0 5%; padding-top: 1.5em; padding-bottom: 40px; }
-        .footer__copy { font-size: 12px; }
-      }
-
-      @media screen and (min-width: 1800px) {
-        .footer__links { gap: 8em; }
-      }
-    </style>
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:site" content="wearekido.com">
@@ -151,34 +50,35 @@
                 onclick="videoPlay();"></video>
         </section>
 
-        <footer class="whiteSection">
-          <div class="footer__kido" role="img" aria-label="We Are Kido"></div>
-
-          <div class="footer__links">
-            <div class="footer__links-col">
-              <span>Visit DesOps Israel</span>
-              <a href="https://www.desops.co.il" target="_blank">Learn about DesOps</a>
+        <section class="whiteSection columnDiv no-gap">
+            <h3 class="new-width align-center visually-hidden">We can do it all. Together</h3>
+            <button class="roundButton invertButton biggerButton"
+                onclick="window.open('mailto:hello@wearekido.com');">LET'S TALK</button>
+            <div class="kido biggerKido"></div>
+            <div class="rowDiv no-padding full-width center-flex footerDiv footerLinks">
+                <div class="left-align">
+                    Visit DesOps Israel<br />
+                    <a href="https://www.desops.co.il" target="_blank">Learn about DesOps</a>
+                </div>
+                <div class="left-align">
+                    Follow on linkedin<br />
+                    <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=false&heroEntityKey=urn%3Ali%3Aorganization%3A91394396&keywords=kido&origin=RICH_QUERY_SUGGESTION&position=3&searchId=903a4d10-ca98-49ec-b0e3-859e558f69e3&sid=v%3BS"
+                        target="_blank">Read weekly updates</a>
+                </div>
+                <div class="left-align">
+                    Check out Tidy<br />
+                    <a href="https://tidy.guide" target="_blank">Integrate Figma automations</a>
+                </div>
             </div>
-            <div class="footer__links-col">
-              <span>Follow on LinkedIn</span>
-              <a href="https://www.linkedin.com/company/kido-design-operation-partners" target="_blank">Read weekly updates</a>
+            <hr class="footerHR" />
+            <div class="rowDiv no-padding full-width center-flex footerDiv">
+                <p class="footerLinks">
+                    <a href="../case-studies">Case Studies</a>
+                    <a href="../about">About</a>
+                </p>
+                <p>© All rights reserved. Kido 2024</p>
             </div>
-            <div class="footer__links-col">
-              <span>Check out Tidy</span>
-              <a href="https://tidy.guide" target="_blank">Integrate Figma automations</a>
-            </div>
-          </div>
-
-          <hr class="footer__hr" />
-
-          <div class="footer__bottom">
-            <nav class="footer__bottom-nav">
-              <a href="../case-studies">Case studies</a>
-              <a href="../about">About</a>
-            </nav>
-            <p class="footer__copy">© All rights reserved. Kido 2026</p>
-          </div>
-        </footer>
+        </section>
 
     </div>
     <script src="../code/videos.js"></script>
