@@ -1,3 +1,5 @@
+<img src="https://tidy-dev-team.github.io/kido-web/kido.svg" />
+
 # kido-web
 
 This is the repo for our website, you can see the `main` branch here (via GitHub Pages):<br/>
