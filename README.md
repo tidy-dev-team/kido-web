@@ -14,6 +14,6 @@ The repo contains 2 branches:
 Also, here's the method to update the actual website:
 - Go to NameCheap.com
 - Sign in with this user:
-    - Name: idoz******
+    - Name: ido*******
     - Pass: **********
 - Upload the new files to the server at the correct domain
