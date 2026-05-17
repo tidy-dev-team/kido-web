@@ -10,8 +10,8 @@ https://tidy-dev-team.github.io/kido-web
 ---
 
 The repo contains 2 branches:
-- main: That's the newest version of the website
-- dec: That's the website we have line in our domain, last updated in December 2025
+- **main:** That's the newest version of the website
+- **dec:** That's the website we have line in our domain, last updated in December 2025
 
 ---
 
