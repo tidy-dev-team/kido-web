@@ -824,6 +824,8 @@
     var nav      = document.querySelector('nav');
     var navLinks = document.querySelectorAll('.nav-links a');
     var sectionIds = ['introduction', 'numbers', 'process', 'clients', 'services', 'community'];
+    var scrollLocked = false;
+    var scrollLockTimer = null;
 
     function moveAccentTo(link, instant) {
         var navRect  = nav.getBoundingClientRect();
@@ -854,15 +856,34 @@
         return document.querySelector('.nav-links a[href="#' + activeId + '"]');
     }
 
-    window.addEventListener('load', function () {
+    function snapAccent() {
         var link = getActiveLink();
         if (link) moveAccentTo(link, true);
-    });
+    }
+
+    window.addEventListener('load', snapAccent);
+    window.addEventListener('resize', snapAccent);
 
     window.addEventListener('scroll', function () {
+        if (scrollLocked) return;
         var link = getActiveLink();
         if (link) moveAccentTo(link, false);
     }, { passive: true });
+
+    function smoothScrollTo(targetY, duration) {
+        var startY = window.scrollY;
+        var diff = targetY - startY;
+        var startTime = null;
+        function step(ts) {
+            if (!startTime) startTime = ts;
+            var elapsed = ts - startTime;
+            var p = Math.min(elapsed / duration, 1);
+            var ease = p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p + 2, 3) / 2;
+            window.scrollTo(0, startY + diff * ease);
+            if (elapsed < duration) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
 
     navLinks.forEach(function (link) {
         link.addEventListener('click', function (e) {
@@ -871,7 +892,10 @@
             var target = document.querySelector(link.getAttribute('href'));
             if (target) {
                 var targetTop = target.getBoundingClientRect().top + window.scrollY - nav.offsetHeight;
-                window.scrollTo({ top: targetTop, behavior: 'smooth' });
+                scrollLocked = true;
+                clearTimeout(scrollLockTimer);
+                scrollLockTimer = setTimeout(function () { scrollLocked = false; }, 700);
+                smoothScrollTo(targetTop, 600);
             }
         });
     });
