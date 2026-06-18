@@ -179,14 +179,15 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, auto);
+            justify-content: space-between;
             padding-bottom: 80px;
         }
 
         .stat-number {
             font-family: 'haas', sans-serif;
-            font-weight: 700;
-            font-size: clamp(80px, 11.5vw, 190px);
+            font-weight: 600;
+            font-size: clamp(80px, 10vw, 190px);
             line-height: 0.88;
             letter-spacing: -0.03em;
             color: #1A1A1A;
@@ -194,9 +195,7 @@
         }
 
         .stat-label {
-            font-size: 13px;
-            font-weight: 400;
-            color: rgba(26,26,26,0.6);
+            font-size: 14px;
             margin-top: 16px;
             max-width: 210px;
             line-height: 1.5;
