@@ -6,6 +6,9 @@
     <title>About Kido 2026</title>
     <link rel="stylesheet" href="font-haas.css">
     <link rel="stylesheet" href="font-kepler.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@600&display=swap">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
@@ -37,6 +40,7 @@
             display: flex;
             align-items: center;
             padding: 0 var(--pad);
+            border-bottom: 1px solid #000000;
         }
 
         .nav-accent {
@@ -50,11 +54,13 @@
         }
 
         .nav-brand {
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 0.14em;
+            font-family: 'Geist Mono', monospace;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0;
+            line-height: 1.5;
             text-transform: uppercase;
-            color: rgba(26,26,26,0.5);
+            color: #181818;
             flex-shrink: 0;
         }
 
@@ -68,22 +74,24 @@
         }
 
         .nav-links a {
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 0.14em;
+            font-family: 'Geist Mono', monospace;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0;
+            line-height: 1.5;
             text-transform: uppercase;
             text-decoration: none;
-            color: rgba(26,26,26,0.6);
+            color: #181818;
             transition: color 0.2s;
         }
-        .nav-links a:hover { color: #1A1A1A; }
+        .nav-links a:hover { color: #181818; }
 
         .nav-logo {
             font-family: 'kepler', serif;
             font-style: italic;
             font-size: 22px;
             font-weight: 400;
-            color: #1A1A1A;
+            color: #181818;
             margin-left: auto;
         }
 
@@ -101,11 +109,12 @@
         }
 
         .hero-intro {
-            font-size: 18px;
+            font-family: 'haas', sans-serif;
+            font-size: 55px;
             font-weight: 400;
-            line-height: 1.65;
-            color: rgba(26,26,26,0.75);
-            padding-left: 30px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #181818;
         }
 
         .hero-headline {
