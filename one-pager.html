@@ -362,9 +362,19 @@
             display: grid;
             grid-template-columns: 55fr 45fr;
             padding: 60px var(--pad);
-            border-bottom: 1px solid rgba(26,26,26,0.12);
+            position: relative;
             gap: 60px;
             align-items: start;
+        }
+        .service-item::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: var(--pad);
+            right: var(--pad);
+            height: 1px;
+            background: rgba(26,26,26,0.12);
         }
 
         .service-left {
@@ -447,7 +457,17 @@
 
         /* ─────────── COMMUNITY (within services, transitions) ─────────── */
         .community-section {
-            border-top: 1px solid rgba(26,26,26,0.12);
+            position: relative;
+        }
+        .community-section::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: var(--pad);
+            right: var(--pad);
+            height: 1px;
+            background: rgba(26,26,26,0.12);
         }
 
         .community-grid {
