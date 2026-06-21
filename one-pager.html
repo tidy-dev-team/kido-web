@@ -477,33 +477,35 @@
         }
 
         /* ─────────── COMMUNITY (within services, transitions) ─────────── */
+        :root {
+            --community-height: 760px;
+        }
+
         .community-section {
         }
 
         .community-grid {
-            display: grid;
-            grid-template-columns: 59fr 41fr;
+            display: flex;
+            height: var(--community-height);
         }
 
         .community-illustration {
             background: var(--lime);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 0;
+            width: 50%;
             overflow: hidden;
+            flex-shrink: 0;
         }
 
         .community-illustration img {
             width: 100%;
+            height: 100%;
             display: block;
-            flex: 1;
-            object-fit: cover;
         }
 
         .community-icons-row {
             display: flex;
             gap: 30px;
+            height: 64px;
             padding: 20px var(--pad);
             background: var(--lime);
         }
@@ -512,6 +514,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            padding-left: 108px;
         }
 
         .community-icon img {
@@ -528,10 +531,11 @@
         }
 
         .community-right {
-            padding: 70px var(--pad);
+            width: 50%;
+            padding: 70px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
         }
 
         .community-trained-heading {
@@ -874,17 +878,7 @@
     <div id="community" class="community-section">
         <div class="community-grid">
             <div class="community-illustration">
-                <img src="one-pager-images/designers.svg" alt="500+ designers">
-                <div class="community-icons-row">
-                    <div class="community-icon">
-                        <img src="one-pager-images/single-member.svg" alt="">
-                        <span>Israeli Figma community</span>
-                    </div>
-                    <div class="community-icon">
-                        <img src="one-pager-images/single-designer.svg" alt="">
-                        <span>Designers trained on Figma</span>
-                    </div>
-                </div>
+                <img src="one-pager-images/designers-new.svg" alt="500+ designers">
             </div>
             <div class="community-right">
                 <div>
