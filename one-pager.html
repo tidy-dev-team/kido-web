@@ -1,993 +1,1441 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO -->
     <title>About Kido 2026</title>
-    <meta name="description" content="We help best in class companies to accelerate and optimize the design &amp; creative process by focusing on outstanding design and not mundane tasks." />
+    <meta
+      name="description"
+      content="We help best in class companies to accelerate and optimize the design &amp; creative process by focusing on outstanding design and not mundane tasks."
+    />
     <link rel="canonical" href="https://wearekido.com/about" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="About Kido 2026" />
-    <meta property="og:description" content="We help best in class companies to accelerate and optimize the design &amp; creative process by focusing on outstanding design and not mundane tasks." />
-    <meta property="og:image" content="https://wearekido.com/images/kido-social.jpg" />
+    <meta
+      property="og:description"
+      content="We help best in class companies to accelerate and optimize the design &amp; creative process by focusing on outstanding design and not mundane tasks."
+    />
+    <meta
+      property="og:image"
+      content="https://wearekido.com/images/kido-social.jpg"
+    />
     <meta property="og:url" content="https://wearekido.com/about" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="wearekido.com" />
     <meta name="twitter:title" content="About Kido 2026" />
-    <meta name="twitter:description" content="We help best in class companies to accelerate and optimize the design &amp; creative process by focusing on outstanding design and not mundane tasks." />
-    <meta name="twitter:image" content="https://wearekido.com/images/kido-social.jpg" />
+    <meta
+      name="twitter:description"
+      content="We help best in class companies to accelerate and optimize the design &amp; creative process by focusing on outstanding design and not mundane tasks."
+    />
+    <meta
+      name="twitter:image"
+      content="https://wearekido.com/images/kido-social.jpg"
+    />
 
     <!-- Icons -->
     <link rel="icon" type="image/x-icon" href="images/kido-icon.png" />
     <link rel="apple-touch-icon" href="images/kido-icon.png" />
-    <link rel="stylesheet" href="font-haas.css">
-    <link rel="stylesheet" href="font-haas-text.css">
-    <link rel="stylesheet" href="font-kepler.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@500&display=swap">
+    <link rel="stylesheet" href="font-haas.css" />
+    <link rel="stylesheet" href="font-haas-text.css" />
+    <link rel="stylesheet" href="font-kepler.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@500&display=swap"
+    />
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-
-        :root {
-            --lime: #E8FA84;
-            --dark: #111111;
-            --white: #FFFFFF;
-            --pad: 30px;
-        }
-
-        body {
-            font-family: 'haas', sans-serif;
-            font-weight: 500;
-            background: var(--white);
-            color: #181818;
-            font-size: 15px;
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
-
-        /* ─────────── NAV ─────────── */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--white);
-            height: 60px;
-            display: flex;
-            align-items: center;
-            padding: 0 var(--pad);
-            border-bottom: 1px solid #000000;
-        }
-
-        .nav-accent {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 80px;
-            height: 7px;
-            background: #181818;
-            transition: left 0.28s ease, width 0.28s ease;
-        }
-
-        .nav-brand {
-            font-family: 'Geist Mono', monospace;
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0;
-            line-height: 1.5;
-            text-transform: uppercase;
-            color: #181818;
-            flex-shrink: 0;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 34px;
-            list-style: none;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .nav-links a {
-            font-family: 'Geist Mono', monospace;
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0;
-            line-height: 1.5;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: #181818;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: #181818; }
-
-        .nav-logo {
-            font-family: 'kepler', serif;
-            font-style: italic;
-            font-size: 22px;
-            font-weight: 400;
-            color: #181818;
-            margin-left: auto;
-        }
-
-        /* ─────────── HERO ─────────── */
-        .hero-section {
-            background: var(--white);
-            padding-top: 120px;
-        }
-
-        .hero-top {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            padding: 0 var(--pad);
-            margin-bottom: 260px;
-        }
-
-        .hero-intro {
-            font-family: 'haas', sans-serif;
-            font-size: 55px;
-            font-weight: 400;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            color: #181818;
-            margin-right: 124px;
-        }
-
-        .hero-headline {
-            font-family: 'haas', sans-serif;
-            font-weight: 700;
-            font-size: clamp(64px, 9vw, 140px);
-            line-height: 1.0;
-            letter-spacing: -0.025em;
-            color: #181818;
-            padding: 0 var(--pad);
-            margin-bottom: 50px;
-        }
-
-        .hero-photo {
-            padding: 0 var(--pad);
-        }
-        .hero-photo img {
-            width: 100%;
-            display: block;
-        }
-
-        /* ─────────── ABOUT / AUTOMATION (lime) ─────────── */
-        .about-section {
-            background: var(--white);
-            padding: 90px var(--pad);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            align-items: start;
-        }
-
-        .automation-heading {
-            font-family: 'haas', sans-serif;
-            font-weight: 700;
-            font-size: clamp(44px, 4.4vw, 84px);
-            line-height: 0.93;
-            letter-spacing: -0.025em;
-            color: #181818;
-            padding-right: 40px;
-        }
-
-        .about-text-cols {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-            padding-top: 8px;
-        }
-
-        .about-text-col p {
-            font-size: 26px;
-            font-weight: 500;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-        }
-
-        /* ─────────── NUMBERS (lime) ─────────── */
-        .numbers-section {
-            background: var(--lime);
-            padding: 80px var(--pad) 0;
-        }
-
-        .numbers-headline {
-            font-family: 'haas', sans-serif;
-            font-weight: 700;
-            font-size: clamp(44px, 7vw, 110px);
-            line-height: 1.08;
-            letter-spacing: -0.02em;
-            color: #181818;
-            margin-bottom: 100px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, auto);
-            justify-content: space-between;
-            padding-bottom: 80px;
-        }
-
-        .stat-number {
-            font-family: 'haas', sans-serif;
-            font-weight: 600;
-            font-size: clamp(80px, 10vw, 190px);
-            line-height: 0.88;
-            letter-spacing: -0.03em;
-            color: #181818;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            margin-top: 16px;
-            max-width: 210px;
-            line-height: 1.5;
-        }
-
-        /* ─────────── PROCESS (lime) ─────────── */
-        .process-section {
-            background: var(--lime);
-            padding: 70px var(--pad) 0;
-        }
-
-        .process-divider {
-            border: none;
-            border-top: 1.5px solid rgba(26,26,26,0.2);
-            margin-bottom: 70px;
-        }
-
-        .process-headline {
-            font-family: 'haas', sans-serif;
-            font-weight: 700;
-            font-size: clamp(38px, 4.8vw, 72px);
-            line-height: 1.06;
-            letter-spacing: -0.02em;
-            color: #181818;
-            margin-bottom: 60px;
-        }
-
-        .pyramid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .pyramid-level {
-            border: 1.5px solid #181818;
-            text-align: center;
-            padding: 40px;
-            margin-top: -1.5px;
-            background: var(--lime);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 160px;
-        }
-
-        .pyramid-level h4 {
-            font-family: 'haas', sans-serif;
-            font-size: 31px;
-            font-weight: 700;
-            line-height: 1.35;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-            color: #181818;
-        }
-
-        .pyramid-level p {
-            font-family: 'haas', sans-serif;
-            font-size: 18px;
-            font-weight: 400;
-            color: #181818;
-            max-width: 568px;
-            margin: 0 auto;
-            line-height: 1.35;
-        }
-
-        .pyr-1 { width: 29%; }
-        .pyr-2 { width: 48%; }
-        .pyr-3 { width: 73%; }
-        .pyr-4 { width: 97%; border-bottom: none; }
-
-        /* ─────────── CLIENTS (dark) ─────────── */
-        .clients-section {
-            background: var(--dark);
-            color: #fff;
-            padding: 80px var(--pad);
-        }
-
-        .clients-headline {
-            font-family: 'haas', sans-serif;
-            font-weight: 700;
-            font-size: clamp(26px, 3vw, 46px);
-            color: #fff;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .logos-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 12px;
-        }
-
-        .logo-cell {
-            background: #1D1D1D;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* height: 130px; */
-            /* padding: 22px 32px; */
-        }
-
-        .logo-cell img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* ─────────── SERVICES (white) ─────────── */
-        .services-section {
-            background: var(--white);
-            color: #181818;
-        }
-
-        .services-header {
-            padding: 80px var(--pad) 70px;
-            text-align: center;
-            position: relative;
-        }
-        .services-header::after {
-            content: '';
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: var(--pad);
-            right: var(--pad);
-            height: 1px;
-            background: rgba(26,26,26,0.12);
-        }
-
-        .services-title {
-            font-family: 'haas', sans-serif;
-            font-weight: 600;
-            font-size: clamp(40px, 4.2vw, 80px);
-            line-height: 0.91;
-            letter-spacing: -0.02em;
-            color: #181818;
-            margin-bottom: 20px;
-        }
-
-        .services-subtitle {
-            font-family: 'haas-text', sans-serif;
-            font-size: clamp(28px, 2.86vw, 55px);
-            font-weight: 400;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            color: #181818;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .service-item {
-            display: grid;
-            grid-template-columns: 55fr 45fr;
-            padding: 60px var(--pad);
-            position: relative;
-            gap: 60px;
-            align-items: start;
-        }
-        .service-item::after {
-            content: '';
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: var(--pad);
-            right: var(--pad);
-            height: 1px;
-            background: rgba(26,26,26,0.12);
-        }
-
-        .service-left {
-            display: grid;
-            grid-template-columns: 24px 1fr;
-            grid-template-rows: auto auto;
-            column-gap: 10px;
-        }
-
-        .service-num {
-            grid-column: 1;
-            grid-row: 1;
-            font-family: 'haas-text', sans-serif;
-            font-size: 31px;
-            font-weight: 700;
-            line-height: 1.35;
-            letter-spacing: -0.02em;
-            color: #181818;
-        }
-
-        .service-name {
-            grid-column: 2;
-            grid-row: 1;
-            font-family: 'haas', sans-serif;
-            font-weight: 600;
-            font-size: clamp(80px, 8.5vw, 163px);
-            line-height: 1.0;
-            letter-spacing: -0.02em;
-            color: #181818;
-            display: block;
-            margin-bottom: 24px;
-        }
-
-        .service-desc {
-            grid-column: 2;
-            grid-row: 2;
-            font-family: 'haas-text', sans-serif;
-            font-size: 31px;
-            font-weight: 400;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            color: #181818;
-        }
-
-        .service-list {
-            list-style: none;
-            padding-top: 0;
-            padding-left: 80px;
-            counter-reset: svc;
-        }
-
-        .service-list li {
-            counter-increment: svc;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 10px 0;
-            font-family: 'haas-text', sans-serif;
-            font-size: 18px;
-            font-weight: 400;
-            color: #181818;
-            line-height: 1.35;
-        }
-
-        .service-list li::before {
-            content: counter(svc);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--lime);
-            border: 0.9px dashed #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: 400;
-            color: #181818;
-            flex-shrink: 0;
-        }
-
-        /* ─────────── COMMUNITY (within services, transitions) ─────────── */
-        :root {
-            --community-height: 760px;
-        }
-
-        .community-section {
-        }
-
-        .community-grid {
-            display: flex;
-            height: var(--community-height);
-        }
-
-        .community-illustration {
-            background: var(--lime);
-            width: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .community-illustration img {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        .community-icons-row {
-            display: flex;
-            gap: 30px;
-            height: 64px;
-            padding: 20px var(--pad);
-            background: var(--lime);
-        }
-
-        .community-icon {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding-left: 108px;
-        }
-
-        .community-icon img {
-            height: 24px;
-            width: auto;
-        }
-
-        .community-icon span {
-            font-family: 'haas-text', sans-serif;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 1.35;
-            color: #181818;
-        }
-
-        .community-right {
-            width: 50%;
-            padding: 70px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .community-trained-heading {
-            font-family: 'haas', sans-serif;
-            font-weight: 600;
-            font-size: clamp(40px, 4.2vw, 80px);
-            line-height: 0.91;
-            letter-spacing: -0.02em;
-            color: #181818;
-            margin-bottom: 22px;
-        }
-
-        .community-trained-text {
-            font-family: 'haas-text', sans-serif;
-            font-size: 31px;
-            font-weight: 600;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            color: #181818;
-        }
-
-        .community-divider {
-            border: none;
-            border-top: 1px solid rgba(26,26,26,0.12);
-            margin: 40px calc(-1 * var(--pad));
-        }
-
-        .community-stat-label {
-            font-family: 'haas-text', sans-serif;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 1.2;
-            color: #181818;
-            margin-bottom: 8px;
-        }
-
-        .community-big-num {
-            font-family: 'haas', sans-serif;
-            font-weight: 600;
-            font-size: clamp(80px, 8.5vw, 163px);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            color: #181818;
-        }
-
-        /* ─────────── FOOTER (dark) ─────────── */
-        footer {
-            background: var(--dark);
-            color: #fff;
-            padding: 200px var(--pad) 60px;
-            padding-bottom: 30px;
-        }
-
-        .footer-cta {
-            font-family: 'haas', sans-serif;
-            font-weight: 700;
-            font-size: clamp(52px, 8vw, 118px);
-            line-height: 0.95;
-            letter-spacing: -0.025em;
-            margin-bottom: 44px;
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            font-size: 13px;
-            font-weight: 400;
-            color: #ffffff;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .footer-bottom a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .footer-bottom a:hover { text-decoration: underline; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --lime: #e8fa84;
+        --dark: #111111;
+        --white: #ffffff;
+        --pad: 30px;
+      }
+
+      body {
+        font-family: "haas", sans-serif;
+        font-weight: 500;
+        background: var(--white);
+        color: #181818;
+        font-size: 15px;
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+
+      /* ─────────── NAV ─────────── */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--white);
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding: 0 var(--pad);
+        border-bottom: 1px solid #000000;
+      }
+
+      .nav-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 7px;
+        background: #181818;
+        transition:
+          left 0.28s ease,
+          width 0.28s ease;
+      }
+
+      .nav-brand {
+        font-family: "Geist Mono", monospace;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.5;
+        text-transform: uppercase;
+        color: #181818;
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 34px;
+        list-style: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .nav-links a {
+        font-family: "Geist Mono", monospace;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.5;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #181818;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: #181818;
+      }
+
+      .nav-logo {
+        font-family: "kepler", serif;
+        font-style: italic;
+        font-size: 22px;
+        font-weight: 400;
+        color: #181818;
+        margin-left: auto;
+      }
+
+      /* ─────────── HERO ─────────── */
+      .hero-section {
+        background: var(--white);
+        padding-top: 120px;
+      }
+
+      .hero-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 var(--pad);
+        margin-bottom: 260px;
+      }
+
+      .hero-intro {
+        font-family: "haas", sans-serif;
+        font-size: 55px;
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: #181818;
+        margin-right: 124px;
+      }
+
+      .hero-headline {
+        font-family: "haas", sans-serif;
+        font-weight: 700;
+        font-size: clamp(64px, 9vw, 140px);
+        line-height: 1;
+        letter-spacing: -0.025em;
+        color: #181818;
+        padding: 0 var(--pad);
+        margin-bottom: 50px;
+      }
+
+      .hero-photo {
+        padding: 0 var(--pad);
+      }
+      .hero-photo img {
+        width: 100%;
+        display: block;
+      }
+
+      /* ─────────── ABOUT / AUTOMATION (lime) ─────────── */
+      .about-section {
+        background: var(--white);
+        padding: 90px var(--pad);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        align-items: start;
+      }
+
+      .automation-heading {
+        font-family: "haas", sans-serif;
+        font-weight: 700;
+        font-size: clamp(44px, 4.4vw, 84px);
+        line-height: 0.93;
+        letter-spacing: -0.025em;
+        color: #181818;
+        padding-right: 40px;
+      }
+
+      .about-text-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        padding-top: 8px;
+      }
+
+      .about-text-col p {
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      /* ─────────── NUMBERS (lime) ─────────── */
+      .numbers-section {
+        background: var(--lime);
+        padding: 80px var(--pad) 0;
+      }
+
+      .numbers-headline {
+        font-family: "haas", sans-serif;
+        font-weight: 700;
+        font-size: clamp(44px, 7vw, 110px);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        color: #181818;
+        margin-bottom: 100px;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: space-between;
+        padding-bottom: 80px;
+      }
+
+      .stat-number {
+        font-family: "haas", sans-serif;
+        font-weight: 600;
+        font-size: clamp(80px, 10vw, 190px);
+        line-height: 0.88;
+        letter-spacing: -0.03em;
+        color: #181818;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        margin-top: 16px;
+        max-width: 210px;
+        line-height: 1.5;
+      }
+
+      /* ─────────── PROCESS (lime) ─────────── */
+      .process-section {
+        background: var(--lime);
+        padding: 70px var(--pad) 0;
+      }
+
+      .process-divider {
+        border: none;
+        border-top: 1.5px solid rgba(26, 26, 26, 0.2);
+        margin-bottom: 70px;
+      }
+
+      .process-headline {
+        font-family: "haas", sans-serif;
+        font-weight: 700;
+        font-size: clamp(38px, 4.8vw, 72px);
+        line-height: 1.06;
+        letter-spacing: -0.02em;
+        color: #181818;
+        margin-bottom: 60px;
+      }
+
+      .pyramid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .pyramid-level {
+        border: 1.5px solid #181818;
+        text-align: center;
+        padding: 40px;
+        margin-top: -1.5px;
+        background: var(--lime);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 160px;
+      }
+
+      .pyramid-level h4 {
+        font-family: "haas", sans-serif;
+        font-size: 31px;
+        font-weight: 700;
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+        color: #181818;
+      }
+
+      .pyramid-level p {
+        font-family: "haas", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: #181818;
+        max-width: 568px;
+        margin: 0 auto;
+        line-height: 1.35;
+      }
+
+      .pyr-1 {
+        width: 29%;
+      }
+      .pyr-2 {
+        width: 48%;
+      }
+      .pyr-3 {
+        width: 73%;
+      }
+      .pyr-4 {
+        width: 97%;
+        border-bottom: none;
+      }
+
+      /* ─────────── CLIENTS (dark) ─────────── */
+      .clients-section {
+        background: var(--dark);
+        color: #fff;
+        padding: 80px var(--pad);
+      }
+
+      .clients-headline {
+        font-family: "haas", sans-serif;
+        font-weight: 700;
+        font-size: clamp(26px, 3vw, 46px);
+        color: #fff;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .logos-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+      }
+
+      .logo-cell {
+        background: #1d1d1d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* height: 130px; */
+        /* padding: 22px 32px; */
+      }
+
+      .logo-cell img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      /* ─────────── SERVICES (white) ─────────── */
+      .services-section {
+        background: var(--white);
+        color: #181818;
+      }
+
+      .services-header {
+        padding: 80px var(--pad) 70px;
+        text-align: center;
+        position: relative;
+      }
+      .services-header::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: var(--pad);
+        right: var(--pad);
+        height: 1px;
+        background: rgba(26, 26, 26, 0.12);
+      }
+
+      .services-title {
+        font-family: "haas", sans-serif;
+        font-weight: 600;
+        font-size: clamp(40px, 4.2vw, 80px);
+        line-height: 0.91;
+        letter-spacing: -0.02em;
+        color: #181818;
+        margin-bottom: 20px;
+      }
+
+      .services-subtitle {
+        font-family: "haas-text", sans-serif;
+        font-size: clamp(28px, 2.86vw, 55px);
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: #181818;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .service-item {
+        display: grid;
+        grid-template-columns: 55fr 45fr;
+        padding: 60px var(--pad);
+        position: relative;
+        gap: 60px;
+        align-items: start;
+      }
+      .service-item::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: var(--pad);
+        right: var(--pad);
+        height: 1px;
+        background: rgba(26, 26, 26, 0.12);
+      }
+
+      .service-left {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        grid-template-rows: auto auto;
+        column-gap: 24px;
+      }
+
+      .service-num {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: start;
+        font-family: "haas-text", sans-serif;
+        font-size: 31px;
+        font-weight: 700;
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+        color: #181818;
+        text-box: trim-both ex text;
+        transform: translateY(-.85ch);
+      }
+
+      .service-name {
+        grid-column: 2;
+        grid-row: 1;
+        font-family: "haas", sans-serif;
+        font-weight: 600;
+        font-size: clamp(80px, 8.5vw, 163px);
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: #181818;
+        display: block;
+        margin-bottom: 24px;
+        text-box: trim-both ex text;
+      }
+
+      .service-desc {
+        grid-column: 2;
+        grid-row: 2;
+        font-family: "haas-text", sans-serif;
+        font-size: 31px;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: #181818;
+      }
+
+      .service-list {
+        list-style: none;
+        padding-top: 0;
+        padding-left: 0;
+        counter-reset: svc;
+      }
+
+      .service-list li {
+        counter-increment: svc;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 0;
+        font-family: "haas-text", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: #181818;
+        line-height: 1.35;
+      }
+
+      .service-list li:first-of-type {
+        padding-top: 0;
+      }
+
+      .service-list li::before {
+        content: counter(svc);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--lime);
+        border: 0.9px dashed #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 400;
+        color: #181818;
+        flex-shrink: 0;
+      }
+
+      /* ─────────── COMMUNITY (within services, transitions) ─────────── */
+      :root {
+        --community-height: 760px;
+      }
+
+      .community-section {
+      }
+
+      .community-grid {
+        display: flex;
+        height: var(--community-height);
+      }
+
+      .community-illustration {
+        background: var(--lime);
+        width: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .community-illustration img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .community-icons-row {
+        display: flex;
+        gap: 30px;
+        height: 64px;
+        padding: 20px var(--pad);
+        background: var(--lime);
+      }
+
+      .community-icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-left: 108px;
+      }
+
+      .community-icon img {
+        height: 24px;
+        width: auto;
+      }
+
+      .community-icon span {
+        font-family: "haas-text", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.35;
+        color: #181818;
+      }
+
+      .community-right {
+        width: 50%;
+        padding: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .community-trained-heading {
+        font-family: "haas", sans-serif;
+        font-weight: 600;
+        font-size: clamp(40px, 4.2vw, 80px);
+        line-height: 0.91;
+        letter-spacing: -0.02em;
+        color: #181818;
+        margin-bottom: 22px;
+      }
+
+      .community-trained-text {
+        font-family: "haas-text", sans-serif;
+        font-size: 31px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: #181818;
+      }
+
+      .community-divider {
+        border: none;
+        border-top: 1px solid rgba(26, 26, 26, 0.12);
+        margin: 40px calc(-1 * var(--pad));
+      }
+
+      .community-stat-label {
+        font-family: "haas-text", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: #181818;
+        margin-bottom: 8px;
+      }
+
+      .community-big-num {
+        font-family: "haas", sans-serif;
+        font-weight: 600;
+        font-size: clamp(80px, 8.5vw, 163px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: #181818;
+      }
+
+      /* ─────────── FOOTER (dark) ─────────── */
+      footer {
+        background: var(--dark);
+        color: #fff;
+        padding: 200px var(--pad) 60px;
+        padding-bottom: 30px;
+      }
+
+      .footer-cta {
+        font-family: "haas", sans-serif;
+        font-weight: 700;
+        font-size: clamp(52px, 8vw, 118px);
+        line-height: 0.95;
+        letter-spacing: -0.025em;
+        margin-bottom: 44px;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 13px;
+        font-weight: 400;
+        color: #ffffff;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .footer-bottom a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .footer-bottom a:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
-
-<!-- ── NAVIGATION ── -->
-<nav>
-    <div class="nav-accent"></div>
-    <span class="nav-brand">About Kido 2026</span>
-    <ul class="nav-links">
+  </head>
+  <body>
+    <!-- ── NAVIGATION ── -->
+    <nav>
+      <div class="nav-accent"></div>
+      <span class="nav-brand">About Kido 2026</span>
+      <ul class="nav-links">
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#numbers">Numbers</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#clients">Clients</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#community">Community</a></li>
-    </ul>
-    <span class="nav-logo">Kido</span>
-</nav>
+      </ul>
+      <span class="nav-logo">Kido</span>
+    </nav>
 
-<!-- ── HERO ── -->
-<section id="introduction" class="hero-section">
-    <div class="hero-top">
+    <!-- ── HERO ── -->
+    <section id="introduction" class="hero-section">
+      <div class="hero-top">
         <div></div>
-        <p class="hero-intro">Kido is a merger of two design companies united by one belief: great technology products begin with thoughtful infrastructure — built from the start, built to last.</p>
-    </div>
-    <h1 class="hero-headline">We Make Design Work,<br>at Scale</h1>
-    <div class="hero-photo">
-        <img src="one-pager-images/team.png" alt="The Kido team">
-    </div>
-</section>
+        <p class="hero-intro">
+          Kido is a merger of two design companies united by one belief: great
+          technology products begin with thoughtful infrastructure — built from
+          the start, built to last.
+        </p>
+      </div>
+      <h1 class="hero-headline">We Make Design Work,<br />at Scale</h1>
+      <div class="hero-photo">
+        <img src="one-pager-images/team.png" alt="The Kido team" />
+      </div>
+    </section>
 
-<!-- ── ABOUT / FROM ADMIN TO AUTOMATION (lime) ── -->
-<section class="about-section">
-    <div>
-        <h2 class="automation-heading">From admin<br>to automation</h2>
-    </div>
-    <div class="about-text-cols">
+    <!-- ── ABOUT / FROM ADMIN TO AUTOMATION (lime) ── -->
+    <section class="about-section">
+      <div>
+        <h2 class="automation-heading">From admin<br />to automation</h2>
+      </div>
+      <div class="about-text-cols">
         <div class="about-text-col">
-            <p>Kido helps organizations to scale effectively. We help technology companies establish the processes, systems, and foundations that connect design, product, and development into a cohesive way of working. We believe that great products are built on strong foundations. From design systems and DesignOps practices to governance models and scalable workflows, the quality of these building blocks has a direct impact on a product's ability to grow, evolve, and succeed over time.</p>
+          <p>
+            Kido helps organizations to scale effectively. We help technology
+            companies establish the processes, systems, and foundations that
+            connect design, product, and development into a cohesive way of
+            working. We believe that great products are built on strong
+            foundations. From design systems and DesignOps practices to
+            governance models and scalable workflows, the quality of these
+            building blocks has a direct impact on a product's ability to grow,
+            evolve, and succeed over time.
+          </p>
         </div>
         <div class="about-text-col">
-            <p>Over the past 8 years, the Kido team has led design transformation initiatives and helped organizations adopt Figma as a catalyst for organizational change, guiding teams from discovery and strategy through implementation, documentation, and development-ready systems. Kido is the only company in Israel specializing in DesignOps, and is part of the global DesignOps Assembly — the non-profit organization dedicated to advancing the profession worldwide.</p>
+          <p>
+            Over the past 8 years, the Kido team has led design transformation
+            initiatives and helped organizations adopt Figma as a catalyst for
+            organizational change, guiding teams from discovery and strategy
+            through implementation, documentation, and development-ready
+            systems. Kido is the only company in Israel specializing in
+            DesignOps, and is part of the global DesignOps Assembly — the
+            non-profit organization dedicated to advancing the profession
+            worldwide.
+          </p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ── NUMBERS (lime) ── -->
-<section id="numbers" class="numbers-section">
-    <h2 class="numbers-headline">Eight years. Forty systems.<br>Five hundred designers.</h2>
-    <div class="stats-grid">
+    <!-- ── NUMBERS (lime) ── -->
+    <section id="numbers" class="numbers-section">
+      <h2 class="numbers-headline">
+        Eight years. Forty systems.<br />Five hundred designers.
+      </h2>
+      <div class="stats-grid">
         <div>
-            <span class="stat-number">40+</span>
-            <p class="stat-label">Design Systems Built: End-to-end across industries</p>
+          <span class="stat-number">40+</span>
+          <p class="stat-label">
+            Design Systems Built: End-to-end across industries
+          </p>
         </div>
         <div>
-            <span class="stat-number">500+</span>
-            <p class="stat-label">Designers trained on Design System methodology</p>
+          <span class="stat-number">500+</span>
+          <p class="stat-label">
+            Designers trained on Design System methodology
+          </p>
         </div>
         <div>
-            <span class="stat-number">30+</span>
-            <p class="stat-label">Person/years of Knowledge</p>
+          <span class="stat-number">30+</span>
+          <p class="stat-label">Person/years of Knowledge</p>
         </div>
         <div>
-            <span class="stat-number">18+</span>
-            <p class="stat-label">Team Members: Designers, UX specialists, developers</p>
+          <span class="stat-number">18+</span>
+          <p class="stat-label">
+            Team Members: Designers, UX specialists, developers
+          </p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ── PROCESS (lime) ── -->
-<section id="process" class="process-section">
-    <h2 class="process-headline">A system with structure at every level.</h2>
-    <div class="pyramid">
+    <!-- ── PROCESS (lime) ── -->
+    <section id="process" class="process-section">
+      <h2 class="process-headline">A system with structure at every level.</h2>
+      <div class="pyramid">
         <div class="pyramid-level pyr-1">
-            <h4>Documentation and preparation for development</h4>
-            <p>Audit of existing design assets, tools, and processes. We locate every gap before we fill a single one.</p>
+          <h4>Documentation and preparation for development</h4>
+          <p>
+            Audit of existing design assets, tools, and processes. We locate
+            every gap before we fill a single one.
+          </p>
         </div>
         <div class="pyramid-level pyr-2">
-            <h4>Building detailed components for development</h4>
-            <p>Platform-agnostic or platform-specific components — we go wherever the stack goes.</p>
+          <h4>Building detailed components for development</h4>
+          <p>
+            Platform-agnostic or platform-specific components — we go wherever
+            the stack goes.
+          </p>
         </div>
         <div class="pyramid-level pyr-3">
-            <h4>Design System infrastructure</h4>
-            <p>Systemic design decisions around Design</p>
+          <h4>Design System infrastructure</h4>
+          <p>Systemic design decisions around Design</p>
         </div>
         <div class="pyramid-level pyr-4">
-            <h4>System mapping</h4>
-            <p>Audit of existing design assets, tools, and processes. We locate every gap before we fill a single one.</p>
+          <h4>System mapping</h4>
+          <p>
+            Audit of existing design assets, tools, and processes. We locate
+            every gap before we fill a single one.
+          </p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ── CLIENTS (dark) ── -->
-<section id="clients" class="clients-section">
-    <h2 class="clients-headline">Companies we've helped</h2>
-    <div class="logos-grid">
+    <!-- ── CLIENTS (dark) ── -->
+    <section id="clients" class="clients-section">
+      <h2 class="clients-headline">Companies we've helped</h2>
+      <div class="logos-grid">
         <!-- Row 1 -->
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782695.png" alt="Akamai"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782696.png" alt="Varonis"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782700.png" alt="Spark Beyond"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782698.png" alt="Cyberbit"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782699.png" alt="One Zero"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782697.png" alt="Vicarius"></div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782695.png"
+            alt="Akamai"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782696.png"
+            alt="Varonis"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782700.png"
+            alt="Spark Beyond"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782698.png"
+            alt="Cyberbit"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782699.png"
+            alt="One Zero"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782697.png"
+            alt="Vicarius"
+          />
+        </div>
         <!-- Row 2 -->
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782701.png" alt="Cobwebs Technologies"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782731.png" alt="Tipalti"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782703.png" alt="HiBob"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782704.png" alt="Israel National Digital Agency"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782705.png" alt="Melio"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782706.png" alt="Bizi"></div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782701.png"
+            alt="Cobwebs Technologies"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782731.png"
+            alt="Tipalti"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782703.png"
+            alt="HiBob"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782704.png"
+            alt="Israel National Digital Agency"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782705.png"
+            alt="Melio"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782706.png"
+            alt="Bizi"
+          />
+        </div>
         <!-- Row 3 -->
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782707.png" alt="Aqua"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782708.png" alt="Centrica"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782709.png" alt="Yad2"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782710.png" alt="Hyp"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782711.png" alt="Amdocs"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782712.png" alt="Wix"></div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782707.png"
+            alt="Aqua"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782708.png"
+            alt="Centrica"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782709.png"
+            alt="Yad2"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782710.png"
+            alt="Hyp"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782711.png"
+            alt="Amdocs"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782712.png"
+            alt="Wix"
+          />
+        </div>
         <!-- Row 4 -->
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782750.png" alt="Gong"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782714.png" alt="Viber"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782715.png" alt="Autodesk"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782716.png" alt="NetApp"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782717.png" alt="Harman"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782718.png" alt="Zoominfo"></div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782750.png"
+            alt="Gong"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782714.png"
+            alt="Viber"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782715.png"
+            alt="Autodesk"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782716.png"
+            alt="NetApp"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782717.png"
+            alt="Harman"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782718.png"
+            alt="Zoominfo"
+          />
+        </div>
         <!-- Row 5 -->
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782719.png" alt="Duda"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782720.png" alt="SimilarWeb"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782721.png" alt="HP"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782722.png" alt="Appsflyer"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782723.png" alt="Elbit Systems"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782724.png" alt="Monday.com"></div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782719.png"
+            alt="Duda"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782720.png"
+            alt="SimilarWeb"
+          />
+        </div>
+        <div class="logo-cell">
+          <img src="one-pager-images/one-logos/Frame 2018782721.png" alt="HP" />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782722.png"
+            alt="Appsflyer"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782723.png"
+            alt="Elbit Systems"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782724.png"
+            alt="Monday.com"
+          />
+        </div>
         <!-- Row 6 -->
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782725.png" alt="CyberArk"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782726.png" alt="JFrog"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782727.png" alt="Intel"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782728.png" alt="Salesforce Datorama"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782729.png" alt="מכבי"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782730.png" alt="Intel"></div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782725.png"
+            alt="CyberArk"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782726.png"
+            alt="JFrog"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782727.png"
+            alt="Intel"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782728.png"
+            alt="Salesforce Datorama"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782729.png"
+            alt="מכבי"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782730.png"
+            alt="Intel"
+          />
+        </div>
         <!-- Row 7 -->
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782732.png" alt="EY"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782733.png" alt="SolarEdge"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782734.png" alt="Honeydew"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782735.png" alt="Leumi"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782736.png" alt="Natural Intelligence"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782737.png" alt="Riskified"></div>
+        <div class="logo-cell">
+          <img src="one-pager-images/one-logos/Frame 2018782732.png" alt="EY" />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782733.png"
+            alt="SolarEdge"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782734.png"
+            alt="Honeydew"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782735.png"
+            alt="Leumi"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782736.png"
+            alt="Natural Intelligence"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782737.png"
+            alt="Riskified"
+          />
+        </div>
         <!-- Row 8 -->
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782738.png" alt="TytoCare"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782739.png" alt="GM"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782740.png" alt="Clarity"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782741.png" alt="Munters"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782742.png" alt="Orca Security"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782743.png" alt="Vcita"></div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782738.png"
+            alt="TytoCare"
+          />
+        </div>
+        <div class="logo-cell">
+          <img src="one-pager-images/one-logos/Frame 2018782739.png" alt="GM" />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782740.png"
+            alt="Clarity"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782741.png"
+            alt="Munters"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782742.png"
+            alt="Orca Security"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782743.png"
+            alt="Vcita"
+          />
+        </div>
         <!-- Row 9 -->
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782744.png" alt="Verix"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782745.png" alt="Bizzabo"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782746.png" alt="Nuvei"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782747.png" alt="Iguazio"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782748.png" alt="Anodot"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782749.png" alt="Torq"></div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782744.png"
+            alt="Verix"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782745.png"
+            alt="Bizzabo"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782746.png"
+            alt="Nuvei"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782747.png"
+            alt="Iguazio"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782748.png"
+            alt="Anodot"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782749.png"
+            alt="Torq"
+          />
+        </div>
         <!-- Row 10 -->
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782751.png" alt="PeerSpot"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782752.png" alt="Aidoc"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782753.png" alt="Ubimo"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782754.png" alt="Penlink"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782755.png" alt="Micro Focus"></div>
-        <div class="logo-cell"><img src="one-pager-images/one-logos/Frame 2018782756.png" alt="Earnix"></div>
-    </div>
-</section>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782751.png"
+            alt="PeerSpot"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782752.png"
+            alt="Aidoc"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782753.png"
+            alt="Ubimo"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782754.png"
+            alt="Penlink"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782755.png"
+            alt="Micro Focus"
+          />
+        </div>
+        <div class="logo-cell">
+          <img
+            src="one-pager-images/one-logos/Frame 2018782756.png"
+            alt="Earnix"
+          />
+        </div>
+      </div>
+    </section>
 
-<!-- ── SERVICES (white) ── -->
-<section id="services" class="services-section">
-
-    <div class="services-header">
+    <!-- ── SERVICES (white) ── -->
+    <section id="services" class="services-section">
+      <div class="services-header">
         <h2 class="services-title">Five disciplines. One mindset.</h2>
-        <p class="services-subtitle">Each discipline plugs into the next. Design systems make product design scale; DesignOps makes design systems hold; frontend makes the whole thing real. None of it stands alone.</p>
-    </div>
+        <p class="services-subtitle">
+          Each discipline plugs into the next. Design systems make product
+          design scale; DesignOps makes design systems hold; frontend makes the
+          whole thing real. None of it stands alone.
+        </p>
+      </div>
 
-    <!-- 1: Design Infrastructure -->
-    <div class="service-item">
+      <!-- 1: Design Infrastructure -->
+      <div class="service-item">
         <div class="service-left">
-            <span class="service-num">1</span>
-            <span class="service-name">Design Infrastructure</span>
-            <p class="service-desc">Design systems as scalable product infrastructure — built to match your complexity. We design, build, and evolve design system infrastructure that supports your product exactly where it is today, and scales as complexity grows.</p>
+          <span class="service-num">1</span>
+          <span class="service-name">Design Infrastructure</span>
+          <p class="service-desc">
+            Design systems as scalable product infrastructure — built to match
+            your complexity. We design, build, and evolve design system
+            infrastructure that supports your product exactly where it is today,
+            and scales as complexity grows.
+          </p>
         </div>
         <ul class="service-list">
-            <li>Component Design &amp; Development</li>
-            <li>Design System Architecture</li>
-            <li>Token Strategy &amp; Implementation</li>
-            <li>Multi-Brand / Multi-Platform Systems</li>
-            <li>Contribution &amp; Governance Models</li>
-            <li>Continued support and maintenance</li>
+          <li>Component Design &amp; Development</li>
+          <li>Design System Architecture</li>
+          <li>Token Strategy &amp; Implementation</li>
+          <li>Multi-Brand / Multi-Platform Systems</li>
+          <li>Contribution &amp; Governance Models</li>
+          <li>Continued support and maintenance</li>
         </ul>
-    </div>
+      </div>
 
-    <!-- 2: DesignOps -->
-    <div class="service-item">
+      <!-- 2: DesignOps -->
+      <div class="service-item">
         <div class="service-left">
-            <span class="service-num">2</span>
-            <span class="service-name">DesignOps</span>
-            <p class="service-desc">Design Ops aligns people, decisions, and systems so design can scale without friction. We help organizations move from individual excellence and ad-hoc processes to a clear, shared way of operating across design, product, and engineering. This isn't about adding process. It's about creating clarity, ownership, and decision confidence.</p>
+          <span class="service-num">2</span>
+          <span class="service-name">DesignOps</span>
+          <p class="service-desc">
+            Design Ops aligns people, decisions, and systems so design can scale
+            without friction. We help organizations move from individual
+            excellence and ad-hoc processes to a clear, shared way of operating
+            across design, product, and engineering. This isn't about adding
+            process. It's about creating clarity, ownership, and decision
+            confidence.
+          </p>
         </div>
         <ul class="service-list">
-            <li>Organizational Design for Designers, Product &amp; Dev</li>
-            <li>Decision-Making Frameworks</li>
-            <li>Design Governance &amp; Responsibility Models</li>
-            <li>Operating Cadences &amp; Rituals</li>
-            <li>Cross-discipline Alignment (Design × Product × Engineering)</li>
-            <li>Design teams Figma training</li>
-            <li>Design system and Team Audit</li>
+          <li>Organizational Design for Designers, Product &amp; Dev</li>
+          <li>Decision-Making Frameworks</li>
+          <li>Design Governance &amp; Responsibility Models</li>
+          <li>Operating Cadences &amp; Rituals</li>
+          <li>Cross-discipline Alignment (Design × Product × Engineering)</li>
+          <li>Design teams Figma training</li>
+          <li>Design system and Team Audit</li>
         </ul>
-    </div>
+      </div>
 
-    <!-- 3: Product Design -->
-    <div class="service-item">
+      <!-- 3: Product Design -->
+      <div class="service-item">
         <div class="service-left">
-            <span class="service-num">3</span>
-            <span class="service-name">Product Design</span>
-            <p class="service-desc">We define clear product direction and translate it into system-aware product design. From early concepting and validation to usable interfaces — while continuing to support teams as products evolve, scale, and expand.</p>
+          <span class="service-num">3</span>
+          <span class="service-name">Product Design</span>
+          <p class="service-desc">
+            We define clear product direction and translate it into system-aware
+            product design. From early concepting and validation to usable
+            interfaces — while continuing to support teams as products evolve,
+            scale, and expand.
+          </p>
         </div>
         <ul class="service-list">
-            <li>Product Vision &amp; Direction Definition</li>
-            <li>Product Design</li>
-            <li>Early-Stage Concepting &amp; Validation for product expansion</li>
-            <li>Continued support and maintenance</li>
+          <li>Product Vision &amp; Direction Definition</li>
+          <li>Product Design</li>
+          <li>Early-Stage Concepting &amp; Validation for product expansion</li>
+          <li>Continued support and maintenance</li>
         </ul>
-    </div>
+      </div>
 
-    <!-- 4: Lean Branding -->
-    <div class="service-item">
+      <!-- 4: Lean Branding -->
+      <div class="service-item">
         <div class="service-left">
-            <span class="service-num">4</span>
-            <span class="service-name">Lean Branding</span>
-            <p class="service-desc">Designed for teams that need a focused, functional brand identity and a strong initial website presence — supporting real decisions in communication, structure, and growth. We define how the brand should look, feel, and communicate, then translate it into a usable website.</p>
+          <span class="service-num">4</span>
+          <span class="service-name">Lean Branding</span>
+          <p class="service-desc">
+            Designed for teams that need a focused, functional brand identity
+            and a strong initial website presence — supporting real decisions in
+            communication, structure, and growth. We define how the brand should
+            look, feel, and communicate, then translate it into a usable
+            website.
+          </p>
         </div>
         <ul class="service-list">
-            <li>Product Positioning &amp; Brand Principles</li>
-            <li>Visual Direction &amp; Design Rationale</li>
-            <li>Creative Planning &amp; Concept Visualization</li>
-            <li>Refinement of Core Brand Elements</li>
-            <li>System-Ready Visual Language Foundations</li>
+          <li>Product Positioning &amp; Brand Principles</li>
+          <li>Visual Direction &amp; Design Rationale</li>
+          <li>Creative Planning &amp; Concept Visualization</li>
+          <li>Refinement of Core Brand Elements</li>
+          <li>System-Ready Visual Language Foundations</li>
         </ul>
-    </div>
+      </div>
 
-    <!-- 5: Frontend & Automations -->
-    <div class="service-item">
+      <!-- 5: Frontend & Automations -->
+      <div class="service-item">
         <div class="service-left">
-            <span class="service-num">5</span>
-            <span class="service-name">Frontend &amp; Automations</span>
-            <p class="service-desc">We believe frontend and automation work only creates long-term value when it is built on top of clear product foundations, design systems, and operating models. This ensures that everything we ship — code, components, tools, and automations — is intentional, consistent, and scalable, rather than tactical or ad-hoc.</p>
+          <span class="service-num">5</span>
+          <span class="service-name">Frontend &amp; Automations</span>
+          <p class="service-desc">
+            We believe frontend and automation work only creates long-term value
+            when it is built on top of clear product foundations, design
+            systems, and operating models. This ensures that everything we ship
+            — code, components, tools, and automations — is intentional,
+            consistent, and scalable, rather than tactical or ad-hoc.
+          </p>
         </div>
         <ul class="service-list">
-            <li>Frontend Development</li>
-            <li>WordPress Development</li>
-            <li>Storybook Setup &amp; Maintenance for Component Libraries</li>
-            <li>Custom Automations to Reduce Mundane Tasks</li>
-            <li>Internal Tools &amp; Plugins</li>
+          <li>Frontend Development</li>
+          <li>WordPress Development</li>
+          <li>Storybook Setup &amp; Maintenance for Component Libraries</li>
+          <li>Custom Automations to Reduce Mundane Tasks</li>
+          <li>Internal Tools &amp; Plugins</li>
         </ul>
-    </div>
+      </div>
 
-    <!-- Community -->
-    <div id="community" class="community-section">
+      <!-- Community -->
+      <div id="community" class="community-section">
         <div class="community-grid">
-            <div class="community-illustration">
-                <img src="one-pager-images/designers-new.svg" alt="500+ designers">
+          <div class="community-illustration">
+            <img
+              src="one-pager-images/designers-new.svg"
+              alt="500+ designers"
+            />
+          </div>
+          <div class="community-right">
+            <div>
+              <h3 class="community-trained-heading">
+                500+ designers onboarded.
+              </h3>
+              <p class="community-trained-text">
+                Over the past eight years, Kido has trained more than 500
+                multidisciplinary designers across 40+ companies — guiding teams
+                through the shift to a Design System–based way of working. For
+                many, it was also their first encounter with modern design
+                framework, serving as a base for agentic workflow.
+              </p>
             </div>
-            <div class="community-right">
-                <div>
-                    <h3 class="community-trained-heading">500+ designers onboarded.</h3>
-                    <p class="community-trained-text">Over the past eight years, Kido has trained more than 500 multidisciplinary designers across 40+ companies — guiding teams through the shift to a Design System–based way of working. For many, it was also their first encounter with modern design framework, serving as a base for agentic workflow.</p>
-                </div>
-                <div>
-                    <hr class="community-divider">
-                    <p class="community-stat-label">People in the Israeli Figma Community, Founded by Ido Zeifman</p>
-                    <div class="community-big-num">8K+</div>
-                </div>
+            <div>
+              <hr class="community-divider" />
+              <p class="community-stat-label">
+                People in the Israeli Figma Community, Founded by Ido Zeifman
+              </p>
+              <div class="community-big-num">8K+</div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-</section>
+    <!-- ── FOOTER (dark) ── -->
+    <footer>
+      <h2 class="footer-cta">Let's build<br />something together</h2>
+      <div class="footer-bottom">
+        <p>
+          Contact us at:
+          <a href="mailto:hello@wearekido.com">hello@wearekido.com</a>
+        </p>
+        <p>
+          See more at:
+          <a href="https://wearekido.com" target="_blank">wearekido.com</a> |
+          Connect at:
+          <a href="https://linkedin.com/company/wearekido" target="_blank"
+            >linkedin.com</a
+          >
+        </p>
+      </div>
+    </footer>
 
-<!-- ── FOOTER (dark) ── -->
-<footer>
-    <h2 class="footer-cta">Let's build<br>something together</h2>
-    <div class="footer-bottom">
-        <p>Contact us at: <a href="mailto:hello@wearekido.com">hello@wearekido.com</a></p>
-        <p>See more at: <a href="https://wearekido.com" target="_blank">wearekido.com</a> | Connect at: <a href="https://linkedin.com/company/wearekido" target="_blank">linkedin.com</a></p>
-    </div>
-</footer>
+    <script>
+      (function () {
+        var accent = document.querySelector(".nav-accent");
+        var nav = document.querySelector("nav");
+        var navLinks = document.querySelectorAll(".nav-links a");
+        var sectionIds = [
+          "introduction",
+          "numbers",
+          "process",
+          "clients",
+          "services",
+          "community",
+        ];
+        var scrollLocked = false;
+        var scrollLockTimer = null;
 
-
-<script>
-(function () {
-    var accent   = document.querySelector('.nav-accent');
-    var nav      = document.querySelector('nav');
-    var navLinks = document.querySelectorAll('.nav-links a');
-    var sectionIds = ['introduction', 'numbers', 'process', 'clients', 'services', 'community'];
-    var scrollLocked = false;
-    var scrollLockTimer = null;
-
-    function moveAccentTo(link, instant) {
-        var navRect  = nav.getBoundingClientRect();
-        var linkRect = link.getBoundingClientRect();
-        var newLeft  = linkRect.left - navRect.left;
-        var newWidth = linkRect.width;
-        if (instant) {
-            accent.style.transition = 'none';
-            accent.style.left  = newLeft  + 'px';
-            accent.style.width = newWidth + 'px';
+        function moveAccentTo(link, instant) {
+          var navRect = nav.getBoundingClientRect();
+          var linkRect = link.getBoundingClientRect();
+          var newLeft = linkRect.left - navRect.left;
+          var newWidth = linkRect.width;
+          if (instant) {
+            accent.style.transition = "none";
+            accent.style.left = newLeft + "px";
+            accent.style.width = newWidth + "px";
             accent.offsetHeight; // force reflow before re-enabling transition
-            accent.style.transition = '';
-        } else {
-            accent.style.left  = newLeft  + 'px';
-            accent.style.width = newWidth + 'px';
+            accent.style.transition = "";
+          } else {
+            accent.style.left = newLeft + "px";
+            accent.style.width = newWidth + "px";
+          }
         }
-    }
 
-    function getActiveLink() {
-        var scrollPos = window.scrollY + nav.offsetHeight + 10;
-        var activeId  = sectionIds[0];
-        for (var i = 0; i < sectionIds.length; i++) {
+        function getActiveLink() {
+          var scrollPos = window.scrollY + nav.offsetHeight + 10;
+          var activeId = sectionIds[0];
+          for (var i = 0; i < sectionIds.length; i++) {
             var el = document.getElementById(sectionIds[i]);
             if (!el) continue;
             var elTop = el.getBoundingClientRect().top + window.scrollY;
             if (elTop <= scrollPos) activeId = sectionIds[i];
+          }
+          return document.querySelector(
+            '.nav-links a[href="#' + activeId + '"]',
+          );
         }
-        return document.querySelector('.nav-links a[href="#' + activeId + '"]');
-    }
 
-    function snapAccent() {
-        var link = getActiveLink();
-        if (link) moveAccentTo(link, true);
-    }
+        function snapAccent() {
+          var link = getActiveLink();
+          if (link) moveAccentTo(link, true);
+        }
 
-    window.addEventListener('load', snapAccent);
-    window.addEventListener('resize', snapAccent);
+        window.addEventListener("load", snapAccent);
+        window.addEventListener("resize", snapAccent);
 
-    window.addEventListener('scroll', function () {
-        if (scrollLocked) return;
-        var link = getActiveLink();
-        if (link) moveAccentTo(link, false);
-    }, { passive: true });
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (scrollLocked) return;
+            var link = getActiveLink();
+            if (link) moveAccentTo(link, false);
+          },
+          { passive: true },
+        );
 
-    function smoothScrollTo(targetY, duration) {
-        var startY = window.scrollY;
-        var diff = targetY - startY;
-        var startTime = null;
-        function step(ts) {
+        function smoothScrollTo(targetY, duration) {
+          var startY = window.scrollY;
+          var diff = targetY - startY;
+          var startTime = null;
+          function step(ts) {
             if (!startTime) startTime = ts;
             var elapsed = ts - startTime;
             var p = Math.min(elapsed / duration, 1);
-            var ease = p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p + 2, 3) / 2;
+            var ease =
+              p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
             window.scrollTo(0, startY + diff * ease);
             if (elapsed < duration) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
         }
-        requestAnimationFrame(step);
-    }
 
-    navLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function (e) {
             e.preventDefault();
             moveAccentTo(link, false);
-            var target = document.querySelector(link.getAttribute('href'));
+            var target = document.querySelector(link.getAttribute("href"));
             if (target) {
-                var targetTop = target.getBoundingClientRect().top + window.scrollY - nav.offsetHeight;
-                scrollLocked = true;
-                clearTimeout(scrollLockTimer);
-                scrollLockTimer = setTimeout(function () { scrollLocked = false; }, 700);
-                smoothScrollTo(targetTop, 600);
+              var targetTop =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                nav.offsetHeight;
+              scrollLocked = true;
+              clearTimeout(scrollLockTimer);
+              scrollLockTimer = setTimeout(function () {
+                scrollLocked = false;
+              }, 700);
+              smoothScrollTo(targetTop, 600);
             }
+          });
         });
-    });
-})();
-</script>
-</body>
+      })();
+    </script>
+  </body>
 </html>
