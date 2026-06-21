@@ -457,22 +457,11 @@
 
         /* ─────────── COMMUNITY (within services, transitions) ─────────── */
         .community-section {
-            position: relative;
-        }
-        .community-section::before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 0;
-            left: var(--pad);
-            right: var(--pad);
-            height: 1px;
-            background: rgba(26,26,26,0.12);
         }
 
         .community-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 59fr 41fr;
         }
 
         .community-illustration {
@@ -510,9 +499,11 @@
         }
 
         .community-icon span {
-            font-size: 12px;
-            font-weight: 500;
-            color: rgba(26,26,26,0.75);
+            font-family: 'haas-text', sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.35;
+            color: #181818;
         }
 
         .community-right {
@@ -524,37 +515,45 @@
 
         .community-trained-heading {
             font-family: 'haas', sans-serif;
-            font-weight: 700;
-            font-size: clamp(32px, 3.8vw, 58px);
-            line-height: 1.06;
+            font-weight: 600;
+            font-size: clamp(40px, 4.2vw, 80px);
+            line-height: 0.91;
             letter-spacing: -0.02em;
-            color: #1A1A1A;
+            color: #181818;
             margin-bottom: 22px;
         }
 
         .community-trained-text {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 1.75;
-            color: rgba(26,26,26,0.65);
-            max-width: 440px;
-            margin-bottom: 50px;
+            font-family: 'haas-text', sans-serif;
+            font-size: 31px;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: #181818;
+        }
+
+        .community-divider {
+            border: none;
+            border-top: 1px solid rgba(26,26,26,0.12);
+            margin: 40px calc(-1 * var(--pad));
         }
 
         .community-stat-label {
-            font-size: 12px;
+            font-family: 'haas-text', sans-serif;
+            font-size: 18px;
             font-weight: 400;
-            color: rgba(26,26,26,0.55);
+            line-height: 1.2;
+            color: #181818;
             margin-bottom: 8px;
         }
 
         .community-big-num {
             font-family: 'haas', sans-serif;
-            font-weight: 700;
-            font-size: clamp(80px, 10vw, 156px);
-            line-height: 0.88;
-            letter-spacing: -0.03em;
-            color: #1A1A1A;
+            font-weight: 600;
+            font-size: clamp(80px, 8.5vw, 163px);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #181818;
         }
 
         /* ─────────── FOOTER (dark) ─────────── */
@@ -580,13 +579,13 @@
             align-items: flex-end;
             font-size: 13px;
             font-weight: 400;
-            color: rgba(255,255,255,0.5);
+            color: #ffffff;
             flex-wrap: wrap;
             gap: 12px;
         }
 
         .footer-bottom a {
-            color: rgba(255,255,255,0.85);
+            color: #ffffff;
             text-decoration: none;
             font-weight: 600;
         }
@@ -872,6 +871,7 @@
                     <p class="community-trained-text">Over the past eight years, Kido has trained more than 500 multidisciplinary designers across 40+ companies — guiding teams through the shift to a Design System–based way of working. For many, it was also their first encounter with modern design framework, serving as a base for agentic workflow.</p>
                 </div>
                 <div>
+                    <hr class="community-divider">
                     <p class="community-stat-label">People in the Israeli Figma Community, Founded by Ido Zeifman</p>
                     <div class="community-big-num">8K+</div>
                 </div>
