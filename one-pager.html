@@ -214,7 +214,7 @@
         /* ─────────── PROCESS (lime) ─────────── */
         .process-section {
             background: var(--lime);
-            padding: 0 var(--pad) 90px;
+            padding: 70px var(--pad) 0;
         }
 
         .process-divider {
@@ -240,33 +240,42 @@
         }
 
         .pyramid-level {
-            border: 1.5px solid rgba(26,26,26,0.55);
+            border: 1.5px solid #181818;
             text-align: center;
-            padding: 28px 40px;
-            margin-top: -1px;
+            padding: 40px;
+            margin-top: -1.5px;
             background: var(--lime);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 160px;
         }
 
         .pyramid-level h4 {
-            font-size: 17px;
+            font-family: 'haas', sans-serif;
+            font-size: 31px;
             font-weight: 700;
-            margin-bottom: 8px;
-            color: #1A1A1A;
+            line-height: 1.35;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            color: #181818;
         }
 
         .pyramid-level p {
-            font-size: 13px;
+            font-family: 'haas', sans-serif;
+            font-size: 18px;
             font-weight: 400;
-            color: rgba(26,26,26,0.6);
-            max-width: 400px;
+            color: #181818;
+            max-width: 568px;
             margin: 0 auto;
-            line-height: 1.55;
+            line-height: 1.35;
         }
 
-        .pyr-1 { width: 35%; }
-        .pyr-2 { width: 55%; }
-        .pyr-3 { width: 74%; }
-        .pyr-4 { width: 100%; }
+        .pyr-1 { width: 29%; }
+        .pyr-2 { width: 48%; }
+        .pyr-3 { width: 73%; }
+        .pyr-4 { width: 97%; border-bottom: none; }
 
         /* ─────────── CLIENTS (dark) ─────────── */
         .clients-section {
@@ -611,7 +620,6 @@
 
 <!-- ── PROCESS (lime) ── -->
 <section id="process" class="process-section">
-    <hr class="process-divider">
     <h2 class="process-headline">A system with structure at every level.</h2>
     <div class="pyramid">
         <div class="pyramid-level pyr-1">
