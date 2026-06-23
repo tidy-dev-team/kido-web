@@ -1395,6 +1395,7 @@
         }
 
         window.addEventListener("load", snapAccent);
+        document.fonts.ready.then(snapAccent);
         window.addEventListener("resize", snapAccent);
 
         window.addEventListener(
