@@ -1017,6 +1017,14 @@ h2.small-text {
     max-width: unset;
   }
   
+  .heroSection {
+    padding-bottom: 0;
+  }
+
+  .rowDiv {
+        margin-top: 0;
+  }
+  
   .max-40 {
     max-width: calc(100vw - 80px);
   }
