@@ -13,6 +13,15 @@ body {
   overflow-x: hidden;
 }
 
+.lottie {
+  width: 100%;
+  max-width: 60vw;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+}
+
 #wrapper {
   position: absolute;
   width: 100%;
