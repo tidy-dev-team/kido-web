@@ -1011,6 +1011,11 @@ h2.small-text {
 
 /* mobile */
 @media screen and (max-width:900px) {
+  .lottie {
+    width: 100%;
+    max-width: unset;
+  }
+  
   .max-40 {
     max-width: calc(100vw - 80px);
   }
