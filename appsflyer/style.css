@@ -1012,7 +1012,8 @@ h2.small-text {
 /* mobile */
 @media screen and (max-width:900px) {
   .lottie {
-    width: 100%;
+    width: 92vw;
+    height: 51.75vw;
     max-width: unset;
   }
   
