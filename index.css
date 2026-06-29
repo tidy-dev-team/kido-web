@@ -159,6 +159,7 @@ section {
   width: 100%;
   padding: 0;
   min-height: unset;
+  aspect-ratio: 16 / 9;
 }
 
 .kido {
@@ -1201,6 +1202,119 @@ h2.small-text {
   max-width: 100%;
 }
 
+/* ── SERVICES ACCORDION (Figma 2025 redesign) ── */
+section.svc-section {
+  min-height: 0;
+  text-align: left;
+  padding-top: 0;
+  background: #fff;
+  color: #181818;
+}
+
+.svc-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 1px solid rgba(26, 26, 26, 0.18);
+  padding: 40px 0;
+  cursor: pointer;
+  user-select: none;
+  gap: 20px;
+}
+
+.svc-item:last-child {
+  border-bottom: 1px solid rgba(26, 26, 26, 0.18);
+}
+
+.svc-item.open {
+  display: grid;
+  grid-template-columns: 60% 1fr auto;
+  column-gap: 40px;
+  align-items: start;
+}
+
+.svc-left {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: start;
+  min-width: 0;
+}
+
+.svc-n {
+  font-family: 'haas';
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #181818;
+  line-height: 1.35;
+  padding-top: 8px;
+}
+
+.svc-t {
+  font-family: 'haas';
+  font-weight: 700;
+  font-size: clamp(1.8em, 5vw, 5em);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #181818;
+}
+
+.svc-bullet-list {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 8px;
+  font-size: 1em;
+  counter-reset: svc-i;
+}
+
+.svc-item.open .svc-bullet-list {
+  display: block;
+}
+
+.svc-bullet-list li {
+  counter-increment: svc-i;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  font-family: 'haas-text';
+  font-size: 1.05em;
+  font-weight: 400;
+  color: #181818;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.svc-bullet-list li::before {
+  content: counter(svc-i);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e8fa84;
+  border: 1px dashed #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'haas-text';
+  font-size: 0.85em;
+  font-weight: 400;
+  color: #181818;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.svc-plus {
+  font-family: 'haas';
+  font-size: 2em;
+  font-weight: 700;
+  color: #181818;
+  line-height: 1;
+  padding-top: 8px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
 /* external big screen */
 @media screen and (min-width:1800px) {
   div.footerLinks {
@@ -1211,6 +1325,35 @@ h2.small-text {
 
 /* mobile */
 @media screen and (max-width:900px) {
+  .svc-item.open {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+  }
+
+  .svc-item.open .svc-left {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .svc-item.open .svc-bullet-list {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 20px;
+  }
+
+  .svc-item.open .svc-plus {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .svc-left {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .svc-t {
+    font-size: 2.2em;
+  }
+
   details {
     max-height: unset;
     overflow: visible;

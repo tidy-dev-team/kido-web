@@ -89,6 +89,19 @@
       }
     </script>
     <script>
+      function svcToggle(el) {
+        var wasOpen = el.classList.contains('open');
+        document.querySelectorAll('.svc-item.open').forEach(function(item) {
+          item.classList.remove('open');
+          item.querySelector('.svc-plus').textContent = '+';
+        });
+        if (!wasOpen) {
+          el.classList.add('open');
+          el.querySelector('.svc-plus').textContent = '−';
+        }
+      }
+    </script>
+    <script>
       function clientCardClick(e) {
         e.target.classList.toggle("open");
       }
@@ -247,85 +260,82 @@
         <hr />
         <div class="triLabel">Services</div>
 
-        <section class="align-padding margin-160">
-          <div class="rowDiv no-pad">
-            <div class="half-max"></div>
-            <div class="half-size">
-              <h3 class="float-right indent margin-80">
-                We provide a diverse array of services that cater to numerous
-                industries. We specialize in uncovering valuable insights,
-                coming up with creative design concepts, and developing
-                solutions for projects of all scopes and sizes.
-              </h3>
-              <hr class="float-right" />
-              <details>
-                <summary>
-                  <h2 class="float-right">Design Infrastructure</h2>
-                </summary>
-                <ul class="float-right">
-                  <li>Component Design & Development</li>
-                  <li>Design System Architecture</li>
-                  <li>Token Strategy & Implementation</li>
-                  <li>Multi-Brand / Multi-Platform Systems</li>
-                  <li>Contribution & Governance Models</li>
-                  <li>Continues support and maintenance</li>
-                </ul>
-              </details>
-              <hr class="float-right" />
-              <details>
-                <summary>
-                  <h2 class="float-right">DesignOps</h2>
-                </summary>
-                <ul class="float-right">
-                  <li>Organizational Design for Designers, Product & Dev</li>
-                  <li>Decision-Making Frameworks</li>
-                  <li>Design Governance & Responsibility Models</li>
-                  <li>Operating Cadences & Rituals</li>
-                  <li>Cross-discipline Alignment (Design × Product × Engineering)</li>
-                  <li>Design teams Figma training</li>
-                  <li>Design system and Team Audit</li>
-                </ul>
-              </details>
-              <hr class="float-right" />
-              <details>
-                <summary>
-                  <h2 class="float-right">Product Design</h2>
-                </summary>
-                <ul class="float-right">
-                  <li>Product Vision & Direction Definition</li>
-                  <li>Product Design</li>
-                  <li>Early-Stage Concepting & Validation for product expansion</li>
-                  <li>Continues support and maintenance</li>
-                </ul>
-              </details>
-              <hr class="float-right" />
-              <details>
-                <summary>
-                  <h2 class="float-right">Lean Branding</h2>
-                </summary>
-                <ul class="float-right">
-                  <li>Product Positioning & Brand Principles</li>
-                  <li>Visual Direction & Design Rationale</li>
-                  <li>Creative Planning & Concept Visualization</li>
-                  <li>Refinement of Core Brand Elements</li>
-                  <li>System-Ready Visual Language Foundations</li>
-                </ul>
-              </details>
-              <hr class="float-right" />
-              <details>
-                <summary>
-                  <h2 class="float-right">Frontend Dev & Automations</h2>
-                </summary>
-                <ul class="float-right">
-                  <li>Frontend Development</li>
-                  <li>WordPress Development</li>
-                  <li>Storybook Setup & Maintenance for Component Libraries</li>
-                  <li>Custom Automations to Reduce Mundane Tasks</li>
-                  <li>Internal Tools & Plugins</li>
-                </ul>
-              </details>
-              <hr class="float-right" />
+        <section class="svc-section align-padding margin-160">
+          <div class="svc-item" onclick="svcToggle(this)">
+            <div class="svc-left">
+              <span class="svc-n">1</span>
+              <span class="svc-t">Design Infrastructure</span>
             </div>
+            <ul class="svc-bullet-list">
+              <li>Component Design &amp; Development</li>
+              <li>Design System Architecture</li>
+              <li>Token Strategy &amp; Implementation</li>
+              <li>Multi-Brand / Multi-Platform Systems</li>
+              <li>Contribution &amp; Governance Models</li>
+              <li>Continued support and maintenance</li>
+            </ul>
+            <span class="svc-plus">+</span>
+          </div>
+
+          <div class="svc-item" onclick="svcToggle(this)">
+            <div class="svc-left">
+              <span class="svc-n">2</span>
+              <span class="svc-t">DesignOps</span>
+            </div>
+            <ul class="svc-bullet-list">
+              <li>Organizational Design for Designers, Product &amp; Dev</li>
+              <li>Decision-Making Frameworks</li>
+              <li>Design Governance &amp; Responsibility Models</li>
+              <li>Operating Cadences &amp; Rituals</li>
+              <li>Cross-discipline Alignment (Design × Product × Engineering)</li>
+              <li>Design teams Figma training</li>
+              <li>Design system and Team Audit</li>
+            </ul>
+            <span class="svc-plus">+</span>
+          </div>
+
+          <div class="svc-item" onclick="svcToggle(this)">
+            <div class="svc-left">
+              <span class="svc-n">3</span>
+              <span class="svc-t">Product Design</span>
+            </div>
+            <ul class="svc-bullet-list">
+              <li>Product Vision &amp; Direction Definition</li>
+              <li>Product Design</li>
+              <li>Early-Stage Concepting &amp; Validation for product expansion</li>
+              <li>Continued support and maintenance</li>
+            </ul>
+            <span class="svc-plus">+</span>
+          </div>
+
+          <div class="svc-item" onclick="svcToggle(this)">
+            <div class="svc-left">
+              <span class="svc-n">4</span>
+              <span class="svc-t">Lean Branding</span>
+            </div>
+            <ul class="svc-bullet-list">
+              <li>Product Positioning &amp; Brand Principles</li>
+              <li>Visual Direction &amp; Design Rationale</li>
+              <li>Creative Planning &amp; Concept Visualization</li>
+              <li>Refinement of Core Brand Elements</li>
+              <li>System-Ready Visual Language Foundations</li>
+            </ul>
+            <span class="svc-plus">+</span>
+          </div>
+
+          <div class="svc-item" onclick="svcToggle(this)">
+            <div class="svc-left">
+              <span class="svc-n">5</span>
+              <span class="svc-t">Frontend &amp; Automations</span>
+            </div>
+            <ul class="svc-bullet-list">
+              <li>Frontend Development</li>
+              <li>WordPress Development</li>
+              <li>Storybook Setup &amp; Maintenance for Component Libraries</li>
+              <li>Custom Automations to Reduce Mundane Tasks</li>
+              <li>Internal Tools &amp; Plugins</li>
+            </ul>
+            <span class="svc-plus">+</span>
           </div>
         </section>
 
