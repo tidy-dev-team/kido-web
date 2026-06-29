@@ -89,11 +89,35 @@
       }
     </script>
     <script>
+      function svcClose(item) {
+        if (item.classList.contains('closing')) return;
+        item.classList.add('closing');
+        item.querySelector('.svc-plus').textContent = '+';
+
+        var cs = getComputedStyle(item);
+        var openH = item.offsetHeight;
+        var collapsedH = parseFloat(cs.paddingTop)
+                       + item.querySelector('.svc-t').offsetHeight
+                       + parseFloat(cs.paddingBottom);
+
+        item.style.height = openH + 'px';
+        item.style.overflow = 'hidden';
+        item.offsetHeight; // force reflow
+        item.style.transition = 'height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        item.style.height = collapsedH + 'px';
+
+        setTimeout(function() {
+          item.classList.remove('open', 'closing');
+          item.style.height = '';
+          item.style.overflow = '';
+          item.style.transition = '';
+        }, 320);
+      }
+
       function svcToggle(el) {
         var wasOpen = el.classList.contains('open');
         document.querySelectorAll('.svc-item.open').forEach(function(item) {
-          item.classList.remove('open');
-          item.querySelector('.svc-plus').textContent = '+';
+          svcClose(item);
         });
         if (!wasOpen) {
           el.classList.add('open');
@@ -176,6 +200,35 @@
         var cards = document.getElementsByClassName('client-card');
         if (cards.length > 0) cards[0].classList.add('active');
         checkClientScroll();
+
+        var indexServicesBtn = document.getElementById('indexServicesBtn');
+        var indexServicesDropdown = document.getElementById('indexServicesDropdown');
+
+        function positionDropdown() {
+          var rect = indexServicesBtn.getBoundingClientRect();
+          indexServicesDropdown.style.top = (rect.bottom + 8) + 'px';
+          indexServicesDropdown.style.left = rect.left + 'px';
+        }
+
+        function closeServicesDropdown() {
+          indexServicesDropdown.classList.remove('open');
+        }
+
+        indexServicesBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var isOpen = indexServicesDropdown.classList.toggle('open');
+          if (isOpen) positionDropdown();
+        });
+
+        document.addEventListener('click', closeServicesDropdown);
+        window.addEventListener('scroll', closeServicesDropdown, { passive: true });
+
+        var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        var mobileMenuClose = document.getElementById('mobileMenuClose');
+        var mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', function() { mobileMenu.classList.add('open'); });
+        mobileMenuClose.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
       });
     </script>
   </head>
@@ -188,6 +241,32 @@
     "
   >
     <div id="wrapper">
+      <!-- Mobile menu overlay -->
+      <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="mobile-menu__top">
+          <div class="mobile-menu__logo"><a href="" aria-label="Kido home"></a></div>
+          <button class="mobile-menu-btn mobile-menu-btn--open" id="mobileMenuClose" type="button">MENU</button>
+        </div>
+        <nav class="mobile-menu__nav">
+          <a href="about">ABOUT</a>
+          <span class="mobile-menu__services-label">SERVICES</span>
+          <div class="mobile-menu__sub">
+            <a href="services/design_infrastructure.html">DESIGN INFRASTRUCTURE</a>
+            <a href="services/product_design.html">PRODUCT DESIGN</a>
+            <a href="services/design_ops.html">DESIGN OPS</a>
+            <a href="services/lean_branding.html">LEAN BRANDING</a>
+            <a href="services/frontend_dev.html">FRONT END DEVELOPMENT &amp; AUTOMATIONS</a>
+          </div>
+          <a href="case-studies">CASE STUDIES</a>
+          <a href="mailto:hello@wearekido.com">LET'S TALK</a>
+        </nav>
+      </div>
+      <!-- Mobile sticky header -->
+      <header class="mobile-header">
+        <div class="mobile-header__logo"><a href="" aria-label="Kido home"></a></div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button">MENU</button>
+      </header>
+
       <header id="mainHeader">
         <div class="logoDiv">
           <lottie-player
@@ -201,6 +280,7 @@
         </div>
         <div class="logoText"><a href=""></a></div>
         <nav class="linksDiv center-flex">
+          <button class="svc-nav-btn" id="indexServicesBtn" type="button">SERVICES</button>
           <a href="case-studies">CASE STUDIES</a>
           <a href="about">ABOUT</a>
         </nav>
@@ -210,6 +290,13 @@
           >LET'S TALK</a
         >
       </header>
+      <div class="index-svc-dropdown" id="indexServicesDropdown">
+        <a href="services/design_infrastructure.html">DESIGN INFRASTRUCTURE</a>
+        <a href="services/product_design.html">PRODUCT DESIGN</a>
+        <a href="services/design_ops.html">DESIGN OPS</a>
+        <a href="services/lean_branding.html">LEAN BRANDING</a>
+        <a href="services/frontend_dev.html">FRONT END DEVELOPMENT &amp; AUTOMATIONS</a>
+      </div>
       <main>
         <section class="firstSection" id="videoSection">
           <video
