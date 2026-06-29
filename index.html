@@ -102,87 +102,81 @@
       }
     </script>
     <script>
+      var _kidoCard = 0;
+
       function clientCardClick(e) {
         e.target.classList.toggle("open");
       }
+
       function clientNext() {
-        if (document.body.offsetWidth < 900) {
-          siteWidth =
-            document.getElementsByClassName("client-wrapper")[0].offsetWidth +
-            24;
-        } else {
-          siteWidth =
-            document.getElementsByClassName("client-wrapper")[0].offsetWidth +
-            200;
+        var cards = document.getElementsByClassName('client-card');
+        if (_kidoCard < cards.length - 1) {
+          var curr = cards[_kidoCard];
+          curr.classList.remove('active');
+          curr.classList.add('exit-left');
+          _kidoCard++;
+          var next = cards[_kidoCard];
+          next.classList.add('active', 'enter-right');
+          setTimeout(function() {
+            curr.classList.remove('exit-left');
+            next.classList.remove('enter-right');
+          }, 450);
         }
-        document
-          .getElementsByClassName("client-wrapper")[0]
-          .scrollBy(siteWidth, 0);
         checkClientScroll();
       }
 
       function clientPrev() {
-        if (document.body.offsetWidth < 900) {
-          siteWidth =
-            document.getElementsByClassName("client-wrapper")[0].offsetWidth +
-            24;
-        } else {
-          siteWidth =
-            document.getElementsByClassName("client-wrapper")[0].offsetWidth +
-            200;
+        var cards = document.getElementsByClassName('client-card');
+        if (_kidoCard > 0) {
+          var curr = cards[_kidoCard];
+          curr.classList.remove('active');
+          curr.classList.add('exit-right');
+          _kidoCard--;
+          var prev = cards[_kidoCard];
+          prev.classList.add('active', 'enter-left');
+          setTimeout(function() {
+            curr.classList.remove('exit-right');
+            prev.classList.remove('enter-left');
+          }, 450);
         }
-        document
-          .getElementsByClassName("client-wrapper")[0]
-          .scrollBy(siteWidth * -1, 0);
         checkClientScroll();
       }
 
       function resetClientScroll() {
-        document
-          .getElementsByClassName("client-wrapper")[0]
-          .scrollBy(-10000, 0);
+        var cards = document.getElementsByClassName('client-card');
+        cards[_kidoCard].classList.remove('active');
+        _kidoCard = 0;
+        cards[0].classList.add('active');
         checkClientScroll();
       }
 
       function resetClientExpantion() {
         var x = document.getElementsByClassName("client-card");
-        var i;
-        for (i = 0; i < x.length; i++) {
+        for (var i = 0; i < x.length; i++) {
           x[i].classList.remove("open");
-        }
-        if (
-          document
-            .getElementById("scroll-section-label")
-            .getBoundingClientRect().top < 0
-        ) {
-          document
-            .getElementById("scroll-section-label")
-            .scrollIntoView({ behavior: "smooth" });
         }
       }
 
       function checkClientScroll() {
         resetClientExpantion();
-        setTimeout(function () {
-          if (
-            document.getElementsByClassName("client-wrapper")[0].scrollLeft <
-            100
-          ) {
-            document.getElementById("arrow-prev").classList.add("unselect");
-          } else {
-            document.getElementById("arrow-prev").classList.remove("unselect");
-          }
-
-          if (
-            document.getElementsByClassName("client-wrapper")[0].scrollLeft >
-            document.getElementsByClassName("client-wrapper")[0].offsetWidth * 4
-          ) {
-            document.getElementById("arrow-next").classList.add("unselect");
-          } else {
-            document.getElementById("arrow-next").classList.remove("unselect");
-          }
-        }, 600);
+        var cards = document.getElementsByClassName('client-card');
+        if (_kidoCard <= 0) {
+          document.getElementById("arrow-prev").classList.add("unselect");
+        } else {
+          document.getElementById("arrow-prev").classList.remove("unselect");
+        }
+        if (_kidoCard >= cards.length - 1) {
+          document.getElementById("arrow-next").classList.add("unselect");
+        } else {
+          document.getElementById("arrow-next").classList.remove("unselect");
+        }
       }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var cards = document.getElementsByClassName('client-card');
+        if (cards.length > 0) cards[0].classList.add('active');
+        checkClientScroll();
+      });
     </script>
   </head>
 
@@ -230,37 +224,27 @@
           ></video>
         </section>
 
-        <section class="columnDiv margin-48 secondSection">
-          <h1 class="noselect">
-            <br />We help best in class companies to accelerate and optimize the
-            design & creative process by focusing on outstanding design and not
-            mundane tasks
-          </h1>
-          <lottie-player
-            src="https://lottie.host/cb8e6687-f930-46ef-8dd5-459e38953552/psZ0aMJEeD.json"
-            background="transparent"
-            speed="0.4"
-            style="width: 100%; height: 100%; max-width: 520px"
-            loop
-            autoplay
-            disableShadowDOM
-          ></lottie-player>
+        <section class="secondSection">
+          <div class="secondSection-inner">
+            <div class="secondSection-text-wrap">
+              <img src="images/section2-star.svg" class="secondSection-star" alt="" />
+              <p class="secondSection-text">We help best in class companies to accelerate and optimize the design &amp; creative process by focusing on outstanding design and not mundane tasks</p>
+            </div>
+            <img src="images/section2-pyramid.svg" class="secondSection-pyramid" alt="" />
+          </div>
         </section>
 
-        <hr />
-        <div class="triLabel">Selected Clients</div>
-
         <section
-          class="rowDiv space margin-80 gap-120 margin-160 margin-top-160 clientsDiv"
-          style="padding-bottom: 0"
+          class="rowDiv space gap-120 clientsDiv"
+          style="padding-bottom: 60px;padding-top: 60px;margin: 0;"
         >
           <div class="rowDiv newClients"></div>
         </section>
 
-        <hr />
-        <div class="triLabel">Services</div>
-
-        <section class="svc-section align-padding margin-160">
+        <section class="svc-section align-padding padding-160">
+          
+          <div class="triLabel">Services</div>
+          <p class="svc-intro">Each discipline plugs into the next. Design systems make product design scale; DesignOps makes design systems hold; frontend makes the whole thing real. None of it stands alone.</p>
           <div class="svc-item" onclick="svcToggle(this)">
             <div class="svc-left">
               <span class="svc-n">1</span>
@@ -339,38 +323,9 @@
           </div>
         </section>
 
-        <hr />
-        <div class="triLabel">Selected Projects</div>
-
-        <section class="rowDiv padding-sm justify margin-160">
-          <a href="gcc" class="case-card">
-            <img src="images/gcc-social.jpg" alt="GCC Case Study" />
-            <div class="flex-card">
-              <h2>GCC</h2>
-              <h3>Systemized Branding at Speed: 3 Sites in 10 Weeks</h3>
-            </div>
-          </a>
-          <a href="appsflyer" class="case-card">
-            <img src="images/case-appsflyer.jpg" alt="AppsFlyer Case Study" />
-            <div class="flex-card">
-              <h2>AppsFlyer</h2>
-              <h3>Brand Reposition Implementation - Building While Shipping</h3>
-            </div>
-          </a>
-          <a href="amdocs" class="case-card">
-            <img src="images/case-amdocs.jpg" alt="Amdocs Case Study" />
-            <div class="flex-card">
-              <h2>Amdocs</h2>
-              <h3>One Library to Rule Them All</h3>
-            </div>
-          </a>
-        </section>
-
-        <hr id="scroll-section-label" />
-        <div class="triLabel">Client testimonials</div>
-
         <section class="scroll-section">
-          <div class="client-wrapper" onscroll="checkClientScroll()">
+          <div class="triLabel">Testimonials</div>
+          <div class="client-wrapper">
             <div class="client-card" onclick="clientCardClick(event)">
               <p>
                 <span class="summary-span"
@@ -589,6 +544,33 @@
               id="arrow-next"
             ></button>
           </div>
+        </section>
+
+        <hr />
+        <div class="triLabel">Selected Projects</div>
+
+        <section class="rowDiv padding-sm justify margin-160">
+          <a href="gcc" class="case-card">
+            <img src="images/gcc-social.jpg" alt="GCC Case Study" />
+            <div class="flex-card">
+              <h2>GCC</h2>
+              <h3>Systemized Branding at Speed: 3 Sites in 10 Weeks</h3>
+            </div>
+          </a>
+          <a href="appsflyer" class="case-card">
+            <img src="images/case-appsflyer.jpg" alt="AppsFlyer Case Study" />
+            <div class="flex-card">
+              <h2>AppsFlyer</h2>
+              <h3>Brand Reposition Implementation - Building While Shipping</h3>
+            </div>
+          </a>
+          <a href="amdocs" class="case-card">
+            <img src="images/case-amdocs.jpg" alt="Amdocs Case Study" />
+            <div class="flex-card">
+              <h2>Amdocs</h2>
+              <h3>One Library to Rule Them All</h3>
+            </div>
+          </a>
         </section>
       </main>
       <footer class="whiteSection columnDiv no-gap">
