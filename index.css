@@ -1388,6 +1388,49 @@ section.svc-section {
   box-sizing: border-box;
 }
 
+.svc-desc {
+  display: none;
+  grid-column: 2;
+  margin-top: 20px;
+  font-family: 'haas-text';
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #181818;
+  max-width: 480px;
+}
+
+.svc-item.open .svc-desc {
+  display: block;
+}
+
+.svc-more {
+  display: none;
+  grid-column: 2;
+  margin-top: 28px;
+  align-self: end;
+  width: fit-content;
+  padding: 9px 22px;
+  border: 1px solid #181818;
+  border-radius: 9999px;
+  font-family: 'haas-text';
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #181818;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.svc-more:hover {
+  background-color: #181818;
+  color: white;
+}
+
+.svc-item.open .svc-more {
+  display: block;
+}
+
 .svc-plus {
   font-family: 'haas';
   font-size: 2em;
