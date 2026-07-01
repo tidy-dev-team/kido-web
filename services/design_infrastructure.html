@@ -10,7 +10,10 @@
       name="description"
       content="Design systems as scalable product infrastructure. Kido builds and evolves design system infrastructure that supports your product today and scales as complexity grows."
     />
-    <link rel="canonical" href="https://wearekido.com/services" />
+    <link
+      rel="canonical"
+      href="https://wearekido.com/services/design-infrastructure"
+    />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Design Infrastructure — Kido" />
@@ -22,7 +25,10 @@
       property="og:image"
       content="https://wearekido.com/images/kido-social.jpg"
     />
-    <meta property="og:url" content="https://wearekido.com/services" />
+    <meta
+      property="og:url"
+      content="https://wearekido.com/services/design-infrastructure"
+    />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -64,7 +70,7 @@
       html,
       body {
         overflow-x: clip;
-        background-color: #f5f5f0;
+        background-color: #ffffff;
       }
 
       /* ─────────────────────────────────────────
@@ -74,20 +80,18 @@
         display: flex;
         align-items: center;
         width: 100%;
-        padding: 0 clamp(24px, 3.75vw, 72px);
-        height: 100px;
+        padding: 0 48px;
+        height: 80px;
         position: sticky;
         top: 0;
         z-index: 100;
-        background: #f5f5f0;
+        background: #ffffff;
       }
 
       .header__logo {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 72px;
-        height: 26px;
+        flex-shrink: 0;
+        width: 80px;
+        height: 30px;
         background: url("../images/kido.svg") no-repeat center / contain;
       }
 
@@ -99,47 +103,62 @@
 
       .header__nav {
         display: flex;
-        gap: 8px;
-        transition: opacity 0.25s ease;
+        align-items: center;
+        gap: 40px;
+        flex-grow: 1;
+        justify-content: center;
+        height: 100%;
       }
 
-      .header__nav a,
-      .nav__services-btn,
-      .header__cta {
+      .header__nav > a,
+      .nav__services-btn {
         font-family: "haas", sans-serif;
-        font-size: 18px;
+        font-size: 1.2em;
         font-weight: 500;
-        letter-spacing: 0.04em;
-        color: #f5f5f0;
-        background: #2c2c2c;
-        text-decoration: none;
+        color: #1c1c1c;
+        background: none;
         border: none;
-        border-radius: 999px;
-        padding: 12px 16px 10px;
+        padding: 0;
+        text-decoration: none;
         white-space: nowrap;
         cursor: pointer;
-        width: fit-content;
+        outline: none;
+        -webkit-font-smoothing: antialiased;
       }
 
-      .header__nav a:hover,
-      .nav__services-btn:hover,
-      .header__cta:hover {
-        background: #e4e4e4;
-        color: #181818;
+      .header__nav > a:hover,
+      .nav__services-btn:hover {
+        color: #888888;
       }
 
       .header__cta {
-        margin-left: auto;
-        transition: opacity 0.25s ease;
+        font-family: "haas", sans-serif;
+        font-size: 1.2em;
+        font-weight: 500;
+        color: #1c1c1c;
+        background: #ffffff;
+        border: 2px solid #1c1c1c;
+        border-radius: 999px;
+        padding: 4px 16px 1px;
+        text-decoration: none;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .header__cta:hover {
+        background: #1c1c1c;
+        color: #ffffff;
       }
 
       .nav__dropdown-wrap {
         position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
       }
 
       .nav__services-btn.open {
-        background: #e4e4e4;
-        color: #181818;
+        color: #888888;
       }
 
       .nav__dropdown {
@@ -151,12 +170,32 @@
         gap: 8px;
         opacity: 0;
         pointer-events: none;
-        z-index: -1;
+        z-index: 10;
+        transition: opacity 0.2s ease;
       }
 
       .nav__dropdown.open {
         opacity: 1;
         pointer-events: all;
+      }
+
+      .nav__dropdown a {
+        font-family: "haas", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: #181818;
+        background: #e4e4e4;
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 12px 16px 10px;
+        white-space: nowrap;
+        display: block;
+      }
+
+      .nav__dropdown a:hover {
+        background: #2c2c2c;
+        color: #f5f5f0;
       }
 
       .mobile-header {
@@ -168,7 +207,7 @@
         position: sticky;
         top: 0;
         z-index: 200;
-        background: #f5f5f0;
+        background: #ffffff;
       }
 
       .mobile-header__logo {
@@ -189,7 +228,7 @@
         font-weight: 500;
         letter-spacing: 0.06em;
         color: #181818;
-        background: #e4e4e4;
+        background: #ffffff;
         border: none;
         border-radius: 999px;
         padding: 10px 18px 8px;
@@ -202,23 +241,25 @@
         position: fixed;
         inset: 0;
         z-index: 300;
-        background: #f5f5f0;
+        background: #ffffff;
         padding: 0 24px 40px;
         overflow-y: auto;
         overscroll-behavior: contain;
         clip-path: inset(0 0 100% 0);
         visibility: hidden;
         pointer-events: none;
-        transition: clip-path 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-                    visibility 0s 0.55s;
+        transition:
+          clip-path 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+          visibility 0s 0.55s;
       }
 
       .mobile-menu.open {
         clip-path: inset(0 0 0% 0);
         visibility: visible;
         pointer-events: auto;
-        transition: clip-path 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-                    visibility 0s 0s;
+        transition:
+          clip-path 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+          visibility 0s 0s;
       }
 
       .mobile-menu__top {
@@ -257,7 +298,9 @@
       .mobile-menu__sub {
         opacity: 0;
         transform: translateY(10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
       }
 
       .mobile-menu.open .mobile-menu__nav > a,
@@ -267,11 +310,21 @@
         transform: translateY(0);
       }
 
-      .mobile-menu.open .mobile-menu__nav > a:nth-child(1) { transition-delay: 0.25s; }
-      .mobile-menu.open .mobile-menu__nav > *:nth-child(2)  { transition-delay: 0.32s; }
-      .mobile-menu.open .mobile-menu__nav > *:nth-child(3)  { transition-delay: 0.39s; }
-      .mobile-menu.open .mobile-menu__nav > *:nth-child(4)  { transition-delay: 0.46s; }
-      .mobile-menu.open .mobile-menu__nav > *:nth-child(5)  { transition-delay: 0.53s; }
+      .mobile-menu.open .mobile-menu__nav > a:nth-child(1) {
+        transition-delay: 0.25s;
+      }
+      .mobile-menu.open .mobile-menu__nav > *:nth-child(2) {
+        transition-delay: 0.32s;
+      }
+      .mobile-menu.open .mobile-menu__nav > *:nth-child(3) {
+        transition-delay: 0.39s;
+      }
+      .mobile-menu.open .mobile-menu__nav > *:nth-child(4) {
+        transition-delay: 0.46s;
+      }
+      .mobile-menu.open .mobile-menu__nav > *:nth-child(5) {
+        transition-delay: 0.53s;
+      }
 
       .mobile-menu__nav > a,
       .mobile-menu__services-label {
@@ -321,295 +374,209 @@
 
       /* ─────────────────────────────────────────
          Hero Section
-         Fluid: 88px @ 1920px → 32px @ ~700px
       ───────────────────────────────────────── */
-      .hero {
-        display: flex;
-        width: 100%;
-        min-height: clamp(400px, 47.4vw, 910px);
+      .pd-hero {
+        background: #ffffff;
+        text-align: center;
+        padding: clamp(60px, 7.3vw, 140px) clamp(24px, 6.25vw, 120px)
+          clamp(48px, 5.2vw, 100px);
       }
 
-      .hero__left {
-        flex: 1 0 0;
-        background: #f6f5ee;
-        padding: clamp(40px, 5.2vw, 100px) clamp(24px, 6.25vw, 120px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .pd-hero__title {
+        font-family: "haas", sans-serif;
+        font-size: clamp(40px, 8.4vw, 161px);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: #181818;
+        margin-bottom: 0.15em;
       }
 
-      .hero__left picture {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+      .pd-hero__tagline {
+        font-family: "haas", sans-serif;
+        font-size: clamp(15px, 1.46vw, 28px);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        color: #181818;
+        max-width: 35.3em;
+        margin: 0 auto;
+        text-wrap: balance;
       }
 
-      .hero__illustration-slot {
+      /* ─────────────────────────────────────────
+         Lime Section
+      ───────────────────────────────────────── */
+      .pd-lime {
+        background: #e8fa84;
+      }
+
+      .pd-lime__capabilities {
+        padding: clamp(48px, 3.44vw, 66px) clamp(24px, 4.27vw, 82px) 0;
+      }
+
+      .pd-lime__cap-label {
+        color: #212121;
+        margin-bottom: clamp(32px, 3.75vw, 72px);
         display: block;
-        max-height: 100%;
+      }
+
+      .pd-lime__body {
+        font-family: "haas", sans-serif;
+        font-size: clamp(22px, 3.6vw, 71px);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: #181818;
+        text-align: center;
+        max-width: 70%;
+        margin: 0 auto clamp(32px, 3.5vw, 68px);
+      }
+
+      .pd-lime__bullets {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(8px, 0.52vw, 10px) clamp(24px, 3.125vw, 60px);
+        max-width: 60%;
+        margin: 0 auto;
+        padding-bottom: clamp(60px, 7.3vw, 140px);
+      }
+
+      .pd-lime__bullet {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-family: "haas-text", sans-serif;
+        font-size: clamp(15px, 1.46vw, 28px);
+        font-weight: 400;
+        color: #181818;
+        line-height: 1.1;
+        padding: 4px 0;
+      }
+
+      .pd-lime__bullet-dot {
+        flex-shrink: 0;
+        width: 26px;
+        height: 26px;
+        margin-top: 0.1em;
+        background: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.8366 17.3422C24.4396 15.8863 24.75 14.3259 24.75 12.75C24.75 9.5674 23.4857 6.51516 21.2353 4.26472C18.9848 2.01428 15.9326 0.75 12.75 0.75C9.5674 0.75 6.51515 2.01428 4.26472 4.26472C2.01428 6.51516 0.75 9.5674 0.75 12.75C0.75 14.3259 1.06039 15.8863 1.66345 17.3422C2.2665 18.7981 3.15042 20.121 4.26472 21.2353C5.37902 22.3496 6.70189 23.2335 8.1578 23.8366C9.61371 24.4396 11.1741 24.75 12.75 24.75C14.3259 24.75 15.8863 24.4396 17.3422 23.8366C18.7981 23.2335 20.121 22.3496 21.2353 21.2353C22.3496 20.121 23.2335 18.7981 23.8366 17.3422Z' fill='%23181818'/%3E%3Cpath d='M8.75 13.75L11.75 16.75L16.75 9.75M24.75 12.75C24.75 14.3259 24.4396 15.8863 23.8366 17.3422C23.2335 18.7981 22.3496 20.121 21.2353 21.2353C20.121 22.3496 18.7981 23.2335 17.3422 23.8366C15.8863 24.4396 14.3259 24.75 12.75 24.75C11.1741 24.75 9.61371 24.4396 8.1578 23.8366C6.70189 23.2335 5.37902 22.3496 4.26472 21.2353C3.15042 20.121 2.2665 18.7981 1.66345 17.3422C1.06039 15.8863 0.75 14.3259 0.75 12.75C0.75 9.5674 2.01428 6.51516 4.26472 4.26472C6.51516 2.01428 9.5674 0.75 12.75 0.75C15.9326 0.75 18.9848 2.01428 21.2353 4.26472C23.4857 6.51516 24.75 9.5674 24.75 12.75Z' stroke='%23E8FA84' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+          no-repeat center / contain;
+      }
+
+      /* ─────────────────────────────────────────
+         Focused by Need
+      ───────────────────────────────────────── */
+      .pd-focused-label {
+        display: block;
+        color: #212121;
+        padding: clamp(20px, 2.6vw, 50px) clamp(24px, 4.27vw, 82px)
+          clamp(20px, 2.6vw, 50px);
+      }
+
+      .pd-focused-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: clamp(320px, 41.25vw, 792px);
+      }
+
+      .pd-focused-row + .pd-focused-row {
+        min-height: clamp(280px, 32.85vw, 631px);
+      }
+
+      .pd-focused-illus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(40px, 5vw, 96px);
+      }
+
+      .pd-focused-illus img {
         max-width: 100%;
+        max-height: clamp(220px, 28vw, 540px);
         object-fit: contain;
       }
 
-      .hero__right {
-        flex: 1 0 0;
-        background: #181818;
-        padding: clamp(40px, 5.2vw, 100px) clamp(24px, 6.25vw, 120px);
-        display: flex;
-        align-items: center;
-      }
-
-      .hero__text {
-        font-family: "kepler", Georgia, serif;
-        font-size: 88px;
-        font-weight: 400;
-        font-style: italic;
-        line-height: 0.93;
-        letter-spacing: -0.04em;
-      }
-
-      .hero__service-name {
-        display: block;
-        font-size: inherit;
-        font-weight: inherit;
-        font-style: inherit;
-        color: #efefef;
-        margin-bottom: 0.1em;
-      }
-
-      .hero__tagline {
-        display: block;
-        color: #8a9a5b;
-      }
-
-      /* ─────────────────────────────────────────
-         Capabilities Section
-         Fluid: 42px @ 1920px → 18px @ mobile
-      ───────────────────────────────────────── */
-      .capabilities {
-        background: #ffffff;
+      .pd-focused-text {
         display: flex;
         flex-direction: column;
-        gap: clamp(48px, 6.5vw, 124px);
-        padding-top: clamp(48px, 5.2vw, 100px);
+        justify-content: center;
+        padding: clamp(40px, 5.2vw, 100px) clamp(32px, 5.2vw, 100px);
       }
 
-      .capabilities__intro {
-        padding-left: clamp(24px, 6.25vw, 120px);
-        padding-right: clamp(24px, 6.25vw, 120px);
-        max-width: 1684px;
-      }
-
-      .capabilities__label {
-        color: #181818;
-        margin-bottom: 28px;
-      }
-
-      .capabilities__body {
-        font-family: "haas-text", sans-serif;
-        font-size: 35px;
-        font-weight: 400;
-        color: #181818;
-        letter-spacing: -0.03em;
-        line-height: 1.2;
-      }
-
-      .capabilities__list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-
-      .capabilities__item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: clamp(64px, 8.85vw, 170px);
-        padding: clamp(16px, 2vw, 40px) clamp(24px, 6.25vw, 120px);
-        border-top: 1px solid #b8b8b8;
-        font-family: "haas-text", sans-serif;
-        font-size: 35px;
-        font-weight: 400;
-        color: #181818;
-        letter-spacing: -0.03em;
-        gap: 16px;
-        opacity: 0.2;
-        transition: opacity 0.5s ease;
-      }
-
-      .capabilities__item.in-view {
-        opacity: 1;
-      }
-
-      .capabilities__item-num {
-        flex-shrink: 0;
-      }
-
-      .capabilities__item-name {
-        text-align: right;
-      }
-
-      /* ─────────────────────────────────────────
-         Testimonial Section
-         Fluid: 73px @ 1920px → 26px @ mobile
-      ───────────────────────────────────────── */
-      .testimonial {
-        background: #457b9d;
-        text-align: center;
-        padding: clamp(64px, 7.3vw, 140px) clamp(24px, 6.25vw, 120px);
-      }
-
-      .testimonial__inner {
-        max-width: 1280px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: clamp(32px, 2.9vw, 56px);
-      }
-
-      .testimonial__quote {
-        font-family: "kepler", Georgia, serif;
-        font-size: 64px;
-        font-weight: 300;
-        font-style: italic;
-        color: #efefef;
-        letter-spacing: -0.04em;
-        line-height: 1.1;
-      }
-
-      .testimonial__attribution {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
+      .pd-focused-title {
         font-family: "haas", sans-serif;
-        font-size: 16px;
+        font-size: clamp(28px, 3.7vw, 71px);
         font-weight: 500;
-        color: #ebebeb;
-        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: #181818;
+        margin-bottom: clamp(16px, 1.25vw, 24px);
       }
 
-      .testimonial__attribution .spacer {
-        letter-spacing: 3.2px;
-      }
-
-      .testimonial__attribution-company {
-        font-weight: 700;
+      .pd-focused-desc {
+        font-family: "haas-text", sans-serif;
+        font-size: clamp(15px, 1.46vw, 28px);
+        font-weight: 400;
+        color: #181818;
+        line-height: 1.3;
+        max-width: 22em;
       }
 
       /* ─────────────────────────────────────────
-         DS by Scale Section
-         Fluid: 40px @ 1920px → 18px @ mobile
+         Testimonial Strip
       ───────────────────────────────────────── */
-      .ds-scale {
-        position: relative;
+      .pd-testimonial {
+        background: #181818;
+        padding: clamp(64px, 7.3vw, 140px) clamp(24px, 6.25vw, 120px);
         display: flex;
         flex-direction: column;
-        overflow: hidden;
-        background-color: #181818;
+        align-items: center;
+        gap: clamp(32px, 3.125vw, 60px);
       }
 
-      .ds-scale__bg-video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        z-index: 0;
-      }
-
-      .ds-scale__row {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        align-items: stretch;
-      }
-
-      .ds-scale__row--spread {
-        justify-content: space-between;
-      }
-
-      .ds-scale__row--offset {
-        padding-left: 34.9%;
-      }
-
-      .ds-scale__card {
-        background: #8a9a5b;
-        padding: clamp(48px, 6.9vw, 132px) clamp(24px, 4.2vw, 80px);
-        color: #ffffff;
-        font-family: "haas-text", sans-serif;
+      .pd-testimonial__quote {
+        font-family: "haas", sans-serif;
+        font-size: clamp(20px, 2.86vw, 55px);
+        font-weight: 400;
         letter-spacing: -0.02em;
-        line-height: 1.2;
+        line-height: 1.3;
+        color: #ffffff;
+        text-align: center;
+        max-width: min(58vw, 1112px);
+      }
+
+      .pd-testimonial__attribution {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        position: relative;
+        align-items: center;
+        gap: clamp(16px, 2.6vw, 50px);
+      }
+
+      .pd-testimonial__person {
+        font-family: "haas-text", sans-serif;
+        font-size: clamp(13px, 0.94vw, 18px);
+        font-weight: 400;
+        color: #9a9a9a;
+        line-height: 1.4;
+      }
+
+      .pd-testimonial__person strong {
+        color: #ffffff;
+        font-weight: 400;
+        display: block;
+      }
+
+      .pd-testimonial__logo {
+        height: 52px;
+        width: auto;
+        object-fit: contain;
         flex-shrink: 0;
-      }
-
-      .ds-scale__card-label {
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0;
-        position: absolute;
-        top: clamp(28px, 3.5vw, 68px);
-        left: clamp(24px, 2.8vw, 54px);
-      }
-
-      .ds-scale__card-label--mobile-only {
-        display: none;
-      }
-
-      .ds-scale__card-title {
-        font-size: 35px;
-        font-weight: 400;
-      }
-
-      .ds-scale__card-desc {
-        font-size: 18px;
-        font-weight: 400;
-        color: rgba(255, 255, 255, 0.72);
-        line-height: 1.55;
-        margin-top: clamp(12px, 1.25vw, 24px);
-        opacity: 0;
-        transform: translateY(32px);
-        transition:
-          opacity 0.7s ease,
-          transform 0.7s ease;
-      }
-
-      .ds-scale__card.revealed .ds-scale__card-desc {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .ds-scale__card--foundational {
-        width: 34.9%;
-        min-height: clamp(280px, 44.8vw, 860px);
-      }
-
-      .ds-scale__card--scalable {
-        width: 29.6%;
-        min-height: clamp(280px, 44.8vw, 860px);
-      }
-
-      .ds-scale__card--product-web {
-        width: 54.5%;
-        min-height: clamp(180px, 27.9vw, 536px);
-      }
-
-      .ds-scale__card--full-stack {
-        width: 34.85%;
-        min-height: clamp(320px, 59.9vw, 1150px);
       }
 
       /* ─────────────────────────────────────────
          Selected Projects Section
       ───────────────────────────────────────── */
       .selected-projects {
-        background-color: #1c1c1c;
+        background-color: #181818;
         color: #ffffff;
         padding-top: clamp(40px, 4vw, 80px);
       }
@@ -687,8 +654,6 @@
         white-space: nowrap;
       }
 
-      /* Placed after all component styles so it wins the
-         cascade without !important when combined with others */
       .geist-label {
         font-family: "Geist Mono", monospace;
         font-weight: 400;
@@ -794,146 +759,54 @@
       }
 
       /* ─────────────────────────────────────────
-         Tablet (≤1199px)
+         Tablet (≤900px)
       ───────────────────────────────────────── */
-      @media (max-width: 1199px) {
-        .hero__text {
-          font-size: 56px;
+      @media (max-width: 900px) {
+        .header__nav > a,
+        .nav__services-btn,
+        .header__cta {
+          font-size: 0.9em;
         }
-        .capabilities__body {
-          font-size: 28px;
-        }
-        .capabilities__item {
-          font-size: 28px;
-        }
-        .testimonial__quote {
-          font-size: 48px;
-        }
-        .ds-scale__card-title {
-          font-size: 28px;
-        }
-        .ds-scale__card-desc {
-          font-size: 16px;
+
+        .header__nav {
+          gap: 20px;
         }
       }
 
       /* ─────────────────────────────────────────
-         Mobile (≤767px) — all overrides in one place
+         Mobile (≤767px)
       ───────────────────────────────────────── */
       @media (max-width: 767px) {
-        /* Hero */
-        .hero {
+        .pd-lime__bullets {
+          grid-template-columns: 1fr;
+          max-width: 90%;
+        }
+
+        .pd-focused-row {
+          grid-template-columns: 1fr;
+          min-height: unset;
+        }
+
+        .pd-focused-row .pd-focused-illus {
+          order: -1;
+          padding: 40px 24px 24px;
+        }
+
+        .pd-focused-row .pd-focused-text {
+          padding: 0 24px 40px;
+        }
+
+        .pd-testimonial__quote {
+          max-width: unset;
+        }
+
+        .pd-testimonial__attribution {
           flex-direction: column;
-          min-height: unset;
-        }
-        .hero__left {
-          background: #181818;
-          padding: 48px 24px 0;
-          min-height: 50vw;
-        }
-        .hero__left picture {
-          height: 100%;
-          aspect-ratio: 1 / 1;
-        }
-        .hero__illustration-slot { width: 40%; height: auto; }
-        .hero__right {
-          padding: 48px 24px 64px;
-        }
-        .hero__text {
-          font-size: 36px;
-          width: 100%;
-          text-align: center;
-          margin: 0 auto;
-        }
-
-        /* Capabilities */
-        .capabilities__body {
-          font-size: 20px;
-        }
-        .capabilities__list {
-          padding: 0 24px;
-        }
-        .capabilities__item {
-          font-size: 20px;
-          flex-direction: row;
-          align-items: flex-start;
-          justify-content: flex-start;
-          gap: 4rem;
-          padding-left: 0;
-          padding-right: 0;
-        }
-        .capabilities__item-name {
-          text-align: right;
-          width: 100%;
-        }
-
-        /* Testimonial */
-        .testimonial__quote {
-          font-size: 28px;
-        }
-        .testimonial__attribution {
-          font-size: 12px;
-        }
-
-        /* DS by Scale: sticky horizontal snap carousel */
-        .ds-scale {
-          position: relative;
-          height: 455px;
-          overflow: hidden;
-        }
-        .ds-scale__card-title {
-          font-size: 20px;
-        }
-        .ds-scale__card-desc {
-          font-size: 15px;
-        }
-        .ds-scale__mobile-strip {
-          position: absolute;
-          inset: 0;
-          display: flex;
-          z-index: 1;
-          touch-action: pan-y;
-        }
-        .ds-scale__mobile-slide {
-          flex: 0 0 90%;
-          height: 100%;
-          display: flex;
           align-items: center;
-          justify-content: center;
-        }
-        .ds-scale__mobile-strip .ds-scale__card {
-          width: calc(100% - 48px);
-          height: calc(100% - 144px);
-          min-height: unset;
-          position: relative;
-        }
-        .ds-scale__mobile-strip .ds-scale__card-desc {
-          opacity: 1;
-          transform: none;
-          transition: none;
-        }
-        .ds-scale__mobile-strip .ds-scale__card-label {
-          position: absolute;
-          top: auto;
-          bottom: 16px;
-          left: 24px;
-        }
-        .ds-scale__mobile-strip .ds-scale__card-label--mobile-only {
-          display: block;
-        }
-        .ds-scale__mobile-strip .ds-scale__card::after {
-          content: attr(data-mobile-num);
-          position: absolute;
-          bottom: 16px;
-          right: 24px;
-          font-family: "haas-text", sans-serif;
-          font-size: 14px;
-          font-weight: 600;
-          color: #ffffff;
-          letter-spacing: 0;
+          gap: 16px;
+          text-align: center;
         }
 
-        /* Selected Projects */
         .sp-label {
           margin-left: 24px;
         }
@@ -946,7 +819,6 @@
           width: 100%;
         }
 
-        /* Footer */
         .whiteSection {
           padding: 40px 24px;
         }
@@ -991,9 +863,6 @@
         }
       }
 
-      /* ─────────────────────────────────────────
-         Wide screens (≥1800px)
-      ───────────────────────────────────────── */
       @media screen and (min-width: 1800px) {
         .footer__links {
           gap: 8em;
@@ -1002,12 +871,25 @@
     </style>
   </head>
   <body>
-
     <!-- ── Mobile menu overlay ── -->
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation menu"
+    >
       <div class="mobile-menu__top">
-        <div class="mobile-menu__logo"><a href="../" aria-label="Kido home"></a></div>
-        <button class="mobile-menu-btn mobile-menu-btn--open" id="mobileMenuClose" type="button">MENU</button>
+        <div class="mobile-menu__logo">
+          <a href="../" aria-label="Kido home"></a>
+        </div>
+        <button
+          class="mobile-menu-btn mobile-menu-btn--open"
+          id="mobileMenuClose"
+          type="button"
+        >
+          MENU
+        </button>
       </div>
       <nav class="mobile-menu__nav">
         <a href="../about">ABOUT</a>
@@ -1017,7 +899,9 @@
           <a href="product_design.html">PRODUCT DESIGN</a>
           <a href="design_ops.html">DESIGN OPS</a>
           <a href="lean_branding.html">LEAN BRANDING</a>
-          <a href="frontend_dev.html">FRONT END DEVELOPMENT &amp; AUTOMATIONS</a>
+          <a href="frontend_dev.html"
+            >FRONT END DEVELOPMENT &amp; AUTOMATIONS</a
+          >
         </div>
         <a href="../case-studies">CASE STUDIES</a>
         <a href="mailto:hello@wearekido.com">LET'S TALK</a>
@@ -1026,12 +910,17 @@
 
     <!-- ── Mobile Header ── -->
     <header class="mobile-header">
-      <div class="mobile-header__logo"><a href="../" aria-label="Kido home"></a></div>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" type="button">MENU</button>
+      <div class="mobile-header__logo">
+        <a href="../" aria-label="Kido home"></a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" type="button">
+        MENU
+      </button>
     </header>
 
     <!-- ── Desktop Header ── -->
     <header>
+      <div class="header__logo"><a href="../" aria-label="Kido home"></a></div>
       <nav class="header__nav">
         <div class="nav__dropdown-wrap">
           <button class="nav__services-btn" id="servicesBtn" type="button">
@@ -1042,159 +931,114 @@
             <a href="product_design.html">PRODUCT DESIGN</a>
             <a href="design_ops.html">DESIGN OPS</a>
             <a href="lean_branding.html">LEAN BRANDING</a>
-            <a href="frontend_dev.html">FRONT END DEVELOPMENT &amp; AUTOMATIONS</a>
+            <a href="frontend_dev.html"
+              >FRONT END DEVELOPMENT &amp; AUTOMATIONS</a
+            >
           </div>
         </div>
         <a href="../case-studies">CASE STUDIES</a>
         <a href="../about">ABOUT</a>
       </nav>
-      <div class="header__logo"><a href="../" aria-label="Kido home"></a></div>
       <a class="header__cta" href="mailto:hello@wearekido.com">LET'S TALK</a>
     </header>
 
     <!-- ── Hero ── -->
-    <section class="hero">
-      <div class="hero__left">
-        <picture>
-          <source media="(max-width: 767px)" srcset="images/di_mobile.svg" />
-          <img
-            class="hero__illustration-slot"
-            src="images/di_desktop.svg"
-            alt="Design Infrastructure illustration"
-            loading="eager"
-          />
-        </picture>
-      </div>
-      <div class="hero__right">
-        <div class="hero__text">
-          <h1 class="hero__service-name">Design Infrastructure</h1>
-          <p class="hero__tagline"
-            >Build the system<br />once. Scale forever.</p
-          >
-        </div>
-      </div>
+    <section class="pd-hero">
+      <h1 class="pd-hero__title">Design Infrastructure</h1>
+      <p class="pd-hero__tagline">Build the system once. Scale forever.</p>
     </section>
 
-    <!-- ── Capabilities ── -->
-    <section class="capabilities" aria-label="Capabilities">
-      <div class="capabilities__intro">
-        <p class="capabilities__label geist-label">[ Capabilities ]</p>
-        <p class="capabilities__body">
+    <!-- ── Lime section ── -->
+    <section class="pd-lime" aria-label="Design Infrastructure capabilities">
+      <!-- Capabilities -->
+      <div class="pd-lime__capabilities">
+        <span class="pd-lime__cap-label geist-label">[ Capabilities ]</span>
+        <p class="pd-lime__body">
           Design systems as scalable product infrastructure — built to match
           your complexity. We design, build, and evolve design system
           infrastructure that supports your product exactly where it is today —
           and scales with you as complexity grows.
         </p>
+        <div class="pd-lime__bullets">
+          <div class="pd-lime__bullet">
+            <span class="pd-lime__bullet-dot"></span>Component design and
+            development
+          </div>
+          <div class="pd-lime__bullet">
+            <span class="pd-lime__bullet-dot"></span>Multi-brand / Multi-platform
+            systems
+          </div>
+          <div class="pd-lime__bullet">
+            <span class="pd-lime__bullet-dot"></span>Design system architecture
+          </div>
+          <div class="pd-lime__bullet">
+            <span class="pd-lime__bullet-dot"></span>Contribution &amp;
+            governance models
+          </div>
+          <div class="pd-lime__bullet">
+            <span class="pd-lime__bullet-dot"></span>Token strategy &amp;
+            implementation
+          </div>
+          <div class="pd-lime__bullet">
+            <span class="pd-lime__bullet-dot"></span>Continuous support and
+            maintenance
+          </div>
+        </div>
       </div>
-      <ul class="capabilities__list">
-        <li class="capabilities__item">
-          <span class="capabilities__item-num">1</span>
-          <span class="capabilities__item-name"
-            >Component Design and Development</span
-          >
-        </li>
-        <li class="capabilities__item">
-          <span class="capabilities__item-num">2</span>
-          <span class="capabilities__item-name"
-            >Design System Architecture</span
-          >
-        </li>
-        <li class="capabilities__item">
-          <span class="capabilities__item-num">3</span>
-          <span class="capabilities__item-name"
-            >Token Strategy &amp; Implementation</span
-          >
-        </li>
-        <li class="capabilities__item">
-          <span class="capabilities__item-num">4</span>
-          <span class="capabilities__item-name"
-            >Multi-Brand / Multi-Platform Systems</span
-          >
-        </li>
-        <li class="capabilities__item">
-          <span class="capabilities__item-num">5</span>
-          <span class="capabilities__item-name"
-            >Contribution &amp; Governance Models</span
-          >
-        </li>
-        <li class="capabilities__item">
-          <span class="capabilities__item-num">6</span>
-          <span class="capabilities__item-name"
-            >Continuous support and maintenance</span
-          >
-        </li>
-      </ul>
-    </section>
 
-    <!-- ── Testimonial ── -->
-    <section class="testimonial" aria-label="Client testimonial">
-      <div class="testimonial__inner">
-        <blockquote class="testimonial__quote">
-          "Working with Kido has been a true game changer for us.<br />They
-          helped us take an early version of our design system — one that didn't
-          quite match how we work — and turn it into something that actually
-          fits our day-to-day needs. They brought in best practices and a fresh
-          perspective, kept things practical, and made sure the whole team was
-          part of the process."
-        </blockquote>
-        <p class="testimonial__attribution">
-          <span>Noa<span class="spacer"> </span>Karni</span>
-          <span
-            >Director<span class="spacer"> </span>of<span class="spacer"> </span
-            >User<span class="spacer"> </span>Experience</span
-          >
-          <span class="testimonial__attribution-company">Akamai</span>
-        </p>
-      </div>
-    </section>
+      <!-- Design System by Scale label -->
+      <span class="pd-focused-label geist-label">[ Design System by Scale ]</span>
 
-    <!-- ── DS by Scale ── -->
-    <section class="ds-scale" aria-label="Design System by Scale">
-      <video
-        class="ds-scale__bg-video"
-        src="videos/flower-anim-1.mp4"
-        autoplay
-        loop
-        muted
-        playsinline
-      ></video>
-
-      <!-- Row 1: foundational (left edge) + scalable (right edge) -->
-      <div class="ds-scale__row ds-scale__row--spread">
-        <div class="ds-scale__card ds-scale__card--foundational">
-          <span class="ds-scale__card-label geist-label"
-            >[ Design System by Scale ]</span
-          >
-          <h3 class="ds-scale__card-title">Foundational<br />Design System</h3>
-          <p class="ds-scale__card-desc">
+      <!-- Row 1: Illustration left · Foundational Design System right -->
+      <div class="pd-focused-row">
+        <div class="pd-focused-illus">
+          <img
+            src="images/design-infra-01.png"
+            alt="Foundational Design System illustration"
+            loading="lazy"
+          />
+        </div>
+        <div class="pd-focused-text">
+          <h3 class="pd-focused-title">Foundational<br />Design System</h3>
+          <p class="pd-focused-desc">
             For early-stage products or focused platforms that need clarity,
             speed, and consistency without over-engineering.
           </p>
         </div>
-        <div class="ds-scale__card ds-scale__card--scalable">
-          <span
-            class="ds-scale__card-label geist-label ds-scale__card-label--mobile-only"
-            >[ Design System by Scale ]</span
-          >
-          <h3 class="ds-scale__card-title">Scalable<br />Design System</h3>
-          <p class="ds-scale__card-desc">
+      </div>
+
+      <!-- Row 2: Scalable Design System left · Illustration right -->
+      <div class="pd-focused-row">
+        <div class="pd-focused-text">
+          <h3 class="pd-focused-title">Scalable<br />Design System</h3>
+          <p class="pd-focused-desc">
             For growing products, multiple teams, or evolving UX complexity —
             built to scale across features, platforms, and contributors.
           </p>
         </div>
+        <div class="pd-focused-illus">
+          <img
+            src="images/design-infra-02.png"
+            alt="Scalable Design System illustration"
+            loading="lazy"
+          />
+        </div>
       </div>
 
-      <!-- Row 2: offset ~670px from left -->
-      <div class="ds-scale__row ds-scale__row--offset">
-        <div class="ds-scale__card ds-scale__card--product-web">
-          <span
-            class="ds-scale__card-label geist-label ds-scale__card-label--mobile-only"
-            >[ Design System by Scale ]</span
-          >
-          <h3 class="ds-scale__card-title">
+      <!-- Row 3: Illustration left · Product or Website × Design System right -->
+      <div class="pd-focused-row">
+        <div class="pd-focused-illus">
+          <img
+            src="images/design-infra-03.png"
+            alt="Product or Website × Design System illustration"
+            loading="lazy"
+          />
+        </div>
+        <div class="pd-focused-text">
+          <h3 class="pd-focused-title">
             Product or Website<br />&times; Design System
           </h3>
-          <p class="ds-scale__card-desc">
+          <p class="pd-focused-desc">
             For teams building or redesigning a product or site with a
             system-first approach — ensuring consistency, speed, and long-term
             flexibility from day one.
@@ -1202,21 +1046,48 @@
         </div>
       </div>
 
-      <!-- Row 3: starts at left edge -->
-      <div class="ds-scale__row">
-        <div class="ds-scale__card ds-scale__card--full-stack">
-          <span
-            class="ds-scale__card-label geist-label ds-scale__card-label--mobile-only"
-            >[ Design System by Scale ]</span
-          >
-          <h3 class="ds-scale__card-title">
+      <!-- Row 4: Full-stack left · Illustration right -->
+      <div class="pd-focused-row">
+        <div class="pd-focused-text">
+          <h3 class="pd-focused-title">
             Product or Website &times;<br />Design System &times;<br />Frontend
             Development
           </h3>
-          <p class="ds-scale__card-desc">
+          <p class="pd-focused-desc">
             An end-to-end infrastructure engagement — from product or web
             design, through system architecture, to production-ready development
             and handoff.
+          </p>
+        </div>
+        <div class="pd-focused-illus">
+          <img
+            src="images/design-infra-04.png"
+            alt="Full-stack infrastructure illustration"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Testimonial strip -->
+      <div class="pd-testimonial">
+        <blockquote class="pd-testimonial__quote">
+          "Working with Kido has been a true game changer for us. They helped
+          us take an early version of our design system — one that didn't quite
+          match how we work — and turn it into something that actually fits our
+          day-to-day needs. They brought in best practices and a fresh
+          perspective, kept things practical, and made sure the whole team was
+          part of the process."
+        </blockquote>
+        <div class="pd-testimonial__attribution">
+          <img
+            class="pd-testimonial__logo"
+            src="../images/akamai-logo.png"
+            alt="Akamai"
+            loading="lazy"
+          />
+          <p class="pd-testimonial__person">
+            <strong>Noa Karni</strong>
+            Director of User Experience<br />Akamai
           </p>
         </div>
       </div>
@@ -1227,21 +1098,30 @@
       <div class="sp-label geist-label">[ CASE STUDIES ]</div>
       <div class="sp-cards">
         <a href="../gcc" class="sp-card">
-          <div class="sp-card__img"><img src="../images/gcc-social.jpg" alt="GCC Case Study" /></div>
+          <div class="sp-card__img">
+            <img src="../images/gcc-social.jpg" alt="GCC Case Study" />
+          </div>
           <div class="sp-card-info">
             <h2>GCC</h2>
             <h3>Systemized Branding at Speed: 3 Sites in 10 Weeks</h3>
           </div>
         </a>
         <a href="../appsflyer" class="sp-card">
-          <div class="sp-card__img"><img src="../images/case-appsflyer.jpg" alt="AppsFlyer Case Study" /></div>
+          <div class="sp-card__img">
+            <img
+              src="../images/case-appsflyer.jpg"
+              alt="AppsFlyer Case Study"
+            />
+          </div>
           <div class="sp-card-info">
             <h2>AppsFlyer</h2>
             <h3>Brand Reposition Implementation - Building While Shipping</h3>
           </div>
         </a>
         <a href="../amdocs" class="sp-card">
-          <div class="sp-card__img"><img src="../images/case-amdocs.jpg" alt="Amdocs Case Study" /></div>
+          <div class="sp-card__img">
+            <img src="../images/case-amdocs.jpg" alt="Amdocs Case Study" />
+          </div>
           <div class="sp-card-info">
             <h2>Amdocs</h2>
             <h3>One Library to Rule Them All</h3>
@@ -1263,7 +1143,9 @@
         </div>
         <div class="footer__links-col">
           <span>Follow on LinkedIn</span>
-          <a href="https://www.linkedin.com/company/kido-design-operation-partners" target="_blank"
+          <a
+            href="https://www.linkedin.com/company/kido-design-operation-partners"
+            target="_blank"
             >Read weekly updates</a
           >
         </div>
@@ -1288,10 +1170,14 @@
 
     <script>
       // Services dropdown
-      window.addEventListener("scroll", () => {
-        servicesDropdown?.classList.remove("open");
-        servicesBtn?.classList.remove("open");
-      }, { passive: true });
+      window.addEventListener(
+        "scroll",
+        () => {
+          servicesDropdown?.classList.remove("open");
+          servicesBtn?.classList.remove("open");
+        },
+        { passive: true },
+      );
 
       const servicesBtn = document.getElementById("servicesBtn");
       const servicesDropdown = document.getElementById("servicesDropdown");
@@ -1312,128 +1198,12 @@
       const mobileMenuClose = document.getElementById("mobileMenuClose");
       const mobileMenu = document.getElementById("mobileMenu");
 
-      mobileMenuBtn.addEventListener("click", () => mobileMenu.classList.add("open"));
-      mobileMenuClose.addEventListener("click", () => mobileMenu.classList.remove("open"));
-
-      // Capabilities: scroll-reveal
-      const capItems = document.querySelectorAll(".capabilities__item");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("in-view");
-            } else {
-              entry.target.classList.remove("in-view");
-            }
-          });
-        },
-        { rootMargin: "-25% 0px -25% 0px", threshold: 0 },
+      mobileMenuBtn.addEventListener("click", () =>
+        mobileMenu.classList.add("open"),
       );
-      capItems.forEach((item) => observer.observe(item));
-
-      // DS by Scale: scroll-reveal
-      const dsCards = document.querySelectorAll(".ds-scale__card");
-      const dsObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("revealed");
-            } else {
-              entry.target.classList.remove("revealed");
-            }
-          });
-        },
-        { rootMargin: "0px 0px -10% 0px", threshold: 0.15 },
+      mobileMenuClose.addEventListener("click", () =>
+        mobileMenu.classList.remove("open"),
       );
-      dsCards.forEach((card) => dsObserver.observe(card));
-
-      // DS by Scale: mobile horizontal snap carousel
-      (function initMobileDsScale() {
-        const section = document.querySelector(".ds-scale");
-        const rows = Array.from(section.querySelectorAll(".ds-scale__row"));
-        const cards = Array.from(section.querySelectorAll(".ds-scale__card"));
-        const total = cards.length;
-
-        const origins = cards.map((card) => ({
-          parent: card.parentNode,
-          nextSibling: card.nextSibling,
-        }));
-
-        cards.forEach((card, i) =>
-          card.setAttribute("data-mobile-num", i + 1 + "/" + total),
-        );
-
-        let strip = null;
-        let active = false;
-
-        function setup() {
-          if (active) return;
-          active = true;
-          cards.forEach((card) => card.classList.add("revealed"));
-          strip = document.createElement("div");
-          strip.className = "ds-scale__mobile-strip";
-          cards.forEach((card) => {
-            const slide = document.createElement("div");
-            slide.className = "ds-scale__mobile-slide";
-            slide.appendChild(card);
-            strip.appendChild(slide);
-          });
-                    rows.forEach((row) => (row.style.display = "none"));
-          section.appendChild(strip);
-
-          // Transform-based slider — strip is not a scroll container so vertical page scroll is never captured
-          let cur = 0;
-          const n = cards.length;
-          function goTo(i, animated) {
-            cur = Math.max(0, Math.min(i, n - 1));
-            strip.style.transition = animated ? "transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94)" : "none";
-            strip.style.transform = "translateX(" + (-cur * 90) + "%)";
-          }
-          goTo(0, false);
-          let tx0 = 0, ty0 = 0, tdir = null, tdx = 0;
-          strip.addEventListener("touchstart", function(e) {
-            tx0 = e.touches[0].clientX; ty0 = e.touches[0].clientY;
-            tdir = null; tdx = 0;
-            strip.style.transition = "none";
-          }, { passive: true });
-          strip.addEventListener("touchmove", function(e) {
-            const x = e.touches[0].clientX - tx0, y = e.touches[0].clientY - ty0;
-            if (tdir === null && (Math.abs(x) > 5 || Math.abs(y) > 5))
-              tdir = Math.abs(x) > Math.abs(y) ? "h" : "v";
-            if (tdir !== "h") return;
-            e.preventDefault();
-            tdx = x;
-            strip.style.transform = "translateX(" + (-cur * 100 + tdx / strip.offsetWidth * 100) + "%)";
-          }, { passive: false });
-          strip.addEventListener("touchend", function() {
-            if (tdir !== "h") return;
-            if (tdx < -50) goTo(cur + 1, true);
-            else if (tdx > 50) goTo(cur - 1, true);
-            else goTo(cur, true);
-            tdir = null;
-          }, { passive: true });
-        }
-
-        function teardown() {
-          if (!active) return;
-          active = false;
-          cards.forEach((card, i) => {
-            const { parent, nextSibling } = origins[i];
-            parent.insertBefore(card, nextSibling);
-            card.classList.remove("revealed");
-          });
-          strip.remove();
-          strip = null;
-          rows.forEach((row) => (row.style.display = ""));
-        }
-
-        function check() {
-          window.innerWidth <= 767 ? setup() : teardown();
-        }
-
-        if (window.innerWidth <= 767) setup();
-        window.addEventListener("resize", check);
-      })();
     </script>
   </body>
 </html>
