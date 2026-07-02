@@ -829,6 +829,7 @@ header .roundButton {
   color: #1C1C1C;
   text-decoration: none;
   height: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 .linksDiv a:hover {
