@@ -200,6 +200,7 @@ section {
 .scroll-section .triLabel {
   margin-left: 0;
   margin-bottom: 60px;
+  text-align: left;
 }
 
 .button-flex {
@@ -343,8 +344,8 @@ section {
 }
 
 .client-card img {
-  width: 66px;
-  height: 66px;
+  height: 44px;
+  width: auto;
   object-fit: contain;
 }
 
@@ -353,9 +354,11 @@ section {
   gap: 18px;
   margin-top: 0;
   margin-bottom: 0;
-  width: auto;
+  width: 100%;
   justify-content: center;
   align-items: center;
+  white-space: normal;
+  overflow: visible;
 }
 
 .client-card .flex {
@@ -363,6 +366,8 @@ section {
   flex-direction: column;
   height: auto;
   justify-content: center;
+  text-align: left;
+  overflow: visible;
 }
 
 .client-card .flex h3,
@@ -376,6 +381,8 @@ section {
 
 .client-card .flex p {
   color: #9A9A9A !important;
+  white-space: nowrap;
+  overflow: visible;
 }
 
 ::selection {

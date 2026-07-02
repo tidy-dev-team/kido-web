@@ -114,36 +114,32 @@
 
       function clientNext() {
         var cards = document.getElementsByClassName('client-card');
-        if (_kidoCard < cards.length - 1) {
-          var curr = cards[_kidoCard];
-          curr.classList.remove('active');
-          curr.classList.add('exit-left');
-          _kidoCard++;
-          var next = cards[_kidoCard];
-          next.classList.add('active', 'enter-right');
-          setTimeout(function() {
-            curr.classList.remove('exit-left');
-            next.classList.remove('enter-right');
-          }, 450);
-        }
-        checkClientScroll();
+        var curr = cards[_kidoCard];
+        curr.classList.remove('active');
+        curr.classList.add('exit-left');
+        _kidoCard = (_kidoCard + 1) % cards.length;
+        var next = cards[_kidoCard];
+        next.classList.add('active', 'enter-right');
+        setTimeout(function() {
+          curr.classList.remove('exit-left');
+          next.classList.remove('enter-right');
+        }, 450);
+        resetClientExpantion();
       }
 
       function clientPrev() {
         var cards = document.getElementsByClassName('client-card');
-        if (_kidoCard > 0) {
-          var curr = cards[_kidoCard];
-          curr.classList.remove('active');
-          curr.classList.add('exit-right');
-          _kidoCard--;
-          var prev = cards[_kidoCard];
-          prev.classList.add('active', 'enter-left');
-          setTimeout(function() {
-            curr.classList.remove('exit-right');
-            prev.classList.remove('enter-left');
-          }, 450);
-        }
-        checkClientScroll();
+        var curr = cards[_kidoCard];
+        curr.classList.remove('active');
+        curr.classList.add('exit-right');
+        _kidoCard = (_kidoCard - 1 + cards.length) % cards.length;
+        var prev = cards[_kidoCard];
+        prev.classList.add('active', 'enter-left');
+        setTimeout(function() {
+          curr.classList.remove('exit-right');
+          prev.classList.remove('enter-left');
+        }, 450);
+        resetClientExpantion();
       }
 
       function resetClientScroll() {
@@ -163,17 +159,6 @@
 
       function checkClientScroll() {
         resetClientExpantion();
-        var cards = document.getElementsByClassName('client-card');
-        if (_kidoCard <= 0) {
-          document.getElementById("arrow-prev").classList.add("unselect");
-        } else {
-          document.getElementById("arrow-prev").classList.remove("unselect");
-        }
-        if (_kidoCard >= cards.length - 1) {
-          document.getElementById("arrow-next").classList.add("unselect");
-        } else {
-          document.getElementById("arrow-next").classList.remove("unselect");
-        }
       }
 
       document.addEventListener('DOMContentLoaded', function () {
@@ -439,10 +424,8 @@
                 <img src="images/af-logo.svg" />
                 <div class="flex">
                   <h3>Hagar Nahum Brockmann</h3>
-                  <p>
-                    Senior Director of Design & Creative<br />
-                    AppsFlyer
-                  </p>
+                  <p>Senior Director of Design & Creative<br />
+                    AppsFlyer</p>
                 </div>
               </div>
             </div>
@@ -485,10 +468,8 @@
                 <img src="images/ni-logo.png" />
                 <div class="flex">
                   <h3>Yaron Yativ</h3>
-                  <p>
-                    Product Design Director<br />
-                    Natural Intelligence
-                  </p>
+                  <p>Product Design Director<br />
+                    Natural Intelligence</p>
                 </div>
               </div>
             </div>
@@ -521,10 +502,8 @@
                 <img src="images/akamai-logo.png" />
                 <div class="flex">
                   <h3>Noa Karni</h3>
-                  <p>
-                    Director of User Experience<br />
-                    Akamai
-                  </p>
+                  <p>Director of User Experience<br />
+                    Akamai</p>
                 </div>
               </div>
             </div>
@@ -564,10 +543,8 @@
                 <img src="images/mvs-logo.jpg" />
                 <div class="flex">
                   <h3>Anna Cohen Yashar</h3>
-                  <p>
-                    Product Team Lead<br />
-                    Mivtach Simon Insurance Agency
-                  </p>
+                  <p>Product Team Lead<br />
+                    Mivtach Simon Insurance Agency</p>
                 </div>
               </div>
             </div>
@@ -610,10 +587,8 @@
                 <img src="images/maccabi-logo.png" />
                 <div class="flex">
                   <h3>Michal Yehudai</h3>
-                  <p>
-                    Head of Digital Design Studio<br />
-                    Maccabi Healthcare
-                  </p>
+                  <p>Head of Digital Design Studio<br />
+                    Maccabi Healthcare</p>
                 </div>
               </div>
             </div>
@@ -621,7 +596,7 @@
           <div class="button-flex">
             <button
               onclick="clientPrev()"
-              class="arrow-button unselect"
+              class="arrow-button"
               id="arrow-prev"
             ></button>
             <button
