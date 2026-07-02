@@ -467,6 +467,17 @@ h1.noselect {
   display: block;
 }
 
+.secondSection-pyramid #animation-container,
+.secondSection-pyramid #animation,
+.secondSection-pyramid svg {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.secondSection-pyramid #animation svg path{
+  stroke-width: 10px;
+}
+
 .translate-12 {
   transform: translateX(-6%);
   width: 94%;
