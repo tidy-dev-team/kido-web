@@ -90,28 +90,8 @@
     </script>
     <script>
       function svcClose(item) {
-        if (item.classList.contains('closing')) return;
-        item.classList.add('closing');
+        item.classList.remove('open', 'closing');
         item.querySelector('.svc-plus').textContent = '+';
-
-        var cs = getComputedStyle(item);
-        var openH = item.offsetHeight;
-        var collapsedH = parseFloat(cs.paddingTop)
-                       + item.querySelector('.svc-t').offsetHeight
-                       + parseFloat(cs.paddingBottom);
-
-        item.style.height = openH + 'px';
-        item.style.overflow = 'hidden';
-        item.offsetHeight; // force reflow
-        item.style.transition = 'height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        item.style.height = collapsedH + 'px';
-
-        setTimeout(function() {
-          item.classList.remove('open', 'closing');
-          item.style.height = '';
-          item.style.overflow = '';
-          item.style.transition = '';
-        }, 320);
       }
 
       function svcToggle(el) {
