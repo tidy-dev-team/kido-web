@@ -496,6 +496,20 @@
         object-fit: contain;
       }
 
+      .pd-focused-illus svg {
+        max-width: 100%;
+        max-height: clamp(220px, 28vw, 540px);
+        width: 100%;
+        height: auto;
+      }
+
+      #design-infra-02.is-animated .circle-anim {
+        animation-name: circleAnim;
+        animation-duration: 600ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+
       .pd-focused-row > .pd-focused-text:first-child {
         padding-left: 112px;
       }
@@ -1025,11 +1039,32 @@
           </p>
         </div>
         <div class="pd-focused-illus">
-          <img
-            src="images/design-infra-02.svg"
-            alt="Scalable Design System illustration"
-            loading="lazy"
-          />
+          <svg id="design-infra-02" width="660" height="514" viewBox="0 0 660 514" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scalable Design System illustration">
+            <style>
+              .circle-anim {
+                transform-box: fill-box;
+                transform-origin: center bottom;
+                scale: 1 0;
+              }
+              .circle_09 { animation-delay: 0ms; }
+              .circle_08 { animation-delay: 50ms; }
+              .circle_06 { animation-delay: 100ms; }
+              .circle_05 { animation-delay: 150ms; }
+              .circle_04 { animation-delay: 200ms; }
+              .circle_03 { animation-delay: 250ms; }
+              @keyframes circleAnim {
+                0%   { scale: 1 0; }
+                100% { scale: 1 1; }
+              }
+            </style>
+            <path d="M0 512.32H659.586" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+            <path class="circle-anim circle_03" d="M330.83 426.203C401.815 426.203 466.055 431.077 512.528 438.947C535.773 442.884 554.525 447.562 567.443 452.734C573.907 455.322 578.852 458.012 582.164 460.753C585.486 463.503 587.027 466.184 587.027 468.761C587.027 471.338 585.486 474.019 582.164 476.769C578.852 479.51 573.907 482.199 567.443 484.787C554.525 489.959 535.773 494.638 512.528 498.574C466.055 506.445 401.815 511.318 330.83 511.318C259.845 511.318 195.604 506.445 149.131 498.574C125.887 494.638 107.135 489.959 94.2168 484.787C87.7531 482.199 82.808 479.509 79.4961 476.769C76.1736 474.019 74.6328 471.338 74.6328 468.761C74.6328 466.184 76.1735 463.503 79.4961 460.753C82.808 458.012 87.7531 455.322 94.2168 452.734C107.135 447.562 125.887 442.884 149.131 438.947C195.604 431.077 259.845 426.203 330.83 426.203Z" stroke="#181818" stroke-width="2"/>
+            <path class="circle-anim circle_04" d="M330.83 337.016C401.773 337.016 465.957 346.873 512.371 362.781C535.583 370.737 554.296 380.187 567.186 390.632C580.084 401.084 587.027 412.422 587.027 424.168C587.027 435.913 580.084 447.252 567.186 457.704C554.296 468.149 535.583 477.599 512.371 485.555C465.957 501.463 401.773 511.32 330.83 511.32C259.887 511.32 195.702 501.463 149.288 485.555C126.077 477.599 107.364 468.149 94.4746 457.704C81.5766 447.252 74.6329 435.913 74.6328 424.168C74.6328 412.422 81.5766 401.084 94.4746 390.632C107.364 380.187 126.077 370.737 149.288 362.781C195.702 346.873 259.887 337.016 330.83 337.016Z" stroke="#181818" stroke-width="2"/>
+            <path class="circle-anim circle_05" d="M330.83 258.203C401.732 258.203 465.873 272.459 512.251 295.461C558.691 318.494 587.027 350.127 587.027 384.765C587.027 419.403 558.691 451.036 512.251 474.068C465.873 497.07 401.732 511.326 330.83 511.326C259.928 511.326 195.786 497.07 149.408 474.068C102.968 451.036 74.6329 419.403 74.6328 384.765C74.6328 350.127 102.968 318.494 149.408 295.461C195.786 272.459 259.928 258.203 330.83 258.203Z" stroke="#181818" stroke-width="2"/>
+            <path class="circle-anim circle_06" d="M330.83 177.305C401.687 177.305 465.79 196.068 512.148 226.351C558.516 256.639 587.027 298.366 587.027 344.312C587.027 390.259 558.516 431.986 512.148 462.274C465.79 492.557 401.687 511.32 330.83 511.32C259.973 511.32 195.869 492.557 149.511 462.274C103.143 431.986 74.6328 390.258 74.6328 344.312C74.6328 298.367 103.143 256.639 149.511 226.351C195.869 196.068 259.973 177.305 330.83 177.305Z" stroke="#181818" stroke-width="2"/>
+            <path class="circle-anim circle_08" d="M330.83 96.4141C472.53 96.4142 587.027 189.481 587.027 303.868C587.027 418.256 472.53 511.322 330.83 511.322C189.13 511.322 74.6328 418.256 74.6328 303.868C74.6328 189.481 189.13 96.4141 330.83 96.4141Z" stroke="#181818" stroke-width="2"/>
+            <path class="circle-anim circle_09" d="M330.83 1C472.327 1.00013 587.027 115.243 587.027 256.16C587.027 397.077 472.327 511.32 330.83 511.32C189.333 511.32 74.6329 397.077 74.6328 256.16C74.6328 115.243 189.333 1 330.83 1Z" stroke="#181818" stroke-width="2"/>
+          </svg>
         </div>
       </div>
 
@@ -1200,6 +1235,23 @@
         servicesDropdown.classList.remove("open");
         servicesBtn.classList.remove("open");
       });
+
+      // Trigger SVG animation on scroll
+      const infraSvg = document.getElementById("design-infra-02");
+      if (infraSvg) {
+        const svgRow = infraSvg.closest(".pd-focused-row");
+        const svgObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              infraSvg.classList.add("is-animated");
+            } else {
+              infraSvg.classList.remove("is-animated");
+            }
+          },
+          { threshold: 0.25 },
+        );
+        svgObserver.observe(svgRow);
+      }
 
       // Mobile menu
       const mobileMenuBtn = document.getElementById("mobileMenuBtn");
