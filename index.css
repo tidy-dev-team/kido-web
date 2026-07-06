@@ -928,6 +928,10 @@ hr.float-right {
   margin-top: 4px;
 }
 
+.svc-section .triLabel {
+  margin-left: 0;
+}
+
 .flex-card {
   display: flex;
   align-items: flex-start;
