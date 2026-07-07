@@ -1246,15 +1246,15 @@
         const svgRow = infraSvg.closest(".pd-focused-row");
         const svgObserver = new IntersectionObserver(
           ([entry]) => {
-            if (entry.isIntersecting) {
+            if (entry.intersectionRatio >= 1.0) {
               infraSvg.classList.add("is-animated");
-            } else {
+            } else if (!entry.isIntersecting) {
               infraSvg.classList.remove("is-animated");
             }
           },
-          { threshold: 0.25 },
+          { threshold: [0, 1.0] },
         );
-        svgObserver.observe(svgRow);
+        svgObserver.observe(infraSvg);
       }
 
       // Mobile menu
