@@ -885,6 +885,56 @@
           gap: 8em;
         }
       }
+
+      /* ─────────────────────────────────────────
+         Product Design SVG Animation
+      ───────────────────────────────────────── */
+      .pro-circle {
+        transform-origin: left center;
+        transform-box: fill-box;
+        scale: 0 1;
+      }
+      .small-circle {
+        transform-origin: center;
+        transform-box: fill-box;
+        scale: 0;
+      }
+      .line-anim {
+        translate: -120% 0;
+      }
+
+      #product-design-02.is-animated .pro-circle {
+        animation-name: proCircleAnim;
+        animation-duration: 300ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+      }
+      #product-design-02.is-animated .small-circle {
+        animation-name: smallCircleAnim;
+        animation-duration: 200ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+      }
+      #product-design-02.is-animated .line-anim {
+        animation-name: lineAnim;
+        animation-duration: 800ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes proCircleAnim {
+        0% { scale: 0 1; }
+        100% { scale: 1 1; }
+      }
+      @keyframes smallCircleAnim {
+        0% { scale: 0; }
+        80% { scale: 1.5; }
+        100% { scale: 1; }
+      }
+      @keyframes lineAnim {
+        0% { translate: -120% 0; }
+        100% { translate: 0 0; }
+      }
     </style>
   </head>
   <body>
@@ -1029,11 +1079,42 @@
           </p>
         </div>
         <div class="pd-focused-illus">
-          <img
-            src="images/product-design-img_02.svg"
-            alt="Product Design illustration"
-            loading="lazy"
-          />
+          <svg id="product-design-02" width="813" height="437" viewBox="0 0 813 437" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Product Design illustration" style="width:100%;height:auto">
+            <style>
+              .pro-circle-05 { animation-delay: 250ms; }
+              .pro-circle-04 { animation-delay: 300ms; }
+              .pro-circle-03 { animation-delay: 350ms; }
+              .pro-circle-02 { animation-delay: 400ms; }
+              .pro-circle-01 { animation-delay: 450ms; }
+              .small-circle-02 { animation-delay: 100ms; }
+              .small-circle-01 { animation-delay: 200ms; }
+              .small-circle-03 { animation-delay: 250ms; }
+              .small-circle-04 { animation-delay: 300ms; }
+              .small-circle-05 { animation-delay: 350ms; }
+              .small-circle-06 { animation-delay: 400ms; }
+              .small-circle-07 { animation-delay: 500ms; }
+            </style>
+            <g clip-path="url(#clip0_2219_9859)">
+              <circle class="pro-circle pro-circle-01" cx="262.38" cy="219.446" r="80.1651" stroke="#181818" stroke-width="2"/>
+              <circle class="pro-circle pro-circle-02" cx="294.212" cy="218.349" r="111.997" stroke="#181818" stroke-width="2"/>
+              <circle class="pro-circle pro-circle-03" cx="327.482" cy="218.189" r="145.268" stroke="#181818" stroke-width="2"/>
+              <circle class="pro-circle pro-circle-04" cx="363.281" cy="218.027" r="181.066" stroke="#181818" stroke-width="2"/>
+              <circle class="pro-circle pro-circle-05" cx="399.524" cy="218.309" r="217.309" stroke="#181818" stroke-width="2"/>
+              <circle class="small-circle small-circle-01" cx="343.063" cy="221.18" r="4.97675" fill="#181818"/>
+              <circle class="small-circle small-circle-02" cx="59.965" cy="221.18" r="4.97675" fill="#181818"/>
+              <path class="line-anim" d="M-67 222L812 222" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+              <circle class="small-circle small-circle-03" cx="406.102" cy="221.18" r="4.97675" fill="#181818"/>
+              <circle class="small-circle small-circle-04" cx="472.59" cy="221.18" r="4.97675" fill="#181818"/>
+              <circle class="small-circle small-circle-05" cx="544.434" cy="221.18" r="4.97675" fill="#181818"/>
+              <circle class="small-circle small-circle-06" cx="617.008" cy="221.18" r="4.97675" fill="#181818"/>
+              <circle class="small-circle small-circle-07" cx="752.387" cy="221.18" r="4.97675" fill="#181818"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_2219_9859">
+                <rect width="812.398" height="436.617" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
         </div>
       </div>
 
@@ -1161,6 +1242,22 @@
         servicesDropdown.classList.remove("open");
         servicesBtn.classList.remove("open");
       });
+
+      // Trigger SVG animation on scroll
+      const productDesignSvg = document.getElementById("product-design-02");
+      if (productDesignSvg) {
+        const pdSvgObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.intersectionRatio >= 1.0) {
+              productDesignSvg.classList.add("is-animated");
+            } else if (!entry.isIntersecting) {
+              productDesignSvg.classList.remove("is-animated");
+            }
+          },
+          { threshold: [0, 1.0] },
+        );
+        pdSvgObserver.observe(productDesignSvg);
+      }
 
       // Mobile menu
       const mobileMenuBtn = document.getElementById("mobileMenuBtn");
