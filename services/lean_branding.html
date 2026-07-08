@@ -497,6 +497,27 @@
         object-fit: contain;
       }
 
+      .pd-focused-illus svg {
+        max-width: 100%;
+        max-height: clamp(220px, 28vw, 540px);
+        width: 100%;
+        height: auto;
+      }
+
+      #lean-branding-02-svg.is-animated .br-circle {
+        animation-name: brCircleAnim;
+        animation-duration: 500ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+      }
+
+      #lean-branding-02-svg.is-animated .br-lines {
+        animation-name: brLineAnim;
+        animation-duration: 200ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+      }
+
       .pd-focused-row > .pd-focused-text:first-child {
         padding-left: clamp(160px, 14.6vw, 280px);
       }
@@ -1025,11 +1046,41 @@
           </p>
         </div>
         <div class="pd-focused-illus">
-          <img
-            src="images/lean-branding-02.png"
-            alt="Positioning and Principles illustration"
-            loading="lazy"
-          />
+          <svg id="lean-branding-02-svg" width="489" height="471" viewBox="0 0 489 471" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Positioning and Principles illustration">
+            <style>
+              .br-circle {
+                transform: scale(0);
+                transform-origin: center;
+                transform-box: fill-box;
+              }
+              @keyframes brCircleAnim {
+                0% { transform: scale(0); }
+                100% { transform: scale(1); }
+              }
+              .br-circle-01 {
+                transform-origin: center top;
+              }
+              .br-circle-02 {
+                transform-origin: right bottom;
+                animation-delay: 150ms;
+              }
+              .br-circle-03 {
+                transform-origin: left bottom;
+                animation-delay: 300ms;
+              }
+              .br-lines {
+                opacity: 0;
+                animation-delay: 800ms;
+              }
+              @keyframes brLineAnim {
+                100% { opacity: 1; }
+              }
+            </style>
+            <circle class="br-circle br-circle-01" cx="242.897" cy="154.847" r="153.847" stroke="#181818" stroke-width="2"/>
+            <circle class="br-circle br-circle-02" cx="333.983" cy="315.768" r="153.847" stroke="#181818" stroke-width="2"/>
+            <circle class="br-circle br-circle-03" cx="154.847" cy="315.768" r="153.847" stroke="#181818" stroke-width="2"/>
+            <path class="br-lines" d="M207.54 228.338L256.707 200.445M191.467 257.453L268.551 212.948M185.277 276.576L278.469 225.132M182.484 295.801L287.909 237.793M267.905 306.815L306.346 284.621M231.178 308.337L301.628 267.663M205.177 304.083L294.886 252.289" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+          </svg>
         </div>
       </div>
 
@@ -1198,6 +1249,22 @@
         servicesDropdown.classList.remove("open");
         servicesBtn.classList.remove("open");
       });
+
+      // Trigger SVG animation on scroll
+      const leanBrandingSvg = document.getElementById("lean-branding-02-svg");
+      if (leanBrandingSvg) {
+        const svgObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.intersectionRatio >= 1.0) {
+              leanBrandingSvg.classList.add("is-animated");
+            } else if (!entry.isIntersecting) {
+              leanBrandingSvg.classList.remove("is-animated");
+            }
+          },
+          { threshold: [0, 1.0] },
+        );
+        svgObserver.observe(leanBrandingSvg);
+      }
 
       // Mobile menu
       const mobileMenuBtn = document.getElementById("mobileMenuBtn");
