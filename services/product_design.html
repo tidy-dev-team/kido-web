@@ -935,6 +935,25 @@
         0% { clip-path: inset(0 100% 0 0); }
         100% { clip-path: inset(0 0% 0 0); }
       }
+
+      /* Product Design 01 SVG Animation */
+      .warpCircle {
+        transform-origin: center;
+        transform-box: fill-box;
+        rotate: 45deg;
+        translate: -1px -1px;
+        transform: scaleX(0.36) rotate(320deg);
+      }
+      #product-design-img-01.is-animated .warpCircle {
+        animation-name: warpRotAnim;
+        animation-duration: 1000ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+      @keyframes warpRotAnim {
+        0% { transform: scaleX(0.36) rotate(320deg); }
+        100% { transform: scaleX(0.36) rotate(360deg); }
+      }
     </style>
   </head>
   <body>
@@ -1054,11 +1073,16 @@
       <!-- Row 1: Diamond illustration left · POC & Product Vision right -->
       <div class="pd-focused-row">
         <div class="pd-focused-illus">
-          <img
-            src="images/product-design-img_01.svg"
-            alt="POC & Product Vision illustration"
-            loading="lazy"
-          />
+          <svg id="product-design-img-01" width="797" height="614" viewBox="0 0 797 614" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="POC &amp; Product Vision illustration">
+            <path d="M640.604 550.392C632.924 558.072 624.908 563.901 618.183 567.132C614.817 568.749 611.826 569.691 609.394 569.917C606.953 570.144 605.227 569.644 604.164 568.58C603.1 567.517 602.6 565.791 602.827 563.351C603.054 560.918 603.994 557.927 605.612 554.56C608.842 547.836 614.672 539.82 622.352 532.14C630.031 524.46 638.048 518.631 644.772 515.4C648.138 513.783 651.13 512.842 653.562 512.616C656.003 512.389 657.728 512.889 658.792 513.952C659.855 515.016 660.356 516.742 660.129 519.182C659.902 521.615 658.961 524.606 657.344 527.972C654.113 534.696 648.284 542.712 640.604 550.392Z" stroke="#181818" stroke-width="2"/>
+            <path d="M170.17 79.9625C162.49 87.6424 154.474 93.4716 147.75 96.7024C144.384 98.3198 141.393 99.2608 138.96 99.4874C136.52 99.7146 134.794 99.2141 133.73 98.1505C132.666 97.0869 132.167 95.3614 132.394 92.9211C132.62 90.4885 133.561 87.497 135.178 84.1306C138.409 77.4064 144.238 69.3902 151.918 61.7103C159.598 54.0305 167.614 48.2012 174.338 44.9704C177.705 43.3529 180.696 42.4126 183.129 42.1862C185.569 41.959 187.295 42.4588 188.358 43.5223C189.422 44.586 189.922 46.3119 189.695 48.7524C189.468 51.1849 188.527 54.176 186.91 57.5423C183.679 64.2664 177.85 72.2827 170.17 79.9625Z" stroke="#181818" stroke-width="2"/>
+            <path d="M657.984 513.578L531.636 199.027M603.996 567.565L289.788 440.5" stroke="#181818" stroke-width="2"/>
+            <path d="M135.891 98.406L262.239 412.958M189.879 44.4194L504.087 171.484" stroke="#181818" stroke-width="2"/>
+            <path d="M657.504 564.812L138.385 45.6939" stroke="#181818" stroke-width="2"/>
+            <circle cx="131.008" cy="39.4617" r="5" transform="rotate(45 131.008 39.4617)" fill="#181818"/>
+            <circle cx="666.172" cy="573.618" r="5" transform="rotate(45 666.172 573.618)" fill="#181818"/>
+            <circle class="warpCircle" cx="398.472" cy="306.996" r="178.98" stroke="#181818" stroke-width="4" stroke-dasharray="8 8"/>
+          </svg>
         </div>
         <div class="pd-focused-text">
           <h3 class="pd-focused-title">POC &amp; Product Vision</h3>
@@ -1246,6 +1270,21 @@
       });
 
       // Trigger SVG animation on scroll
+      const productDesignImg01 = document.getElementById("product-design-img-01");
+      if (productDesignImg01) {
+        const pdImg01Observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.intersectionRatio >= 1.0) {
+              productDesignImg01.classList.add("is-animated");
+            } else if (!entry.isIntersecting) {
+              productDesignImg01.classList.remove("is-animated");
+            }
+          },
+          { threshold: [0, 1.0] },
+        );
+        pdImg01Observer.observe(productDesignImg01);
+      }
+
       const productDesignSvg = document.getElementById("product-design-02");
       if (productDesignSvg) {
         const pdSvgObserver = new IntersectionObserver(

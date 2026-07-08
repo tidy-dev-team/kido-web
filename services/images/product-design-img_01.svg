@@ -1,7 +1,7 @@
 <svg width="797" height="614" viewBox="0 0 797 614" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
         .warpCircle {
-            animation: warpRotAnim 10000ms linear infinite;
+            animation: warpRotAnim 1000ms ease-out forwards;
             transform-origin: center;
             transform-box: fill-box;
             rotate: 45deg;
@@ -9,7 +9,7 @@
         }
 
         @keyframes warpRotAnim {
-            0% { transform: scaleX(0.36) rotate(0deg); }
+            0% { transform: scaleX(0.36) rotate(320deg); }
             100% { transform: scaleX(0.36) rotate(360deg); }
         }
     </style>
