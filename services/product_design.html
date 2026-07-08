@@ -900,7 +900,7 @@
         scale: 0;
       }
       .line-anim {
-        translate: -120% 0;
+        clip-path: inset(0 100% 0 0);
       }
 
       #product-design-02.is-animated .pro-circle {
@@ -932,8 +932,8 @@
         100% { scale: 1; }
       }
       @keyframes lineAnim {
-        0% { translate: -120% 0; }
-        100% { translate: 0 0; }
+        0% { clip-path: inset(0 100% 0 0); }
+        100% { clip-path: inset(0 0% 0 0); }
       }
     </style>
   </head>
@@ -1102,7 +1102,9 @@
               <circle class="pro-circle pro-circle-05" cx="399.524" cy="218.309" r="217.309" stroke="#181818" stroke-width="2"/>
               <circle class="small-circle small-circle-01" cx="343.063" cy="221.18" r="4.97675" fill="#181818"/>
               <circle class="small-circle small-circle-02" cx="59.965" cy="221.18" r="4.97675" fill="#181818"/>
-              <path class="line-anim" d="M-67 222L812 222" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+              <g class="line-anim">
+                <path d="M-67 222L812 222" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+              </g>
               <circle class="small-circle small-circle-03" cx="406.102" cy="221.18" r="4.97675" fill="#181818"/>
               <circle class="small-circle small-circle-04" cx="472.59" cy="221.18" r="4.97675" fill="#181818"/>
               <circle class="small-circle small-circle-05" cx="544.434" cy="221.18" r="4.97675" fill="#181818"/>
