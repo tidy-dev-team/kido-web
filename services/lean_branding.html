@@ -518,6 +518,20 @@
         animation-fill-mode: both;
       }
 
+      #lean-branding-01-svg.is-animated .brGroupCircle {
+        animation-name: rollAnim;
+        animation-duration: 800ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+      #lean-branding-01-svg.is-animated .brGroup path,
+      #lean-branding-01-svg.is-animated .brGroup circle {
+        animation-name: rollDrawAnim;
+        animation-duration: 1000ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
       .pd-focused-row > .pd-focused-text:first-child {
         padding-left: clamp(160px, 14.6vw, 280px);
       }
@@ -1016,11 +1030,47 @@
       <!-- Row 1: Illustration left · Visual Direction right -->
       <div class="pd-focused-row">
         <div class="pd-focused-illus">
-          <img
-            src="images/lean-branding-01.png"
-            alt="Visual Direction and Brand Elements illustration"
-            loading="lazy"
-          />
+          <svg id="lean-branding-01-svg" width="510" height="510" viewBox="0 0 510 510" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visual Direction and Brand Elements illustration">
+            <style>
+              .brGroupCircle {
+                opacity: 0;
+                rotate: 320deg;
+                transform-box: fill-box;
+                transform-origin: center;
+                animation-delay: 600ms;
+              }
+              @keyframes rollAnim {
+                100% { rotate: 360deg; opacity: 1; }
+              }
+              .brGroup path, .brGroup circle {
+                stroke-dasharray: 350;
+                stroke-dashoffset: 350;
+                transform: rotate(-100deg);
+                transform-box: fill-box;
+                transform-origin: center;
+              }
+              @keyframes rollDrawAnim {
+                100% { stroke-dashoffset: 0; transform: rotate(0deg); }
+              }
+              .brGroup > *:nth-child(1) { stroke-dasharray: 487; stroke-dashoffset: 487; }
+              .brGroup > *:nth-child(2) { stroke-dasharray: 558; stroke-dashoffset: 558; animation-delay: 100ms; }
+              .brGroup > *:nth-child(3) { stroke-dasharray: 253; stroke-dashoffset: 253; animation-delay: 200ms; }
+              .brGroup > *:nth-child(4) { stroke-dasharray: 310; stroke-dashoffset: 310; animation-delay: 30ms; }
+              .brGroup > *:nth-child(5) { stroke-dasharray: 718; stroke-dashoffset: 718; animation-delay: 400ms; }
+              .brGroup > *:nth-child(6) { stroke-dasharray: 874; stroke-dashoffset: 874; animation-delay: 500ms; }
+            </style>
+            <g class="brGroupCircle">
+              <circle cx="255" cy="255" r="254" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+            </g>
+            <g class="brGroup">
+              <circle cx="401.5" cy="155.5" r="77.5" stroke="#181818" stroke-width="2"/>
+              <path d="M165.461 304.688C214.355 304.688 254 344.508 254 393.639C254 442.769 214.355 482.591 165.461 482.591C116.567 482.591 76.9219 442.77 76.9219 393.639C76.922 344.508 116.567 304.688 165.461 304.688Z" stroke="#181818" stroke-width="2"/>
+              <circle cx="271.504" cy="468.739" r="40.2621" stroke="#181818" stroke-width="2"/>
+              <circle cx="56.9414" cy="306.988" r="49.3398" stroke="#181818" stroke-width="2"/>
+              <path d="M363.52 229.594C426.544 229.594 477.642 280.869 477.642 344.128C477.641 407.387 426.544 458.662 363.52 458.662C300.496 458.662 249.399 407.387 249.398 344.128C249.398 280.869 300.496 229.594 363.52 229.594Z" stroke="#181818" stroke-width="2"/>
+              <path d="M184.029 26.5859C260.961 26.5859 323.321 88.7671 323.321 165.465C323.321 242.163 260.96 304.343 184.029 304.343C107.098 304.343 44.7384 242.162 44.7383 165.465C44.7383 88.7671 107.098 26.5861 184.029 26.5859Z" stroke="#181818" stroke-width="2"/>
+            </g>
+          </svg>
         </div>
         <div class="pd-focused-text">
           <h3 class="pd-focused-title">
@@ -1251,6 +1301,21 @@
       });
 
       // Trigger SVG animation on scroll
+      const leanBranding01Svg = document.getElementById("lean-branding-01-svg");
+      if (leanBranding01Svg) {
+        const lb01Observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.intersectionRatio >= 1.0) {
+              leanBranding01Svg.classList.add("is-animated");
+            } else if (!entry.isIntersecting) {
+              leanBranding01Svg.classList.remove("is-animated");
+            }
+          },
+          { threshold: [0, 1.0] },
+        );
+        lb01Observer.observe(leanBranding01Svg);
+      }
+
       const leanBrandingSvg = document.getElementById("lean-branding-02-svg");
       if (leanBrandingSvg) {
         const svgObserver = new IntersectionObserver(
