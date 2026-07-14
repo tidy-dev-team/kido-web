@@ -3,7 +3,7 @@
         .lineFront {
             stroke-dasharray: 836.35;
             stroke-dashoffset: 836.35;
-            animation: drawFrontAnim 800ms linear forwards;
+            animation: drawFrontAnim 800ms ease-out forwards;
         }
 
         @keyframes drawFrontAnim {
@@ -11,23 +11,23 @@
         }
 
         #Vector-1767 {
-            animation-delay: 100ms;
+            animation-delay: 150ms;
         }
 
         #Vector-1768 {
-            animation-delay: 200ms;
-        }
-
-        #Vector-1769 {
             animation-delay: 300ms;
         }
 
+        #Vector-1769 {
+            animation-delay: 450ms;
+        }
+
         #Vector-1770 {
-            animation-delay: 400ms;
+            animation-delay: 600ms;
         }
 
         #Vector-1771 {
-            animation-delay: 500ms;
+            animation-delay: 750ms;
         }
     </style>
     <g id="front-end-02">
