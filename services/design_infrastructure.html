@@ -507,6 +507,15 @@
         height: auto;
       }
 
+      #design-infra-01-svg.is-animated #skew-me {
+        animation: rotateSkewAnim 800ms ease-out forwards;
+      }
+
+      #design-infra-01-svg.is-animated .lineInfraDrawn#Vector-1712,
+      #design-infra-01-svg.is-animated .lineInfraDrawn#Vector-1713 {
+        animation: draw 10000ms ease-out forwards;
+      }
+
       #design-infra-02.is-animated .circle-anim {
         animation-name: circleAnim;
         animation-duration: 600ms;
@@ -1018,11 +1027,42 @@
       <!-- Row 1: Illustration left · Foundational Design System right -->
       <div class="pd-focused-row">
         <div class="pd-focused-illus">
-          <img
-            src="images/design-infra-01.png"
-            alt="Foundational Design System illustration"
-            loading="lazy"
-          />
+          <svg id="design-infra-01-svg" width="938" height="542" viewBox="0 0 938 542" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Foundational Design System illustration">
+            <style>
+              #skew-me {
+                transform-origin: center;
+                transform-box: fill-box;
+                transform: skew(-60deg, 30deg) scale(0.87, 0.5) rotate(-30deg);
+              }
+              .lineInfraDrawn#Vector-1712 {
+                stroke-dasharray: 3717.115;
+                stroke-dashoffset: 3717.115;
+              }
+              .lineInfraDrawn#Vector-1713 {
+                stroke-dasharray: 3717.117;
+                stroke-dashoffset: 3717.117;
+              }
+              @keyframes rotateSkewAnim {
+                100% { transform: skew(-60deg, 30deg) scale(0.87, 0.5) rotate(0deg); }
+              }
+              @keyframes draw {
+                100% { stroke-dashoffset: 0; }
+              }
+            </style>
+            <g id="design-infra-01">
+              <g id="skew-me">
+                <g id="Group 3204">
+                  <rect id="Rectangle 8209" x="262.953" y="65.4062" width="411.012" height="411.012" stroke="#181818" stroke-width="2"/>
+                  <path class="lineInfraDrawn" id="Vector-1712" d="M633.668 477.419V64.4062M592.366 477.419V64.4062M551.065 477.419V64.4062M509.764 477.419V64.4062M468.463 477.419V64.4062M427.162 477.419V64.4062M385.86 477.419V64.4062M344.559 477.419V64.4062M303.258 477.419V64.4062" stroke="#181818" stroke-width="2"/>
+                  <path class="lineInfraDrawn" id="Vector-1713" d="M674.966 105.707L261.953 105.707M674.966 147.008L261.953 147.009M674.966 188.31L261.953 188.31M674.966 229.611L261.953 229.611M674.966 270.912L261.953 270.912M674.966 312.213L261.953 312.213M674.966 353.515L261.953 353.515M674.966 394.816L261.953 394.816M674.966 436.117L261.953 436.117" stroke="#181818" stroke-width="2"/>
+                </g>
+                <path class="lineInfraDrawn" id="Vector-1714" d="M197.941 65.1641L739.063 65.1641" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+                <path class="lineInfraDrawn" id="Vector-1715" d="M198.051 476.617L739.172 476.617" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+                <path class="lineInfraDrawn" id="Vector-1716" d="M674.215 0L674.215 541.121" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+                <path class="lineInfraDrawn" id="Vector-1717" d="M262.727 0.445312L262.726 541.566" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+              </g>
+            </g>
+          </svg>
         </div>
         <div class="pd-focused-text">
           <h3 class="pd-focused-title">Foundational<br />Design System</h3>
@@ -1241,6 +1281,21 @@
       });
 
       // Trigger SVG animation on scroll
+      const infraSvg01 = document.getElementById("design-infra-01-svg");
+      if (infraSvg01) {
+        const svg01Observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.intersectionRatio >= 1.0) {
+              infraSvg01.classList.add("is-animated");
+            } else if (!entry.isIntersecting) {
+              infraSvg01.classList.remove("is-animated");
+            }
+          },
+          { threshold: [0, 1.0] },
+        );
+        svg01Observer.observe(infraSvg01);
+      }
+
       const infraSvg = document.getElementById("design-infra-02");
       if (infraSvg) {
         const svgRow = infraSvg.closest(".pd-focused-row");

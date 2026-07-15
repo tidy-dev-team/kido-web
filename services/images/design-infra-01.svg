@@ -11,12 +11,6 @@
             100% { transform: skew(-60deg, 30deg) scale(0.87, 0.5) rotate(0deg); }
         }
 
-        #Rectangle_8209 {
-            stroke-dasharray: 1644.048;
-            stroke-dashoffset: 1644.048;
-            animation: draw 10000ms ease-out forwards;
-        }
-
         .lineInfraDrawn#Vector-1712 {
             stroke-dasharray: 3717.115;
             stroke-dashoffset: 3717.115;

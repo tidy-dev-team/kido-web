@@ -1,0 +1,60 @@
+<svg width="460" height="460" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        #overlay {
+            transform: translate(-78px, 78px);
+            animation: overlayInfraAnim 800ms ease-out forwards;
+        }
+
+        @keyframes overlayInfraAnim {
+            100% { transform: translate(0, 0);}
+        }
+        
+        #clip-rect-1 {
+            animation: reveal-line-1 850ms ease-out forwards;
+        }
+        #clip-rect-2 {
+            animation: reveal-line-2 850ms ease-out forwards;
+        }
+
+        @keyframes reveal-line-1 {
+            to { width: 114.371px; }
+        }
+        @keyframes reveal-line-2 {
+            to { width: 114.446px; }
+        }
+    </style>
+    <defs>
+        <clipPath id="clip-line-1" clipPathUnits="userSpaceOnUse">
+            <rect class="reveal-rect" id="clip-rect-1"
+                x="0" y="-10" width="0" height="20"
+                transform="translate(0.707031 78.755) rotate(-45)" />
+        </clipPath>
+        <clipPath id="clip-line-2" clipPathUnits="userSpaceOnUse">
+            <rect class="reveal-rect" id="clip-rect-2"
+                x="0" y="-10" width="0" height="20"
+                transform="translate(380.938 459.064) rotate(-44.8555)" />
+        </clipPath>
+    </defs>
+    <g id="design-infra-03">
+        <g id="Group 3221">
+            <g id="underlay">
+                <rect id="Rectangle 8209" x="1.14844" y="79.2891" width="379.177" height="379.177"
+                    fill="#E8FA84" stroke="#181818" stroke-width="2" />
+            </g>
+            <g id="overlay">
+                <rect id="Rectangle 8209_2" x="79.4961" y="1.46094" width="379.177" height="379.177"
+                    fill="#E8FA84" stroke="#181818" stroke-width="2" />
+                <path id="Vector 1712" d="M332.53 380.651V0.460938M205.516 380.651V0.460938"
+                    stroke="#181818" stroke-width="2" />
+                <path id="Vector 1713"
+                    d="M459.673 127.239L78.4961 127.239M459.673 254.008L78.4961 254.008"
+                    stroke="#181818" stroke-width="2" />
+            </g>
+            <path id="line-1" d="M0.707031 78.755L78.7511 0.710938" stroke="#181818"
+                stroke-width="2"
+                stroke-dasharray="8 8" clip-path="url(#clip-line-1)" />
+            <path id="line-2" d="M380.938 459.064L459.232 381.164" stroke="#181818" stroke-width="2"
+                stroke-dasharray="8 8" clip-path="url(#clip-line-2)" />
+        </g>
+    </g>
+</svg>
