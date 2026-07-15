@@ -1,0 +1,129 @@
+<svg width="434" height="434" viewBox="0 0 434 434" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="design-ops-03">
+        <g id="Tunnel-group">
+            <path id="border" d="M432.727 1H1V432.727H432.727V1Z" stroke="#181818" stroke-width="2" />
+            <path id="tunnel-1" d="M392.497 41.2344H41.2305V392.501H392.497V41.2344Z"
+                stroke="#181818" stroke-width="2" />
+            <path id="tunnel-2" d="M356.998 76.7266H76.7266V356.998H356.998V76.7266Z"
+                stroke="#181818" stroke-width="2" />
+            <path id="tunnel-3" d="M326.23 107.492H107.488V326.234H326.23V107.492Z" stroke="#181818"
+                stroke-width="2" />
+            <path id="tunnel-4" d="M300.202 133.531H133.523V300.21H300.202V133.531Z"
+                stroke="#181818" stroke-width="2" />
+            <path id="tunnel-5" d="M278.902 154.828H154.82V278.91H278.902V154.828Z" stroke="#181818"
+                stroke-width="2" />
+            <path id="tunnel-6" d="M262.334 171.391H171.383V262.342H262.334V171.391Z"
+                stroke="#181818" stroke-width="2" />
+            <path id="tunnel-8" d="M250.504 183.227H183.219V250.512H250.504V183.227Z"
+                stroke="#181818" stroke-width="2" />
+            <path id="tunnel-9" d="M243.406 190.328H190.32V243.414H243.406V190.328Z"
+                stroke="#181818" stroke-width="2" />
+            <path id="tunnel-10" d="M241.041 192.688H192.688V241.041H241.041V192.688Z"
+                stroke="#181818" stroke-width="2" />
+            <g id="floor">
+                <path id="Vector" d="M192.684 241.047L0.996596 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_2" d="M197.082 241.047L53.5869 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_3" d="M201.477 241.047L96.8075 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_4" d="M205.871 241.047L134.376 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_5" d="M210.266 241.047L168.567 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_6" d="M214.664 241.047L200.954 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_7" d="M219.059 241.047L232.768 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_8" d="M223.457 241.047L265.156 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_9" d="M227.852 241.047L299.347 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_10" d="M232.246 241.047L336.915 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_11" d="M236.645 241.047L380.14 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_12" d="M241.039 241.047L432.726 432.734" stroke="#181818"
+                    stroke-width="2" />
+            </g>
+            <g id="wall-left">
+                <path id="Vector_13" d="M192.688 192.695L1.0005 1.00831" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_14" d="M192.688 197.086L1.00052 53.5909" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_15" d="M192.688 201.484L1.0005 96.8154" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_16" d="M192.688 205.875L1.00052 134.379" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_17" d="M192.688 210.273L1.00051 168.574" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_18" d="M192.688 214.672L1.00048 200.962" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_19" d="M192.688 219.062L1.00048 232.772" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_20" d="M192.688 223.461L1.00051 265.16" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_21" d="M192.688 227.859L1.00052 299.355" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_22" d="M192.688 232.258L1.0005 336.927" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_23" d="M192.688 236.648L1.00052 380.144" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_24" d="M192.688 241.047L1.0005 432.734" stroke="#181818"
+                    stroke-width="2" />
+            </g>
+            <g id="ceiling">
+                <path id="Vector_25" d="M241.043 192.688L432.73 1.0005" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_26" d="M236.645 192.688L380.14 1.00052" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_27" d="M232.25 192.688L336.919 1.0005" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_28" d="M227.855 192.688L299.351 1.00052" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_29" d="M223.461 192.688L265.16 1.00051" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_30" d="M219.062 192.688L232.772 1.00048" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_31" d="M214.668 192.688L200.958 1.00048" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_32" d="M210.27 192.688L168.571 1.00051" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_33" d="M205.875 192.688L134.379 1.00052" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_34" d="M201.48 192.688L96.8114 1.0005" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_35" d="M197.082 192.688L53.5869 1.00052" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_36" d="M192.688 192.688L1.0005 1.0005" stroke="#181818"
+                    stroke-width="2" />
+            </g>
+            <g id="wall-right">
+                <path id="Vector_37" d="M241.039 241.047L432.726 432.734" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_38" d="M241.039 236.656L432.726 380.151" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_39" d="M241.039 232.258L432.726 336.927" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_40" d="M241.039 227.867L432.726 299.363" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_41" d="M241.039 223.469L432.726 265.168" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_42" d="M241.039 219.07L432.726 232.78" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_43" d="M241.039 214.672L432.726 200.962" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_44" d="M241.039 210.281L432.726 168.582" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_45" d="M241.039 205.891L432.726 134.395" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_46" d="M241.039 201.492L432.726 96.8232" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_47" d="M241.039 197.094L432.726 53.5987" stroke="#181818"
+                    stroke-width="2" />
+                <path id="Vector_48" d="M241.039 192.695L432.726 1.00831" stroke="#181818"
+                    stroke-width="2" />
+            </g>
+        </g>
+    </g>
+</svg>
