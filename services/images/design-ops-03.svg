@@ -1,24 +1,111 @@
 <svg width="434" height="434" viewBox="0 0 434 434" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        #floor path, #ceiling path, #wall-left path, #wall-right path {
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            animation: clipLine 800ms linear forwards;
+        }
+
+        #ceiling path {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+
+        #wall-left path {
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        }
+
+        #wall-right path {
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        }
+
+        @keyframes clipLine {
+            100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+        }
+
+        .tunnelRect {
+            transform-origin: center;
+            transform-box: fill-box;
+            opacity: 0;
+            animation: tunnelAnim 800ms linear forwards;
+        }
+
+        #tunnel-1 {
+            scale: 1.25;
+            opacity: 1;
+            stroke-width: 2;
+        }
+
+        #tunnel-2 {
+            scale: 1.6;
+            opacity: 1;
+            stroke-width: 1;
+        }
+
+        #tunnel-3 {
+            scale: 2;
+            opacity: 1;
+            stroke-width: 1;
+        }
+
+        #tunnel-4 {
+            scale: 2.6;
+            opacity: 1;
+            stroke-width: 1;
+        }
+
+        #tunnel-5 {
+            scale: 3.5;
+            opacity: 1;
+            stroke-width: 1;
+        }
+
+        #tunnel-6 {
+            scale: 4.75;
+            opacity: 1;
+            stroke-width: 0.4;
+        }
+
+        #tunnel-8 {
+            scale: 6.5;
+            opacity: 1;
+            stroke-width: 0.3;
+        }
+
+        #tunnel-9 {
+            scale: 8.2;
+            opacity: 1;
+            stroke-width: 0.2;
+        }
+
+        #tunnel-10 {
+            scale: 9;
+            opacity: 1;
+            stroke-width: 0.2;
+        }
+
+        @keyframes tunnelAnim {
+            100% { scale: 1; stroke-width: 2; }
+        }
+    </style>
     <g id="design-ops-03">
-        <g id="Tunnel-group">
+        <g id="group-tunnel">
             <path id="border" d="M432.727 1H1V432.727H432.727V1Z" stroke="#181818" stroke-width="2" />
-            <path id="tunnel-1" d="M392.497 41.2344H41.2305V392.501H392.497V41.2344Z"
+            <path class="tunnelRect" id="tunnel-1" d="M392.497 41.2344H41.2305V392.501H392.497V41.2344Z"
                 stroke="#181818" stroke-width="2" />
-            <path id="tunnel-2" d="M356.998 76.7266H76.7266V356.998H356.998V76.7266Z"
+            <path class="tunnelRect" id="tunnel-2" d="M356.998 76.7266H76.7266V356.998H356.998V76.7266Z"
                 stroke="#181818" stroke-width="2" />
-            <path id="tunnel-3" d="M326.23 107.492H107.488V326.234H326.23V107.492Z" stroke="#181818"
+            <path class="tunnelRect" id="tunnel-3" d="M326.23 107.492H107.488V326.234H326.23V107.492Z" stroke="#181818"
                 stroke-width="2" />
-            <path id="tunnel-4" d="M300.202 133.531H133.523V300.21H300.202V133.531Z"
+            <path class="tunnelRect" id="tunnel-4" d="M300.202 133.531H133.523V300.21H300.202V133.531Z"
                 stroke="#181818" stroke-width="2" />
-            <path id="tunnel-5" d="M278.902 154.828H154.82V278.91H278.902V154.828Z" stroke="#181818"
+            <path class="tunnelRect" id="tunnel-5" d="M278.902 154.828H154.82V278.91H278.902V154.828Z" stroke="#181818"
                 stroke-width="2" />
-            <path id="tunnel-6" d="M262.334 171.391H171.383V262.342H262.334V171.391Z"
+            <path class="tunnelRect" id="tunnel-6" d="M262.334 171.391H171.383V262.342H262.334V171.391Z"
                 stroke="#181818" stroke-width="2" />
-            <path id="tunnel-8" d="M250.504 183.227H183.219V250.512H250.504V183.227Z"
+            <path class="tunnelRect" id="tunnel-8" d="M250.504 183.227H183.219V250.512H250.504V183.227Z"
                 stroke="#181818" stroke-width="2" />
-            <path id="tunnel-9" d="M243.406 190.328H190.32V243.414H243.406V190.328Z"
+            <path class="tunnelRect" id="tunnel-9" d="M243.406 190.328H190.32V243.414H243.406V190.328Z"
                 stroke="#181818" stroke-width="2" />
-            <path id="tunnel-10" d="M241.041 192.688H192.688V241.041H241.041V192.688Z"
+            <path class="tunnelRect" id="tunnel-10" d="M241.041 192.688H192.688V241.041H241.041V192.688Z"
                 stroke="#181818" stroke-width="2" />
             <g id="floor">
                 <path id="Vector" d="M192.684 241.047L0.996596 432.734" stroke="#181818"
