@@ -2,7 +2,7 @@
     <style>
         #overlay {
             transform: translate(-78px, 78px);
-            animation: overlayInfraAnim 800ms ease-out forwards;
+            animation: overlayInfraAnim 600ms ease-out forwards;
         }
 
         @keyframes overlayInfraAnim {
@@ -10,10 +10,10 @@
         }
         
         #clip-rect-1 {
-            animation: reveal-line-1 850ms ease-out forwards;
+            animation: reveal-line-1 650ms ease-out forwards;
         }
         #clip-rect-2 {
-            animation: reveal-line-2 850ms ease-out forwards;
+            animation: reveal-line-2 650ms ease-out forwards;
         }
 
         @keyframes reveal-line-1 {
