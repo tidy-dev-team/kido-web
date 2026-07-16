@@ -767,6 +767,16 @@
         font-size: 1.4em;
       }
 
+      /* design-ops-01 scroll-triggered animations */
+      #design-ops-01-svg.is-animated #lines-01,
+      #design-ops-01-svg.is-animated #lines-02,
+      #design-ops-01-svg.is-animated #lines-03 {
+        animation: rotateOpsAnim 800ms ease-out forwards;
+      }
+      @keyframes rotateOpsAnim {
+        100% { rotate: 0deg; }
+      }
+
       /* design-ops-03 scroll-triggered animations */
       #design-ops-03-svg.is-animated #floor path,
       #design-ops-03-svg.is-animated #ceiling path,
@@ -1028,11 +1038,52 @@
       <!-- Row 1: Illustration left · DesignOps Foundations right -->
       <div class="pd-focused-row">
         <div class="pd-focused-illus">
-          <img
-            src="images/design-ops-01.png"
-            alt="DesignOps Foundations illustration"
-            loading="lazy"
-          />
+          <svg id="design-ops-01-svg" width="694" height="401" viewBox="0 0 694 401" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DesignOps Foundations illustration">
+            <style>
+              #new-skew {
+                transform-origin: center;
+                transform-box: fill-box;
+                transform: skew(-60deg, 30deg) scale(0.87, 0.5);
+              }
+              #lines-01, #lines-02, #lines-03 {
+                rotate: -30deg;
+                transform-origin: center;
+                transform-box: fill-box;
+              }
+              #lines-02 { rotate: 30deg; }
+              #lines-03 { rotate: -10deg; }
+            </style>
+            <g id="design-ops-01">
+              <g id="new-skew">
+                <g id="Group 3219_2">
+                  <rect id="Rectangle 8209_2" x="147.09" y="1.03906" width="398.151" height="398.151" fill="#E8FA84" stroke="#181818" stroke-width="2" />
+                  <path id="Vector 1712_2" d="M506.226 400.19V0.0390625M466.211 400.19V0.0390625M426.196 400.19V0.0390625M386.181 400.19V0.0390625M346.166 400.19V0.0390625M306.151 400.19V0.0390625M266.136 400.19V0.0390625M226.121 400.19V0.0390625M186.105 400.19V0.0390625" stroke="#181818" stroke-width="2" />
+                  <path id="Vector 1713_2" d="M546.24 40.0593L146.09 40.0593M546.24 80.0743L146.09 80.0743M546.24 120.089L146.09 120.089M546.24 160.104L146.09 160.104M546.24 200.119L146.09 200.119M546.24 240.135L146.09 240.135M546.24 280.15L146.09 280.15M546.24 320.165L146.09 320.165M546.24 360.18L146.09 360.18" stroke="#181818" stroke-width="2" />
+                  <circle id="Ellipse 3866_2" cx="346.187" cy="200.085" r="199.085" fill="#E8FA84" stroke="#181818" stroke-width="2" />
+                </g>
+                <circle id="Ellipse 3871_2" cx="346.378" cy="200.21" r="131.054" fill="#E8FA84" stroke="#181818" stroke-width="2" />
+                <circle id="Ellipse 3872_2" cx="346.375" cy="201.332" r="64.277" fill="#E8FA84" stroke="#181818" stroke-width="2" />
+                <g id="Group 3225_2">
+                  <g id="lines-02">
+                    <path id="Vector 1715_3" d="M346.086 331L346.086 265" stroke="#181818" stroke-width="2" />
+                    <path id="Vector 1716_3" d="M346.16 136.387V69.7109" stroke="#181818" stroke-width="2" />
+                    <path id="Vector 1715_4" d="M215.337 200.539L281.328 200.539" stroke="#181818" stroke-width="2" />
+                    <path id="Vector 1716_4" d="M410.328 200.539L477.004 200.539" stroke="#181818" stroke-width="2" />
+                  </g>
+                  <g id="lines-01">
+                    <path id="Vector 1719" d="M346.086 400L346.086 332" stroke="#181818" stroke-width="2" />
+                    <path id="Vector 1718" d="M346.086 69L346.086 1" stroke="#181818" stroke-width="2" />
+                    <path id="Vector 1719_2" d="M146.337 200.539L215.328 200.539" stroke="#181818" stroke-width="2" />
+                    <path id="Vector 1718_2" d="M477.328 200.539L546.004 200.539" stroke="#181818" stroke-width="2" />
+                  </g>
+                  <g id="lines-03">
+                    <path id="Vector 1717_3" d="M346.086 265L346.086 138" stroke="#181818" stroke-width="2" stroke-dasharray="8 8" />
+                    <path id="Vector 1717_4" d="M282.67 200.539L410.062 200.539" stroke="#181818" stroke-width="2" stroke-dasharray="8 8" />
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
         </div>
         <div class="pd-focused-text">
           <h3 class="pd-focused-title">DesignOps<br />Foundations</h3>
@@ -1305,6 +1356,22 @@
         servicesDropdown.classList.remove("open");
         servicesBtn.classList.remove("open");
       });
+
+      // design-ops-01 scroll animation
+      const opssvg01 = document.getElementById("design-ops-01-svg");
+      if (opssvg01) {
+        const svg01Observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.intersectionRatio >= 1.0) {
+              opssvg01.classList.add("is-animated");
+            } else if (!entry.isIntersecting) {
+              opssvg01.classList.remove("is-animated");
+            }
+          },
+          { threshold: [0, 1.0] },
+        );
+        svg01Observer.observe(opssvg01);
+      }
 
       // Mobile menu
       const opssvg03 = document.getElementById("design-ops-03-svg");
