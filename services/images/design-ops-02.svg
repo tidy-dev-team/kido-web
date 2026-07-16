@@ -1,0 +1,159 @@
+<svg width="678" height="424" viewBox="0 0 678 424" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        #h-line-1, #h-line-2, #h-line-3, #h-line-4,
+        #h-line-5, #h-line-6, #h-line-7,
+        #d-line-8, #d-line-9, #d-line-10,
+        #d-line-11, #d-line-12, #d-line-13, #d-line-14 {
+            animation-duration: 600ms;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        #h-line-1  { animation-name: animH1;  }
+        #h-line-2  { animation-name: animH2;  }
+        #h-line-3  { animation-name: animH3;  }
+        #h-line-4  { animation-name: animH4;  }
+        #h-line-5  { animation-name: animH5;  }
+        #h-line-6  { animation-name: animH6;  }
+        #h-line-7  { animation-name: animH7;  }
+        #d-line-8  { animation-name: animD8;  }
+        #d-line-9  { animation-name: animD9;  }
+        #d-line-10 { animation-name: animD10; }
+        #d-line-11 { animation-name: animD11; }
+        #d-line-12 { animation-name: animD12; }
+        #d-line-13 { animation-name: animD13; }
+        #d-line-14 { animation-name: animD14; }
+
+        /* Horizontal lines: straight → bulged sphere curves
+           Start: same control-point X as end, but Y held flat.
+           End:   original end-grid cubic paths. */
+        @keyframes animH1 {
+            from { d: path('M104.688 62 C104.688 62 254.187 62 335.687 62 C417.187 62 566.688 62 566.688 62'); }
+            to   { d: path('M104.688 62 C104.688 62 254.187 80 335.687 80 C417.187 80 566.688 62 566.688 62'); }
+        }
+        @keyframes animH2 {
+            from { d: path('M95.688 97 C137.688 97 243.188 97 335.688 97 C428.187 97 544.687 97 575.688 97'); }
+            to   { d: path('M95.688 97 C137.688 97 243.188 151 335.688 151 C428.187 151 544.687 97 575.688 97'); }
+        }
+        @keyframes animH3 {
+            from { d: path('M86.688 134 C149.188 134 226.991 134 336.491 134 C445.991 134 526.187 134 584.688 134'); }
+            to   { d: path('M86.688 134 C149.188 134 226.991 239 336.491 239 C445.991 239 526.187 134 584.688 134'); }
+        }
+        @keyframes animH4 {
+            from { d: path('M77.688 168 C168.688 168 224.223 168 336.223 168 C448.223 168 483.188 168 593.688 168'); }
+            to   { d: path('M77.688 168 C168.688 187 224.223 320 336.223 320 C448.223 320 483.188 195.5 593.688 168'); }
+        }
+        @keyframes animH5 {
+            from { d: path('M69.688 201 C130.688 201 241.687 201 335.687 201 C429.688 201 546.187 201 601.688 201'); }
+            to   { d: path('M69.688 201 C130.688 201 241.687 361.5 335.687 361.5 C429.688 361.5 546.187 201 601.688 201'); }
+        }
+        @keyframes animH6 {
+            from { d: path('M60.688 236 C140.688 236 220.188 236 335.688 236 C451.188 236 522.687 236 610.688 236'); }
+            to   { d: path('M60.688 236 C140.688 236 220.188 351 335.688 351 C451.188 351 522.687 236 610.688 236'); }
+        }
+        @keyframes animH7 {
+            from { d: path('M51.688 275 C137.188 275 273.687 275 335.687 275 C397.687 275 521.187 275 619.688 275'); }
+            to   { d: path('M51.688 275 C137.188 275 273.687 320.5 335.687 320.5 C397.687 320.5 521.187 275 619.688 275'); }
+        }
+
+        /* Diagonal lines (M C C format):
+           Start: control points at ⅓ / ⅔ along each straight sub-segment → visually straight.
+           End:   original end-grid cubic paths.  */
+        @keyframes animD8 {
+            from { d: path('M165.672 33.178 C154.218 96.617 142.764 160.057 131.310 223.496 C125.431 256.057 119.551 288.617 113.672 321.178'); }
+            to   { d: path('M165.559 33.175 C165.559 33.175 150.939 176.496 141.436 223.496 C131.933 270.496 113.934 277.5 113.559 321.175'); }
+        }
+        @keyframes animD11 {
+            from { d: path('M503.063 33.178 C514.516 96.617 525.970 160.057 537.423 223.496 C543.295 256.049 549.166 288.601 555.037 321.153'); }
+            to   { d: path('M503.062 33.175 C503.062 33.175 517.683 176.496 527.185 223.496 C536.688 270.496 554.688 277.5 555.062 321.175'); }
+        }
+
+        /* Diagonal lines (M L C format):
+           Start: L lands on the straight-line point at the same Y as the end's L waypoint;
+                  C uses ⅓/⅔ control points → straight continuation. */
+        @keyframes animD9 {
+            from { d: path('M221.673 33.176 L189.609 297.001 C188.630 305.059 187.652 313.118 186.673 321.176'); }
+            to   { d: path('M221.56 33.176 L200.933 297.001 C200.933 297.001 186.934 299 186.56 321.176'); }
+        }
+        @keyframes animD12 {
+            from { d: path('M447.061 33.176 L479.125 297.001 C480.104 305.059 481.082 313.118 482.061 321.176'); }
+            to   { d: path('M447.061 33.176 L467.689 297.001 C467.689 297.001 481.687 299 482.061 321.176'); }
+        }
+
+        /* Diagonal lines (M L format): endpoints shift as the grid warps. */
+        @keyframes animD10 {
+            0% { d: path('M277.152 33.176 L265.149 320.997'); }
+            70% { d: path('M277.152 33.176 L265.149 320.997'); }
+            100%   { d: path('M277.153 33.176 L263.69 336.498'); }
+        }
+        @keyframes animD13 {
+            0% { d: path('M391.582 33.176 L403.585 320.997'); }
+            70% { d: path('M391.582 33.176 L403.585 320.997'); }
+            100%   { d: path('M391.583 33.177 L402.688 340.001'); }
+        }
+        @keyframes animD14 {
+            0% { d: path('M334.583 33.179 L334.583 321'); }
+            60% { d: path('M334.583 33.179 L334.583 321'); }
+            100%   { d: path('M334.584 33.181 L334.583 363'); }
+        }
+    </style>
+    <g id="design-ops-02">
+        <g id="grid">
+            <!-- Outer trapezoid — unchanged across both states -->
+            <path id="trapezoid"
+                d="M559.905 33L631.408 321H39.9668L111.47 33H559.905Z"
+                stroke="#181818" stroke-width="2" />
+
+            <!-- Horizontal lines (start: straight; end: sphere-bulge curves) -->
+            <path id="h-line-1"
+                d="M104.688 62 C104.688 62 254.187 62 335.687 62 C417.187 62 566.688 62 566.688 62"
+                stroke="#181818" stroke-width="2" />
+            <path id="h-line-2"
+                d="M95.688 97 C137.688 97 243.188 97 335.688 97 C428.187 97 544.687 97 575.688 97"
+                stroke="#181818" stroke-width="2" />
+            <path id="h-line-3"
+                d="M86.688 134 C149.188 134 226.991 134 336.491 134 C445.991 134 526.187 134 584.688 134"
+                stroke="#181818" stroke-width="2" />
+            <path id="h-line-4"
+                d="M77.688 168 C168.688 168 224.223 168 336.223 168 C448.223 168 483.188 168 593.688 168"
+                stroke="#181818" stroke-width="2" />
+            <path id="h-line-5"
+                d="M69.688 201 C130.688 201 241.687 201 335.687 201 C429.688 201 546.187 201 601.688 201"
+                stroke="#181818" stroke-width="2" />
+            <path id="h-line-6"
+                d="M60.688 236 C140.688 236 220.188 236 335.688 236 C451.188 236 522.687 236 610.688 236"
+                stroke="#181818" stroke-width="2" />
+            <path id="h-line-7"
+                d="M51.688 275 C137.188 275 273.687 275 335.687 275 C397.687 275 521.187 275 619.688 275"
+                stroke="#181818" stroke-width="2" />
+
+            <!-- Left outer diagonal (M C C) -->
+            <path id="d-line-8"
+                d="M165.672 33.178 C154.218 96.617 142.764 160.057 131.310 223.496 C125.431 256.057 119.551 288.617 113.672 321.178"
+                stroke="#181818" stroke-width="2" />
+            <!-- Left inner diagonal (M L C) -->
+            <path id="d-line-9"
+                d="M221.673 33.176 L189.609 297.001 C188.630 305.059 187.652 313.118 186.673 321.176"
+                stroke="#181818" stroke-width="2" />
+            <!-- Left centre diagonal (M L) -->
+            <path id="d-line-10"
+                d="M277.152 33.176 L265.149 320.997"
+                stroke="#181818" stroke-width="2" />
+            <!-- Centre vertical (M L) -->
+            <path id="d-line-14"
+                d="M334.583 33.179 L334.583 321"
+                stroke="#181818" stroke-width="2" />
+            <!-- Right centre diagonal (M L) -->
+            <path id="d-line-13"
+                d="M391.582 33.176 L403.585 320.997"
+                stroke="#181818" stroke-width="2" />
+            <!-- Right inner diagonal (M L C) -->
+            <path id="d-line-12"
+                d="M447.061 33.176 L479.125 297.001 C480.104 305.059 481.082 313.118 482.061 321.176"
+                stroke="#181818" stroke-width="2" />
+            <!-- Right outer diagonal (M C C) -->
+            <path id="d-line-11"
+                d="M503.063 33.178 C514.516 96.617 525.970 160.057 537.423 223.496 C543.295 256.049 549.166 288.601 555.037 321.153"
+                stroke="#181818" stroke-width="2" />
+        </g>
+    </g>
+</svg>
