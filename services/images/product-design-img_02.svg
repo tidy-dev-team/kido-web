@@ -1,36 +1,5 @@
 <svg width="813" height="437" viewBox="0 0 813 437" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        .pro-circle {
-            transform-origin: left center;
-            transform-box: fill-box;
-            animation: proCircleAnim 300ms ease-out both;
-        }
-
-        .pro-circle-05 {
-            animation-delay: 250ms;
-        }
-
-        .pro-circle-04 {
-            animation-delay: 300ms;
-        }
-
-        .pro-circle-03 {
-            animation-delay: 350ms;
-        }
-
-        .pro-circle-02 {
-            animation-delay: 400ms;
-        }
-
-        .pro-circle-01 {
-            animation-delay: 450ms;
-        }
-
-        @keyframes proCircleAnim {
-            0%{scale: 0 1;}
-            100%{scale: 1 1;}
-        }
-
         .small-circle {
             transform-origin: center;
             transform-box: fill-box;

@@ -514,14 +514,9 @@
         animation-fill-mode: forwards;
       }
 
-      #front-end-03-svg.is-animated #rect,
-      #front-end-03-svg.is-animated #rect-dash {
-        animation: rectFrontAnim 800ms ease-out forwards;
-      }
-
       #front-end-03-svg.is-animated #rect-flip,
       #front-end-03-svg.is-animated #rect-flip-dash {
-        animation: rectFlipFrontAnim 800ms ease-out forwards;
+        animation: rectFlipFrontAnim 800ms ease-in-out forwards;
       }
 
       #front-end-02-svg.is-animated .lineFront {
@@ -1149,23 +1144,14 @@
         <div class="pd-focused-illus">
           <svg id="front-end-03-svg" width="518" height="512" viewBox="0 0 518 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Automations and Custom Plugins illustration">
             <style>
-              #rect, #rect-dash {
-                opacity: 0;
-                transform: rotate(15deg) scale(0.8);
-                transform-origin: center;
-                transform-box: view-box;
-              }
               #rect-flip, #rect-flip-dash {
-                opacity: 0;
-                transform: rotate(30deg) scale(0.8);
+                transform: translate(0.8%, -1.5%) rotate(60deg);
                 transform-origin: center;
                 transform-box: view-box;
-              }
-              @keyframes rectFrontAnim {
-                100% { transform: rotate(0deg) scale(1); opacity: 1; }
               }
               @keyframes rectFlipFrontAnim {
-                100% { transform: rotate(0deg) scale(1); opacity: 1; }
+                50% { scale: 0.96; }
+                100% { transform: translate(0, 0) rotate(0deg); }
               }
             </style>
             <g id="front-end-03">

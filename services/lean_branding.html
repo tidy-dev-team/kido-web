@@ -504,26 +504,13 @@
         height: auto;
       }
 
-      #lean-branding-02-svg.is-animated .br-circle {
-        animation-name: brCircleAnim;
-        animation-duration: 500ms;
-        animation-timing-function: ease-out;
-        animation-fill-mode: both;
-      }
-
       #lean-branding-02-svg.is-animated .br-lines {
         animation-name: brLineAnim;
-        animation-duration: 200ms;
+        animation-duration: 800ms;
         animation-timing-function: ease-out;
         animation-fill-mode: both;
       }
 
-      #lean-branding-01-svg.is-animated .brGroupCircle {
-        animation-name: rollAnim;
-        animation-duration: 800ms;
-        animation-timing-function: ease-out;
-        animation-fill-mode: forwards;
-      }
       #lean-branding-01-svg.is-animated .brGroup path,
       #lean-branding-01-svg.is-animated .brGroup circle {
         animation-name: rollDrawAnim;
@@ -1068,16 +1055,6 @@
         <div class="pd-focused-illus">
           <svg id="lean-branding-01-svg" width="510" height="510" viewBox="0 0 510 510" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visual Direction and Brand Elements illustration">
             <style>
-              .brGroupCircle {
-                opacity: 0;
-                rotate: 320deg;
-                transform-box: fill-box;
-                transform-origin: center;
-                animation-delay: 600ms;
-              }
-              @keyframes rollAnim {
-                100% { rotate: 360deg; opacity: 1; }
-              }
               .brGroup path, .brGroup circle {
                 stroke-dasharray: 350;
                 stroke-dashoffset: 350;
@@ -1134,32 +1111,11 @@
         <div class="pd-focused-illus">
           <svg id="lean-branding-02-svg" width="489" height="471" viewBox="0 0 489 471" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Positioning and Principles illustration">
             <style>
-              .br-circle {
-                transform: scale(0);
-                transform-origin: center;
-                transform-box: fill-box;
-              }
-              @keyframes brCircleAnim {
-                0% { transform: scale(0); }
-                100% { transform: scale(1); }
-              }
-              .br-circle-01 {
-                transform-origin: center top;
-              }
-              .br-circle-02 {
-                transform-origin: right bottom;
-                animation-delay: 150ms;
-              }
-              .br-circle-03 {
-                transform-origin: left bottom;
-                animation-delay: 300ms;
-              }
               .br-lines {
-                opacity: 0;
-                animation-delay: 800ms;
+                clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
               }
               @keyframes brLineAnim {
-                100% { opacity: 1; }
+                100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
               }
             </style>
             <circle class="br-circle br-circle-01" cx="242.897" cy="154.847" r="153.847" stroke="#181818" stroke-width="2"/>
@@ -1246,7 +1202,6 @@
         <div class="pd-focused-illus">
           <svg id="lean-branding-04-svg" width="551" height="473" viewBox="0 0 551 473" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Main Website Pages Design and Development illustration">
             <style>
-              #trian-05 { animation-delay: 100ms; }
               #trian-04 { animation-delay: 200ms; }
               #trian-03 { animation-delay: 300ms; }
               #trian-02 { animation-delay: 400ms; }
@@ -1277,7 +1232,7 @@
                   <path id="Vector 1751" d="M547.836 470.463L275.061 315.102" stroke="#181818" stroke-width="2"/>
                   <path id="Vector 1752" d="M3.33594 469.963L275.06 315.102" stroke="#181818" stroke-width="2"/>
                 </g>
-                <g class="trian" id="trian-06">
+                <g>
                   <path d="M548.594 471.976L1.73438 471.961L274.062 1.9873L548.594 471.976Z" stroke="#181818" stroke-width="2"/>
                   <path id="trian-line" d="M274.402 3.58594L275.057 392.401" stroke="#181818" stroke-width="2"/>
                 </g>

@@ -889,26 +889,15 @@
       /* ─────────────────────────────────────────
          Product Design SVG Animation
       ───────────────────────────────────────── */
-      .pro-circle {
-        transform-origin: left center;
-        transform-box: fill-box;
-        scale: 0 1;
-      }
       .small-circle {
         transform-origin: center;
         transform-box: fill-box;
         scale: 0;
       }
       .line-anim {
-        clip-path: inset(0 100% 0 0);
+        translate: -120% 0;
       }
 
-      #product-design-02.is-animated .pro-circle {
-        animation-name: proCircleAnim;
-        animation-duration: 300ms;
-        animation-timing-function: ease-out;
-        animation-fill-mode: both;
-      }
       #product-design-02.is-animated .small-circle {
         animation-name: smallCircleAnim;
         animation-duration: 200ms;
@@ -922,18 +911,14 @@
         animation-fill-mode: forwards;
       }
 
-      @keyframes proCircleAnim {
-        0% { scale: 0 1; }
-        100% { scale: 1 1; }
-      }
       @keyframes smallCircleAnim {
         0% { scale: 0; }
         80% { scale: 1.5; }
         100% { scale: 1; }
       }
       @keyframes lineAnim {
-        0% { clip-path: inset(0 100% 0 0); }
-        100% { clip-path: inset(0 0% 0 0); }
+        0% { translate: -120% 0; }
+        100% { translate: 0 0; }
       }
 
       /* Product Design 01 SVG Animation */
@@ -1105,11 +1090,6 @@
         <div class="pd-focused-illus">
           <svg id="product-design-02" width="813" height="437" viewBox="0 0 813 437" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Product Design illustration" style="width:100%;height:auto">
             <style>
-              .pro-circle-05 { animation-delay: 250ms; }
-              .pro-circle-04 { animation-delay: 300ms; }
-              .pro-circle-03 { animation-delay: 350ms; }
-              .pro-circle-02 { animation-delay: 400ms; }
-              .pro-circle-01 { animation-delay: 450ms; }
               .small-circle-02 { animation-delay: 100ms; }
               .small-circle-01 { animation-delay: 200ms; }
               .small-circle-03 { animation-delay: 250ms; }
@@ -1126,9 +1106,7 @@
               <circle class="pro-circle pro-circle-05" cx="399.524" cy="218.309" r="217.309" stroke="#181818" stroke-width="2"/>
               <circle class="small-circle small-circle-01" cx="343.063" cy="221.18" r="4.97675" fill="#181818"/>
               <circle class="small-circle small-circle-02" cx="59.965" cy="221.18" r="4.97675" fill="#181818"/>
-              <g class="line-anim">
-                <path d="M-67 222L812 222" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
-              </g>
+              <path class="line-anim" d="M-67 222L812 222" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
               <circle class="small-circle small-circle-03" cx="406.102" cy="221.18" r="4.97675" fill="#181818"/>
               <circle class="small-circle small-circle-04" cx="472.59" cy="221.18" r="4.97675" fill="#181818"/>
               <circle class="small-circle small-circle-05" cx="544.434" cy="221.18" r="4.97675" fill="#181818"/>

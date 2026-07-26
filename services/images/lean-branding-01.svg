@@ -1,19 +1,5 @@
 <svg width="510" height="510" viewBox="0 0 510 510" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-
-        .brGroupCircle {
-            opacity: 0;
-            rotate: 320deg;
-            transform-box: fill-box;
-            transform-origin: center;
-            animation: rollAnim 800ms ease-out forwards;
-            animation-delay: 600ms;
-        }
-
-        @keyframes rollAnim {
-            100% { rotate: 360deg; opacity: 1; }
-        }
-
         .brGroup path, .brGroup circle {
             stroke-dasharray: 350;
             stroke-dashoffset: 350;

@@ -1,38 +1,12 @@
 <svg width="489" height="471" viewBox="0 0 489 471" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        .br-circle {
-            animation: brCircleAnim 500ms ease-out both;
-            transform-origin: center;
-            transform-box: fill-box;
-        }
-
-        @keyframes brCircleAnim {
-            0% { transform: scale(0); }
-            100% { transform: scale(1); }
-        }
-
-        .br-circle-01 {
-            transform-origin: center top;
-        }
-
-        .br-circle-02 {
-            transform-origin: right bottom;
-            animation-delay: 150ms;
-        }
-
-        .br-circle-03 {
-            transform-origin: left bottom;
-            animation-delay: 300ms;
-        }
-
         .br-lines {
-            opacity: 0;
-            animation: brLineAnim 200ms ease-out both;
-            animation-delay: 800ms;
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            animation: brLineAnim 800ms ease-out both;
         }
 
         @keyframes brLineAnim {
-            100% { opacity: 1; }
+            100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
         }
     </style>
 <circle class="br-circle br-circle-01" cx="242.897" cy="154.847" r="153.847" stroke="#181818" stroke-width="2"/>

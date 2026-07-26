@@ -10,10 +10,6 @@
             100% { scale: 1 1; }
         }
 
-        #trian-05 {
-            animation-delay: 100ms;
-        }
-
         #trian-04 {
             animation-delay: 200ms;
         }
@@ -73,7 +69,7 @@
                 <path id="Vector 1752" d="M3.33594 469.963L275.06 315.102" stroke="#181818"
                     stroke-width="2" />
             </g>
-            <g class="trian" id="trian-06">
+            <g>
                 <path
                     d="M548.594 471.976L1.73438 471.961L274.062 1.9873L548.594 471.976Z"
                     stroke="#181818" stroke-width="2" />

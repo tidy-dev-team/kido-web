@@ -1,27 +1,16 @@
 <svg width="518" height="512" viewBox="0 0 518 512" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-        #rect, #rect-dash {
-            opacity: 0;
-            transform: rotate(15deg) scale(0.8);
-            transform-origin: center;
-            transform-box: view-box;
-            animation: rectFrontAnim 800ms ease-out forwards;
-        }
-
         #rect-flip, #rect-flip-dash {
-            opacity: 0;
-            transform: rotate(30deg) scale(0.8);
+            <!-- opacity: 0; -->
+            transform: translate(0.8%, -1.5%) rotate(60deg);
             transform-origin: center;
             transform-box: view-box;
-            animation: rectFlipFrontAnim 800ms ease-out forwards;
-        }
-
-        @keyframes rectFrontAnim {
-            100% { transform: rotate(0deg) scale(1); opacity: 1; }
+            animation: rectFlipFrontAnim 800ms ease-in-out forwards;
         }
 
         @keyframes rectFlipFrontAnim {
-            100% { transform: rotate(0deg) scale(1); opacity: 1; }
+            50% { scale: 0.96; }
+            100% { transform: translate(0, 0) rotate(0deg);}
         }
     </style>
     <g id="front-end-03">
