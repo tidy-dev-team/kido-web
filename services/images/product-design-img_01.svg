@@ -6,6 +6,7 @@
             transform-box: fill-box;
             rotate: 45deg;
             translate: -1px -1px;
+            transform: scaleX(0.36) rotate(320deg);
         }
 
         @keyframes warpRotAnim {
