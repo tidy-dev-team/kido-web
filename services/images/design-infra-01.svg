@@ -3,12 +3,7 @@
         #skew-me {
             transform-origin: center;
             transform-box: fill-box;
-            transform: skew(-60deg, 30deg) scale(0.87, 0.5) rotate(-30deg);
-            animation: rotateSkewAnim 800ms ease-out forwards;
-        }
-
-        @keyframes rotateSkewAnim {
-            100% { transform: skew(-60deg, 30deg) scale(0.87, 0.5) rotate(0deg); }
+            transform: skew(-60deg, 30deg) scale(0.87, 0.5) rotate(0deg);
         }
 
         .lineInfraDrawn#Vector-1712 {
