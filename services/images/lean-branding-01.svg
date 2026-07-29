@@ -1,51 +1,72 @@
-<svg width="510" height="510" viewBox="0 0 510 510" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class="pitriSVG" width="510" height="510" viewBox="0 0 510 510" fill="none"
+    xmlns="http://www.w3.org/2000/svg">
     <style>
-        .brGroup path, .brGroup circle {
-            stroke-dasharray: 350;
-            stroke-dashoffset: 350;
-            transform: rotate(-100deg);
+        .pitriSVG {
+            clip-path: circle(50% at 50% 50%);
+        }
+        .brGroup {
+            transform: rotate(300deg);
             transform-box: fill-box;
             transform-origin: center;
-            animation: rollDrawAnim 1000ms ease-in-out forwards;
+            animation: pitriRot 2000ms ease-in-out forwards;
         }
 
-        @keyframes rollDrawAnim {
-            100% { stroke-dashoffset: 0; transform: rotate(0deg); }
+        @keyframes pitriRot {
+            100% { transform: rotate(360deg); }
         }
 
-        .brGroup > *:nth-child(1) {
-            stroke-dasharray: 487; stroke-dashoffset: 487;
+        .brGroup path, .brGroup circle {
+        <!-- stroke-dasharray: 350;
+            stroke-dashoffset: 350; -->
+        <!-- transform: rotate(-100deg); -->
+            transform-box: fill-box;
+            transform-origin: center;
+        <!-- animation: rollDrawAnim 1000ms ease-in-out forwards; -->
+             animation: pitriAnim 1000ms ease-in-out 2 forwards;
         }
+
+        @keyframes pitriAnim {
+            0% { transform: translate(0, 0); }
+            15% { transform: translate(20px, -20px); }
+            30% { transform: translate(-16px, 12px); }
+            45% { transform: translate(12px, -8px); }
+            60% { transform: translate(-8px, 6px); }
+            75% { transform: translate(3px, -4px); }
+            90% { transform: translate(-1px, 2px); }
+            100% { transform: translate(0, 0); }
+        }
+
         .brGroup > *:nth-child(2) {
-            stroke-dasharray: 558; stroke-dashoffset: 558;
-            animation-delay: 100ms;
+            animation-delay: -150ms;
         }
         .brGroup > *:nth-child(3) {
-            stroke-dasharray: 253; stroke-dashoffset: 253;
-            animation-delay: 200ms;
+            animation-delay: -300ms;
         }
         .brGroup > *:nth-child(4) {
-            stroke-dasharray: 310; stroke-dashoffset: 310;
-            animation-delay: 30ms;
+            animation-delay: -350ms;
         }
         .brGroup > *:nth-child(5) {
-            stroke-dasharray: 718; stroke-dashoffset: 718;
-            animation-delay: 400ms;
+            animation-delay: -500ms;
         }
         .brGroup > *:nth-child(6) {
-            stroke-dasharray: 874; stroke-dashoffset: 874;
-            animation-delay: 500ms;
-        }
+            animation-delay: -650ms;
+        } 
     </style>
     <g class="brGroupCircle">
-        <circle cx="255" cy="255" r="254" stroke="#181818" stroke-width="2" stroke-dasharray="8 8"/>
+        <circle cx="255" cy="255" r="254" stroke="#181818" stroke-width="2" stroke-dasharray="8 8" />
     </g>
     <g class="brGroup">
-        <circle cx="401.5" cy="155.5" r="77.5" stroke="#181818" stroke-width="2"/>
-        <path d="M165.461 304.688C214.355 304.688 254 344.508 254 393.639C254 442.769 214.355 482.591 165.461 482.591C116.567 482.591 76.9219 442.77 76.9219 393.639C76.922 344.508 116.567 304.688 165.461 304.688Z" stroke="#181818" stroke-width="2"/>
-        <circle cx="271.504" cy="468.739" r="40.2621" stroke="#181818" stroke-width="2"/>
-        <circle cx="56.9414" cy="306.988" r="49.3398" stroke="#181818" stroke-width="2"/>
-        <path d="M363.52 229.594C426.544 229.594 477.642 280.869 477.642 344.128C477.641 407.387 426.544 458.662 363.52 458.662C300.496 458.662 249.399 407.387 249.398 344.128C249.398 280.869 300.496 229.594 363.52 229.594Z" stroke="#181818" stroke-width="2"/>
-        <path d="M184.029 26.5859C260.961 26.5859 323.321 88.7671 323.321 165.465C323.321 242.163 260.96 304.343 184.029 304.343C107.098 304.343 44.7384 242.162 44.7383 165.465C44.7383 88.7671 107.098 26.5861 184.029 26.5859Z" stroke="#181818" stroke-width="2"/>
+        <circle cx="401.5" cy="155.5" r="77.5" stroke="#181818" stroke-width="2" />
+        <path
+            d="M165.461 304.688C214.355 304.688 254 344.508 254 393.639C254 442.769 214.355 482.591 165.461 482.591C116.567 482.591 76.9219 442.77 76.9219 393.639C76.922 344.508 116.567 304.688 165.461 304.688Z"
+            stroke="#181818" stroke-width="2" />
+        <circle cx="271.504" cy="468.739" r="40.2621" stroke="#181818" stroke-width="2" />
+        <circle cx="56.9414" cy="306.988" r="49.3398" stroke="#181818" stroke-width="2" />
+        <path
+            d="M363.52 229.594C426.544 229.594 477.642 280.869 477.642 344.128C477.641 407.387 426.544 458.662 363.52 458.662C300.496 458.662 249.399 407.387 249.398 344.128C249.398 280.869 300.496 229.594 363.52 229.594Z"
+            stroke="#181818" stroke-width="2" />
+        <path
+            d="M184.029 26.5859C260.961 26.5859 323.321 88.7671 323.321 165.465C323.321 242.163 260.96 304.343 184.029 304.343C107.098 304.343 44.7384 242.162 44.7383 165.465C44.7383 88.7671 107.098 26.5861 184.029 26.5859Z"
+            stroke="#181818" stroke-width="2" />
     </g>
 </svg>
