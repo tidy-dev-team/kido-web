@@ -7,8 +7,12 @@ Thin: 100 200 300, Light: 400, Regular: 500, Bold: 700 800 */
 
 @import url(font-haas-text.css);
 
+html {
+  background-color: #ffffff;
+}
+
 body {
-  background-color: #181818;
+  background-color: #ffffff;
   color: #FFFFFF;
   overflow-x: hidden;
 }

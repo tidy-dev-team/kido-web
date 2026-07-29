@@ -16,12 +16,8 @@
         }
 
         .brGroup path, .brGroup circle {
-        <!-- stroke-dasharray: 350;
-            stroke-dashoffset: 350; -->
-        <!-- transform: rotate(-100deg); -->
             transform-box: fill-box;
             transform-origin: center;
-        <!-- animation: rollDrawAnim 1000ms ease-in-out forwards; -->
              animation: pitriAnim 1000ms ease-in-out 2 forwards;
         }
 
@@ -53,7 +49,8 @@
         } 
     </style>
     <g class="brGroupCircle">
-        <circle cx="255" cy="255" r="254" stroke="#181818" stroke-width="2" stroke-dasharray="8 8" />
+        <circle cx="255" cy="255" r="254" stroke="#181818" stroke-width="2"
+            stroke-dasharray="8 8" />
     </g>
     <g class="brGroup">
         <circle cx="401.5" cy="155.5" r="77.5" stroke="#181818" stroke-width="2" />
