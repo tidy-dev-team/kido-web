@@ -44,6 +44,23 @@ body {
   padding: 0 60px;
 }
 
+.mobile-header {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: white;
+  /* reset generic header rules */
+  width: 100%;
+  box-sizing: border-box;
+  filter: none;
+  mix-blend-mode: normal;
+}
+
 .third-off {
   margin-left: 30%;
   width: 70% !important;
@@ -1703,7 +1720,7 @@ section.svc-section {
     background-image: url(images/clients/clients-mobile-01.svg);
   }
   
-  @keyframes clientsScroll {
+  @  keyframes clientsScroll {
     0% {
       background-image: url(images/clients/clients-mobile-01.svg);
     }
@@ -2043,7 +2060,6 @@ section.svc-section {
     width: 60px;
     height: 60px;
   }
-}
   
   /* ── Mobile menu (index page) ── */
   
@@ -2219,22 +2235,18 @@ section.svc-section {
     padding: 10px 0;
     text-transform: uppercase;
   }
-  
-  @media screen and (max-width:767px) {
-    #mainHeader {
-      display: none;
-    }
-    
-    .index-svc-dropdown {
-      display: none !important;
-    }
-    
-    .mobile-header {
-      display: flex;
-    }
-  
+}
 
-  .mobile-header {
+@media screen and (max-width:767px) {
+  #mainHeader {
     display: none;
+  }
+  
+  .index-svc-dropdown {
+    display: none !important;
+  }
+  
+  .mobile-header {
+    display: flex;
   }
 }
