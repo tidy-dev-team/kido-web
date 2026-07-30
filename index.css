@@ -50,7 +50,7 @@ body {
   justify-content: space-between;
   padding: 0 24px;
   height: 72px;
-  position: sticky;
+  position: fixed !important;
   top: 0;
   z-index: 200;
   background: white;
@@ -2248,5 +2248,9 @@ section.svc-section {
   
   .mobile-header {
     display: flex;
+  }
+  
+  .firstSection {
+    margin-top: 72px;
   }
 }
