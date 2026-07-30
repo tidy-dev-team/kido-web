@@ -2043,7 +2043,7 @@ section.svc-section {
     width: 60px;
     height: 60px;
   }
-
+}
   
   /* ── Mobile menu (index page) ── */
   
@@ -2219,7 +2219,6 @@ section.svc-section {
     padding: 10px 0;
     text-transform: uppercase;
   }
-}
   
   @media screen and (max-width:767px) {
     #mainHeader {
@@ -2238,3 +2237,4 @@ section.svc-section {
   .mobile-header {
     display: none;
   }
+}
