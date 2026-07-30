@@ -1703,7 +1703,7 @@ section.svc-section {
     background-image: url(images/clients/clients-mobile-01.svg);
   }
   
-  @  keyframes clientsScroll {
+  @keyframes clientsScroll {
     0% {
       background-image: url(images/clients/clients-mobile-01.svg);
     }
@@ -2043,6 +2043,7 @@ section.svc-section {
     width: 60px;
     height: 60px;
   }
+
   
   /* ── Mobile menu (index page) ── */
   
@@ -2218,6 +2219,7 @@ section.svc-section {
     padding: 10px 0;
     text-transform: uppercase;
   }
+}
   
   @media screen and (max-width:767px) {
     #mainHeader {
@@ -2231,4 +2233,8 @@ section.svc-section {
     .mobile-header {
       display: flex;
     }
+  
+
+  .mobile-header {
+    display: none;
   }
