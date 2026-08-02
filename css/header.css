@@ -141,6 +141,7 @@ header .roundButton {
   padding: 12px 16px 10px;
   white-space: nowrap;
   display: block;
+  width: fit-content;
 }
 
 .index-svc-dropdown a:hover {
