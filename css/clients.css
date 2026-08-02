@@ -1,0 +1,118 @@
+.clientsDiv {
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #181818;
+}
+
+.clientsStrip {
+  --stripSize: 300vw;
+  background-image: url(../images/clients/clients-strip-01.svg);
+  background-size: contain;
+  background-position: center;
+  height: 2vw;
+  width: 100%;
+  background-repeat: no-repeat;
+  animation: clientsScroll 10000ms steps(1) infinite;
+}
+
+@keyframes clientsScroll {
+  0% {
+    background-image: url(../images/clients/clients-strip-01.svg);
+  }
+
+  25% {
+    background-image: url(../images/clients/clients-strip-02.svg);
+  }
+
+  50% {
+    background-image: url(../images/clients/clients-strip-03.svg);
+  }
+
+  75% {
+    background-image: url(../images/clients/clients-strip-04.svg);
+  }
+
+  100% {
+    background-image: url(../images/clients/clients-strip-01.svg);
+  }
+}
+
+.newClients {
+  height: 1.25vw;
+  width: 100%;
+  background-image: url(../images/clients-strip.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-x;
+  filter: contrast(0.81);
+  animation: newClientsScroll 50000ms linear infinite;
+}
+
+@keyframes newClientsScroll {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: calc(100% - 80vw) 0%;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .newClients {
+    height: 8vw;
+    padding-bottom: 0;
+  }
+
+  .clientsDiv {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .clientsDiv .rowDiv {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .clientsStrip {
+    background-image: url(../images/clients/clients-mobile-01.svg);
+  }
+
+  @keyframes clientsScroll {
+    0% {
+      background-image: url(../images/clients/clients-mobile-01.svg);
+    }
+
+    12.5% {
+      background-image: url(../images/clients/clients-mobile-02.svg);
+    }
+
+    25% {
+      background-image: url(../images/clients/clients-mobile-03.svg);
+    }
+
+    37.5% {
+      background-image: url(../images/clients/clients-mobile-04.svg);
+    }
+
+    50% {
+      background-image: url(../images/clients/clients-mobile-05.svg);
+    }
+
+    62.5% {
+      background-image: url(../images/clients/clients-mobile-06.svg);
+    }
+
+    75% {
+      background-image: url(../images/clients/clients-mobile-07.svg);
+    }
+
+    87.5% {
+      background-image: url(../images/clients/clients-mobile-08.svg);
+    }
+
+    100% {
+      background-image: url(../images/clients/clients-mobile-01.svg);
+    }
+  }
+}

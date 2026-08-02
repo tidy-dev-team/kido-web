@@ -1,0 +1,98 @@
+.firstSection {
+  background-color: #FFFFFF;
+  box-shadow: 0 -10em 0 0 white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 6em;
+  width: 100%;
+  padding: 0;
+  min-height: unset;
+  aspect-ratio: 16 / 9;
+}
+
+.kido {
+  transform-origin: bottom center;
+  color: #FFFFFF;
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+  height: 30vw;
+}
+
+.kido path {
+  transition: fill 300ms linear 0s;
+}
+
+.biggerKido {
+  width: 96%;
+  height: 18vw;
+  background-image: url(../images/wearekido.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#titleKido {
+  --scrollVar: 0;
+  animation: kidoAnim 1s ease-in-out;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scrollVar) * 1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes kidoAnim {
+  0% {
+    width: 100%;
+    height: 30vw;
+    transform: translateY(0);
+  }
+
+  100% {
+    width: 24em;
+    height: 8em;
+    transform: translateY(calc(40vh + 15em));
+  }
+}
+
+#heroVideo {
+  cursor: url(../cursor.svg) 16 16, auto;
+}
+
+#heroVideo.pause {
+  cursor: url(../cursorPause.svg) 16 16, auto;
+}
+
+@media screen and (max-width:900px) {
+  @keyframes kidoAnim {
+    0% {
+      width: 100%;
+      height: 30vw;
+      transform: translateY(0);
+    }
+
+    100% {
+      width: 14em;
+      height: 4em;
+      transform: translateY(calc(40vh + 10em));
+    }
+  }
+
+  .cursor.pause {
+    visibility: hidden;
+  }
+
+  .cursor {
+    top: 3.35% !important;
+    left: 50% !important;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .firstSection {
+    margin-top: 72px;
+  }
+}

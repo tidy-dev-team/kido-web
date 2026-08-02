@@ -1,0 +1,216 @@
+.scroll-section {
+  position: relative;
+  min-height: unset;
+  padding: 80px 60px 100px;
+  width: calc(100% - 120px);
+  background-color: #181818;
+  color: white !important;
+}
+
+.scroll-section .triLabel {
+  margin-left: 0;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.button-flex {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.secondSection {
+  background-color: #181818;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 120px 0 100px;
+  min-height: unset;
+  box-sizing: border-box;
+}
+
+.secondSection-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  width: 62%;
+  max-width: 1194px;
+}
+
+.secondSection-text-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.secondSection-star {
+  position: absolute;
+  top: -8px;
+  right: -24px;
+  width: 16px;
+  height: auto;
+  pointer-events: none;
+}
+
+.secondSection-text {
+  font-family: 'haas';
+  font-weight: 400;
+  font-size: 3.3em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+
+.secondSection-pyramid {
+  width: 100%;
+  max-width: 566px;
+  height: auto;
+  display: block;
+}
+
+.secondSection-pyramid #animation-container,
+.secondSection-pyramid #animation,
+.secondSection-pyramid svg {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.secondSection-pyramid #animation svg path {
+  stroke-width: 10px;
+}
+
+.translate-12 {
+  transform: translateX(-6%);
+  width: 94%;
+  gap: 24px !important;
+}
+
+.translate-12 div {
+  pointer-events: none !important;
+}
+
+.translate-12 .flex-card {
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.secondSection h2 {
+  font-size: 6.2em;
+  max-width: 90%;
+}
+
+.iconSection .rowDiv h2 {
+  font-size: 2.5em;
+  ;
+}
+
+.icon-div {
+  width: 110px;
+  height: 110px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-image: url(../images/icon-operational.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateY(-1em) translateX(2em);
+}
+
+.icons-down .icon-div {
+  transform: translateY(-0.5em) translateX(2em);
+}
+
+.columnDiv h2.alternate {
+  font-size: 2.4em;
+  line-height: 0.75;
+  white-space: pre;
+}
+
+.one-stop {
+  background-image: url(../images/icon-one-stop.svg);
+}
+
+.frontend {
+  background-image: url(../images/icon-frontend.svg);
+}
+
+.pursuing {
+  background-image: url(../images/icon-pursuing.svg);
+}
+
+.whiteSection {
+  background-color: #FFFFFF;
+  color: #000000;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 0;
+}
+
+.whiteSection .kido {
+  padding: 0;
+  margin-bottom: 60px;
+  margin-top: 120px;
+}
+
+.whiteSection h3 {
+  margin-top: 120px;
+  margin-bottom: 8px;
+  font-size: 2.5em;
+}
+
+@media screen and (max-width:900px) {
+  .secondSection {
+    padding: 80px 0 60px;
+  }
+
+  .secondSection-inner {
+    width: 85%;
+    gap: 48px;
+  }
+
+  .secondSection-pyramid {
+    max-width: 320px;
+  }
+
+  .secondSection h2 {
+    font-size: 3em;
+  }
+
+  .scroll-section {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .button-flex {
+    padding: 0;
+  }
+
+  .translate-12 {
+    transform: none;
+    width: unset;
+    gap: 60px !important;
+  }
+
+  .iconSection .columnDiv {
+    max-width: unset;
+  }
+
+  .iconSection .rowDiv h2 {
+    font-size: 1.6em;
+    line-height: normal;
+  }
+
+  .iconSection .rowDiv:first-of-type {
+    padding-bottom: 48px;
+  }
+
+  .icon-div {
+    transform: translateY(2.5em);
+  }
+}

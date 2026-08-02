@@ -1,0 +1,132 @@
+a.roundButton {
+  text-decoration: none !important;
+}
+
+.roundButton {
+  background-color: #1C1C1C;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  outline: none;
+  border-radius: 999px;
+  font-family: 'haas';
+  font-size: 2.7em;
+  font-weight: 400;
+  padding: 4px 28px;
+  padding-bottom: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 300ms linear 0s, all 300ms linear 0s;
+}
+
+.roundButton:hover {
+  background-color: #FFFFFF;
+  color: #1C1C1C;
+}
+
+.invertButton {
+  font-size: 1.2em;
+  padding: 4px 16px;
+  padding-bottom: 1px;
+  font-weight: 500;
+  background-color: #E3E3E3;
+  color: #1C1C1C;
+  border: 2px solid #1C1C1C;
+}
+
+.realWhite,
+.whiteSection .invertButton {
+  background-color: #FFFFFF;
+  color: #1C1C1C;
+}
+
+.invertButton:hover {
+  background-color: #1C1C1C;
+  color: #FFFFFF;
+}
+
+.no-deco {
+  text-decoration: none;
+}
+
+.tagDiv {
+  position: relative;
+  background-color: #FFFFFF;
+  color: #1C1C1C;
+  border: 2px solid #FFFFFF;
+  outline: none;
+  border-radius: 999px;
+  font-family: 'haas';
+  font-size: 1.5em;
+  font-weight: 500;
+  padding: 4px 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 300ms linear 0s;
+}
+
+.empty {
+  color: #5b5b5b;
+  border-color: #5b5b5b;
+  background-color: transparent;
+}
+
+.empty::after {
+  content: 'Coming Soon';
+  position: absolute;
+  color: #FFFFFF;
+  background-color: #1C1C1C;
+  font-size: 0.8em;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 8px 24px;
+  top: 0;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  transition: transform 300ms ease-in-out 0s, opacity 300ms linear 0s;
+}
+
+.tagDiv:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -108%);
+}
+
+.arrow-button {
+  cursor: pointer;
+  width: 66px;
+  height: 66px;
+  background-color: #181818;
+  border-radius: 50%;
+  border: 1.5px solid white;
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-image: url('../images/arrow-left.svg');
+}
+
+.arrow-button:nth-of-type(2n) {
+  background-image: url('../images/arrow-right.svg');
+}
+
+.arrow-button:hover {
+  opacity: .8;
+}
+
+.arrow-button:active {
+  opacity: .6;
+}
+
+@media screen and (max-width:900px) {
+  .roundButton {
+    font-size: 1em;
+  }
+
+  #mainHeader .roundButton {
+    display: none;
+  }
+
+  .tagDiv {
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,174 @@
+.whitePage {
+  background-color: #FFFFFF !important;
+  color: #1C1C1C !important;
+}
+
+.whitePage .invertButton {
+  background-color: #FFFFFF;
+}
+
+.whitePage img,
+.whitePage video {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 5em;
+}
+
+.whitePage .lessPadding {
+  margin: 0 -48px !important;
+}
+
+.whitePage section,
+.paddingSection {
+  width: calc(100% - 120px);
+  max-width: calc(100% - 120px);
+  padding: 0 60px;
+}
+
+.third-off {
+  margin-left: 30%;
+  width: 70% !important;
+  max-width: 70% !important;
+  padding: 0 !important;
+}
+
+section.third-off {
+  margin-left: calc(30% + 30px);
+  width: calc(70% - 90px) !important;
+  max-width: calc(70% - 90px) !important;
+  min-height: 0;
+}
+
+.studies {
+  flex-wrap: wrap;
+  justify-content: flex-start !important;
+  align-items: flex-start;
+  gap: 1.5vw !important;
+}
+
+#wrapper {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.new-width {
+  width: calc(100% - 96px);
+  padding: 0 48px;
+}
+
+.new-width details {
+  max-height: 19em;
+}
+
+section {
+  width: 80%;
+  padding: 0 10%;
+  text-align: center;
+  min-height: 80vh;
+}
+
+.columnDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.iconSection .columnDiv {
+  max-width: calc(35% - 110px);
+}
+
+.justify {
+  justify-content: space-between;
+  gap: unset !important;
+}
+
+.no-gap {
+  gap: 0;
+}
+
+.no-gap h2 {
+  margin: 0;
+}
+
+.rowDiv {
+  display: flex;
+  gap: 48px;
+  margin-top: 4px;
+  min-height: 0;
+  padding-bottom: 100px;
+}
+
+.rowDiv ~ .rowDiv {
+  margin-top: 0;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #5b5b5b;
+  width: calc(100% - 120px);
+}
+
+hr.float-right {
+  margin: 32px 0;
+  width: 100%;
+}
+
+.triLabel {
+  position: relative;
+  margin-left: 60px;
+  font-family: 'haas-text';
+  font-weight: 200;
+  font-size: 0.94em;
+  margin-top: 4px;
+}
+
+@media screen and (max-width:900px) {
+  .rowDiv {
+    flex-direction: column;
+  }
+
+  hr {
+    width: 90%;
+  }
+
+  hr.float-right {
+    width: 100%;
+  }
+
+  .triLabel {
+    margin-left: 40px;
+  }
+
+  .triLabel::before {
+    transform: translate(-20px, 2px);
+  }
+
+  .paddingSection {
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    padding: 0 16px;
+    padding-top: 24px;
+  }
+
+  .third-off,
+  section.third-off {
+    margin: 0;
+    width: calc(100% - 64px) !important;
+    max-width: calc(100% - 64px) !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}

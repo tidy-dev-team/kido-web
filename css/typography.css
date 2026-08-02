@@ -1,0 +1,241 @@
+@keyframes titleAnim {
+  0% {
+    transform: translateY(0) scale(1);
+    color: #000000;
+  }
+
+  100% {
+    transform: translateY(50vh) scale(0.35);
+    color: #FFFFFF;
+  }
+}
+
+h1 {
+  font-size: 16em;
+  color: #101010;
+  font-family: 'kepler';
+  letter-spacing: -0.07em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+h1.noselect {
+  font-size: 4.5em;
+  text-align: left;
+  max-width: 90%;
+  font-family: 'kepler';
+  letter-spacing: -0.065em;
+  line-height: 1em;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 7.2em;
+  font-family: 'kepler';
+  letter-spacing: -0.04em;
+  line-height: 1em;
+  font-weight: 500;
+  max-width: 82%;
+  margin-bottom: 0;
+}
+
+h2.noselect {
+  font-size: 4.5em;
+  text-align: left;
+}
+
+h2.smaller-h2 {
+  font-size: 6.2em;
+  max-width: 100%;
+}
+
+h3.smaller-h3 {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+h2.alternate {
+  margin-bottom: 2em;
+}
+
+.alternate {
+  max-width: 100%;
+  text-transform: none;
+  text-align: left;
+  font-size: 3.2em;
+  font-weight: 300;
+  letter-spacing: normal;
+}
+
+h3 {
+  font-size: 1.65em;
+  font-family: 'haas';
+  font-weight: 400;
+  text-align: left;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+h3.alternate {
+  font-size: 2.5em;
+  color: #D6B678;
+  display: none;
+}
+
+h3.alternate::selection {
+  background-color: #444444;
+}
+
+ul {
+  list-style-type: none;
+  text-align: left;
+  padding-left: 0;
+  font-size: 1.2em;
+}
+
+ul.list-bullets {
+  list-style-type: revert;
+  padding-left: revert;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details {
+  max-height: 6.5em;
+  overflow: hidden;
+  transition: max-height 500ms ease-in-out 0s;
+}
+
+details[open] {
+  max-height: 100vh;
+}
+
+details[open] h2::after {
+  transform: rotate(45deg);
+}
+
+details[open] h3 {
+  margin-top: 0;
+  margin-bottom: 80px;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+
+li {
+  font-family: 'haas';
+  margin: 0.2em 0;
+}
+
+.haas {
+  font-family: 'haas';
+}
+
+.left-align {
+  text-align: left;
+}
+
+summary h2 {
+  margin: 0;
+  margin-top: 0.8em;
+  text-align: left;
+  letter-spacing: normal;
+  cursor: pointer;
+  transition: opacity 300ms linear 0s;
+}
+
+h2.float-right {
+  font-size: min(4vw, 3.5em);
+  width: 100%;
+  white-space: pre;
+}
+
+summary h2:hover {
+  opacity: 0.5;
+}
+
+summary h2::after {
+  content: ' + ';
+  font-size: 0.7em;
+  position: absolute;
+  right: 5%;
+  transform-origin: center;
+  transition: transform 300ms ease-in-out 0s;
+}
+
+h3.sm {
+  font-size: 1.48em;
+}
+
+h2.small-text {
+  text-transform: none;
+}
+
+.line-double {
+  line-height: 1.5;
+}
+
+@media screen and (max-width:900px) {
+  h1 {
+    font-size: 4.5em;
+  }
+
+  h2,
+  h2.smaller-h2 {
+    font-size: 3em;
+  }
+
+  h2.smaller-h2 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  h2.float-right {
+    margin-top: 0;
+    white-space: unset;
+    font-size: 2.5em;
+  }
+
+  h2.noselect,
+  h1.noselect {
+    font-size: 2.3em;
+    line-height: 1.2;
+  }
+
+  .alternate {
+    font-size: 2em;
+    line-height: 1.3;
+  }
+
+  .team-title {
+    font-size: 2em;
+  }
+
+  .indent {
+    text-indent: 0em;
+  }
+
+  details {
+    max-height: unset;
+    overflow: visible;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  ul.float-right {
+    padding-left: 0;
+  }
+
+  summary h2::after {
+    right: 6%;
+  }
+}

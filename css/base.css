@@ -1,0 +1,21 @@
+html {
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
+  color: #FFFFFF;
+  overflow-x: hidden;
+}
+
+.visually-hidden {
+  visibility: hidden;
+}
+
+::selection {
+  background-color: #a2a2a2;
+}
+
+img {
+  max-width: 30vw;
+}

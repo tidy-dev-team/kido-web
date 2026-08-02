@@ -1,0 +1,292 @@
+.client-wrapper {
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+}
+
+@keyframes card-enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes card-exit-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+}
+
+@keyframes card-enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes card-exit-right {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+}
+
+.client-card {
+  font-family: 'haas';
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  grid-area: 1 / 1;
+  font-size: 36px;
+  cursor: pointer;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.client-card.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.client-card.enter-right {
+  animation: card-enter-right 0.45s ease forwards;
+}
+
+.client-card.exit-left {
+  animation: card-exit-left   0.45s ease forwards;
+  z-index: 0;
+}
+
+.client-card.enter-left {
+  animation: card-enter-left  0.45s ease forwards;
+}
+
+.client-card.exit-right {
+  animation: card-exit-right  0.45s ease forwards;
+  z-index: 0;
+}
+
+.client-number {
+  display: none;
+}
+
+.client-card p {
+  font-weight: 400;
+  line-height: 1.3;
+  height: 0;
+  text-indent: 0;
+  margin: 0;
+  max-width: min(1100px, 80%);
+  overflow: hidden;
+  color: white !important;
+}
+
+.client-card span {
+  display: none;
+}
+
+.client-card .summary-span {
+  display: inline;
+}
+
+.client-card .summary-span::after {
+  content: '[...]';
+}
+
+.client-card p:first-of-type {
+  margin: 56px 0 0;
+  height: fit-content;
+  font-size: clamp(1.8rem, 3.5vw, 55px);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.client-card.open span {
+  display: inline;
+}
+
+.client-card.open .summary-span::after {
+  content: '';
+}
+
+.client-card.open p,
+.client-card.open span {
+  height: fit-content;
+}
+
+.client-card.open p {
+  margin: 48px 0;
+}
+
+.client-card * {
+  pointer-events: none;
+}
+
+.client-card img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.client-card .flex-card {
+  order: -1;
+  gap: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  white-space: normal;
+  overflow: visible;
+}
+
+.client-card .flex {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: center;
+  text-align: left;
+  overflow: visible;
+}
+
+.client-card .flex h3,
+.client-card .flex p {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  text-indent: 0;
+  font-weight: 500;
+}
+
+.client-card .flex p {
+  color: #9A9A9A !important;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.flex-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 56px;
+  white-space: nowrap;
+}
+
+div.case-card img {
+  border-radius: 8px;
+}
+
+.case-card {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+  height: fit-content;
+  gap: 24px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.case-card.coming-soon::after {
+  content: 'Coming soon';
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  padding: 4px 16px;
+  background-color: white;
+  box-shadow: 0 2px 16px #00000033;
+  font-family: 'haas-text';
+  color: black;
+  border-radius: 99999px;
+  transform-origin: -50% 600%;
+}
+
+.case-card.coming-soon {
+  pointer-events: none;
+}
+
+.case-card img {
+  transition: transform 300ms ease-in-out 0s;
+}
+
+.case-card:hover img {
+  transform: scale(1.05);
+}
+
+.case-card h2 {
+  font-size: 1.1em;
+  text-align: left;
+  margin: 0;
+  letter-spacing: normal;
+}
+
+.case-card h3 {
+  font-size: 1.6em;
+  margin: 0;
+  white-space: break-spaces;
+}
+
+.case-card .small-text {
+  line-height: 1;
+}
+
+@media screen and (max-width:900px) {
+  .flex-card {
+    align-items: center;
+    white-space: unset;
+  }
+
+  .client-number {
+    width: fit-content;
+    font-size: 31px;
+  }
+
+  .client-card p {
+    padding: 0;
+  }
+
+  .client-card h2 {
+    font-size: 7.2em;
+  }
+
+  .client-card h3 {
+    font-size: 1.5em;
+  }
+
+  .client-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .case-card {
+    width: 100%;
+  }
+
+  .case-card img {
+    min-width: 100%;
+  }
+}

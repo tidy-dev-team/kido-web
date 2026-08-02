@@ -1,0 +1,69 @@
+.footerDiv {
+  font-family: 'haas-text';
+  font-weight: 600;
+  font-size: 0.8em;
+  justify-content: space-between;
+  margin-left: 9vw;
+  margin-right: 6vw;
+}
+
+.footerDiv a {
+  color: #1C1C1C;
+  text-decoration: none;
+}
+
+.footerDiv a:hover {
+  color: #888888;
+}
+
+.footerHR {
+  width: calc(100% - 6vw);
+  margin-top: 4em;
+  margin-left: 3.2vw;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1em;
+}
+
+.footerLinks a {
+  font-family: 'haas';
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.footerLinks .left-align {
+  font-family: 'haas';
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.footerLinks .left-align a {
+  font-size: 1.7em;
+}
+
+@media screen and (min-width:1800px) {
+  div.footerLinks {
+    justify-content: center;
+    gap: 8em;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .footerDiv {
+    gap: 0;
+    width: 90%;
+    margin: 0 !important;
+    flex-direction: column;
+  }
+
+  .footerLinks .left-align {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .footerLinks .left-align a {
+    font-size: 1.5em;
+  }
+}
