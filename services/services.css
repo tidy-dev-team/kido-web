@@ -346,6 +346,7 @@ Lime Section
   color: #212121;
   margin-bottom: clamp(32px, 3.75vw, 72px);
   display: block;
+  margin-left: calc(clamp(160px, 14.6vw, 280px) - clamp(24px, 4.27vw, 82px));
 }
 
 .pd-lime__body {
@@ -396,8 +397,10 @@ Focused Rows
 .pd-focused-label {
   display: block;
   color: #212121;
-  padding: clamp(20px, 2.6vw, 50px) clamp(24px, 4.27vw, 82px)
-  clamp(20px, 2.6vw, 50px);
+  padding-top: clamp(20px, 2.6vw, 50px);
+  padding-right: clamp(24px, 4.27vw, 82px);
+  padding-bottom: clamp(20px, 2.6vw, 50px);
+  padding-left: clamp(160px, 14.6vw, 280px);
 }
 
 .pd-focused-row {
@@ -528,7 +531,7 @@ Selected Projects Section
 }
 
 .sp-label {
-  margin-left: 60px;
+  margin-left: clamp(160px, 14.6vw, 280px);
   font-weight: 200;
   font-size: 15px;
   margin-top: 4px;
@@ -753,7 +756,19 @@ Mobile (≤767px)
   .pd-focused-row > .pd-focused-text:first-child {
     padding-left: 24px;
   }
-  
+
+  .pd-lime__cap-label {
+    margin-left: 0;
+  }
+
+  .pd-focused-label {
+    padding-left: 24px;
+  }
+
+  .sp-label {
+    margin-left: 24px;
+  }
+
   .pd-focused-divider {
     display: block;
     border: none;
