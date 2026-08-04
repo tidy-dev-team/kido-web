@@ -733,9 +733,17 @@ Mobile (≤767px)
     display: flex;
   }
   
+  .pd-lime__body {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .pd-lime__bullets {
     grid-template-columns: 1fr;
-    max-width: 90%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .pd-lime__bullet-dot {
@@ -866,9 +874,9 @@ Lime body — mobile overrides
   .pd-lime__body {
     letter-spacing: 0;
     line-height: 1.2;
-    max-width: 96%;
-    margin-left: 2%;
-    margin-right: 2%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
