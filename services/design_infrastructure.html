@@ -534,6 +534,148 @@
       observeSvg("design-infra-02");
       observeSvg("design-infra-03-svg");
       observeSvg("design-infra-04-svg");
+
+      // ── Cursor distortion effect (circle-clipped) ─────────────────────────────
+      (function () {
+        const NS = 'http://www.w3.org/2000/svg';
+
+        const CIRCLE_URL = (() => {
+          const sz = 128, r = sz / 2;
+          const c  = document.createElement('canvas');
+          c.width  = c.height = sz;
+          const ctx = c.getContext('2d');
+          const g   = ctx.createRadialGradient(r, r, r * 0.65, r, r, r);
+          g.addColorStop(0, 'white');
+          g.addColorStop(1, 'rgba(255,255,255,0)');
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(r, r, r, 0, Math.PI * 2);
+          ctx.fill();
+          return c.toDataURL();
+        })();
+
+        function mk(tag, attrs) {
+          const el = document.createElementNS(NS, tag);
+          for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+          return el;
+        }
+
+        function addCursorDistortion(svgId, groupId) {
+          const svg = document.getElementById(svgId);
+          if (!svg) return;
+
+          const vb  = svg.viewBox.baseVal;
+          const fid = svgId + '-cd';
+
+          let defs = svg.querySelector(':scope > defs');
+          if (!defs) { defs = mk('defs', {}); svg.prepend(defs); }
+
+          const filter = mk('filter', {
+            id: fid,
+            x: '-15%', y: '-15%', width: '130%', height: '130%',
+            'color-interpolation-filters': 'sRGB',
+          });
+
+          const turbulence = mk('feTurbulence', {
+            type: 'fractalNoise', baseFrequency: '0.012',
+            numOctaves: '3', seed: '5', result: 'noise',
+          });
+          filter.appendChild(turbulence);
+
+          const dispMap = mk('feDisplacementMap', {
+            in: 'SourceGraphic', in2: 'noise', scale: '30',
+            xChannelSelector: 'R', yChannelSelector: 'G', result: 'displaced',
+          });
+          filter.appendChild(dispMap);
+
+          const feImg = mk('feImage', {
+            href: CIRCLE_URL, preserveAspectRatio: 'none',
+            x: '-9999', y: '-9999', width: '1', height: '1', result: 'circle-mask',
+          });
+          filter.appendChild(feImg);
+
+          filter.appendChild(mk('feFlood', {
+            'flood-color': '#e8fa84', 'flood-opacity': '1', result: 'lime-flood',
+          }));
+          filter.appendChild(mk('feComposite', {
+            in: 'lime-flood', in2: 'circle-mask', operator: 'in', result: 'lime-disc',
+          }));
+
+          filter.appendChild(mk('feComposite', {
+            in: 'displaced', in2: 'circle-mask', operator: 'in', result: 'clipped',
+          }));
+          filter.appendChild(mk('feComposite', {
+            in: 'clipped', in2: 'lime-disc', operator: 'over', result: 'with-bg',
+          }));
+          filter.appendChild(mk('feComposite', {
+            in: 'with-bg', in2: 'SourceGraphic', operator: 'over',
+          }));
+
+          defs.appendChild(filter);
+
+          let target;
+          if (groupId) {
+            target = svg.querySelector('#' + groupId);
+          } else {
+            target = mk('g', {});
+            Array.from(svg.childNodes)
+              .filter(n => n.nodeType === 1 && n.tagName !== 'defs' && n.tagName !== 'style')
+              .forEach(n => target.appendChild(n));
+            svg.appendChild(target);
+          }
+
+          svg.appendChild(mk('rect', {
+            x: '0', y: '0', width: String(vb.width), height: String(vb.height),
+            fill: 'transparent',
+          }));
+
+          let active = false, rad = null, rafId = null, animT = 0, lastTs = null;
+
+          function animFrame(ts) {
+            if (lastTs !== null) animT += (ts - lastTs) / 1000;
+            lastTs = ts;
+            const bfx = (0.012 + 0.006 * Math.sin(animT * 0.7)).toFixed(5);
+            const bfy = (0.012 + 0.006 * Math.cos(animT * 0.5)).toFixed(5);
+            turbulence.setAttribute('baseFrequency', bfx + ' ' + bfy);
+            dispMap.setAttribute('scale', (30 + 20 * Math.abs(Math.sin(animT * 1.1))).toFixed(1));
+            rafId = requestAnimationFrame(animFrame);
+          }
+
+          svg.addEventListener('mousemove', e => {
+            const rect  = svg.getBoundingClientRect();
+            const ratio = vb.width / rect.width;
+            const x     = (e.clientX - rect.left) * ratio;
+            const y     = (e.clientY - rect.top)  * ratio;
+
+            if (rad === null) {
+              rad = 200 * ratio;
+              feImg.setAttribute('width',  String(rad * 2));
+              feImg.setAttribute('height', String(rad * 2));
+            }
+
+            feImg.setAttribute('x', String(x - rad));
+            feImg.setAttribute('y', String(y - rad));
+
+            if (!active && target) {
+              target.setAttribute('filter', 'url(#' + fid + ')');
+              active = true;
+              rafId = requestAnimationFrame(animFrame);
+            }
+          });
+
+          svg.addEventListener('mouseleave', () => {
+            if (target) target.removeAttribute('filter');
+            if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+            active = false;
+            lastTs = null;
+          });
+        }
+
+        addCursorDistortion('design-infra-01-svg', 'design-infra-01');
+        addCursorDistortion('design-infra-02',      null);
+        addCursorDistortion('design-infra-03-svg', 'design-infra-03');
+        addCursorDistortion('design-infra-04-svg', 'design-infra-04');
+      })();
     </script>
   </body>
 </html>
