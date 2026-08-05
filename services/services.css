@@ -12,6 +12,15 @@ body {
   background-color: #f5f5f0;
 }
 
+::selection {
+  background-color: transparent;
+  color: #c8d772;
+}
+
+.pd-lime .pd-focused-row ::selection, .pd-lime .pd-lime__capabilities ::selection, .pd-lime .pd-focused-label::selection {
+  color: #929d53;
+}
+
 /* ─────────────────────────────────────────
 Header / Nav
 ───────────────────────────────────────── */
@@ -738,14 +747,14 @@ Mobile (≤767px)
     margin-left: 0;
     margin-right: 0;
   }
-
+  
   .pd-lime__bullets {
     grid-template-columns: 1fr;
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
-
+  
   .pd-lime__bullet-dot {
     width: 16px;
     height: 16px;
@@ -769,19 +778,19 @@ Mobile (≤767px)
   .pd-focused-row > .pd-focused-text:first-child {
     padding-left: 24px;
   }
-
+  
   .pd-lime__cap-label {
     margin-left: 0;
   }
-
+  
   .pd-focused-label {
     padding-left: 24px;
   }
-
+  
   .sp-label {
     margin-left: 24px;
   }
-
+  
   .pd-focused-divider {
     display: block;
     border: none;
