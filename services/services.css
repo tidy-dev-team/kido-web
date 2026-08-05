@@ -109,6 +109,18 @@ header {
   color: #888888;
 }
 
+@keyframes dropdownItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .nav__dropdown {
   position: absolute;
   top: calc(100% + 8px);
@@ -119,7 +131,7 @@ header {
   opacity: 0;
   pointer-events: none;
   z-index: 10;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.15s ease;
 }
 
 .nav__dropdown.open {
@@ -140,7 +152,19 @@ header {
   white-space: nowrap;
   display: block;
   width: fit-content;
+  opacity: 0;
+  transform: translateY(-6px);
 }
+
+.nav__dropdown.open a {
+  animation: dropdownItemIn 0.2s ease forwards;
+}
+
+.nav__dropdown.open a:nth-child(1) { animation-delay: 0ms; }
+.nav__dropdown.open a:nth-child(2) { animation-delay: 55ms; }
+.nav__dropdown.open a:nth-child(3) { animation-delay: 110ms; }
+.nav__dropdown.open a:nth-child(4) { animation-delay: 165ms; }
+.nav__dropdown.open a:nth-child(5) { animation-delay: 220ms; }
 
 .nav__dropdown a:hover {
   background: #2c2c2c;

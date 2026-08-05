@@ -113,6 +113,18 @@ header .roundButton {
   color: #888888;
 }
 
+@keyframes dropdownItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .index-svc-dropdown {
   position: fixed;
   z-index: 999;
@@ -121,7 +133,7 @@ header .roundButton {
   gap: 8px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.15s ease;
 }
 
 .index-svc-dropdown.open {
@@ -142,7 +154,19 @@ header .roundButton {
   white-space: nowrap;
   display: block;
   width: fit-content;
+  opacity: 0;
+  transform: translateY(-6px);
 }
+
+.index-svc-dropdown.open a {
+  animation: dropdownItemIn 0.2s ease forwards;
+}
+
+.index-svc-dropdown.open a:nth-child(1) { animation-delay: 0ms; }
+.index-svc-dropdown.open a:nth-child(2) { animation-delay: 55ms; }
+.index-svc-dropdown.open a:nth-child(3) { animation-delay: 110ms; }
+.index-svc-dropdown.open a:nth-child(4) { animation-delay: 165ms; }
+.index-svc-dropdown.open a:nth-child(5) { animation-delay: 220ms; }
 
 .index-svc-dropdown a:hover {
   background: #2c2c2c;
