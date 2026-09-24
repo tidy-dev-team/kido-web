@@ -420,7 +420,7 @@ Lime Section
   flex-shrink: 0;
   width: 26px;
   height: 26px;
-  margin-top: -0.35em;
+  transform: translateY(-5px);
 }
 
 /* ─────────────────────────────────────────
@@ -782,7 +782,7 @@ Mobile (≤767px)
   .pd-lime__bullet-dot {
     width: 16px;
     height: 16px;
-    margin-top: -0.35em;
+    transform: translateY(-5px);
   }
   
   .pd-focused-row {
