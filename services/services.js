@@ -13,28 +13,28 @@ function observeSvg(id) {
   ).observe(el);
 }
 
-window.addEventListener(
-  "scroll",
-  () => {
-    servicesDropdown?.classList.remove("open");
-    servicesBtn?.classList.remove("open");
-  },
-  { passive: true },
-);
+var indexServicesBtn = document.getElementById("indexServicesBtn");
+var indexServicesDropdown = document.getElementById("indexServicesDropdown");
 
-const servicesBtn = document.getElementById("servicesBtn");
-const servicesDropdown = document.getElementById("servicesDropdown");
+function positionDropdown() {
+  var rect = indexServicesBtn.getBoundingClientRect();
+  indexServicesDropdown.style.top = (rect.bottom + 8) + "px";
+  indexServicesDropdown.style.left = rect.left + "px";
+}
 
-servicesBtn.addEventListener("click", (e) => {
+indexServicesBtn.addEventListener("click", function(e) {
   e.stopPropagation();
-  const isOpen = servicesDropdown.classList.toggle("open");
-  servicesBtn.classList.toggle("open", isOpen);
+  var isOpen = indexServicesDropdown.classList.toggle("open");
+  if (isOpen) positionDropdown();
 });
 
-document.addEventListener("click", () => {
-  servicesDropdown.classList.remove("open");
-  servicesBtn.classList.remove("open");
+document.addEventListener("click", function() {
+  indexServicesDropdown.classList.remove("open");
 });
+
+window.addEventListener("scroll", function() {
+  indexServicesDropdown.classList.remove("open");
+}, { passive: true });
 
 const mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const mobileMenuClose = document.getElementById("mobileMenuClose");
