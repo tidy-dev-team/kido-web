@@ -23,6 +23,7 @@ section.svc-section {
   padding-top: 40px;
   background: #fff;
   color: #181818;
+  padding-bottom: 20px !important;
 }
 
 .svc-item {
@@ -36,8 +37,12 @@ section.svc-section {
   gap: 20px;
 }
 
+.triLabel + .svc-item {
+  border-top: none !important;
+}
+
 .svc-item:last-child {
-  border-bottom: 1px solid rgba(26, 26, 26, 0.18);
+  border-bottom: none;
 }
 
 .svc-item.open {
