@@ -57,7 +57,7 @@
 .secondSection-text {
   font-family: 'haas';
   font-weight: 400;
-  font-size: 3.3em;
+  font-size: clamp(1.6em, 3.3vw, 3.3em);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #ffffff;

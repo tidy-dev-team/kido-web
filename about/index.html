@@ -12,6 +12,31 @@
     <link rel="apple-touch-icon" href="../images/kido-icon.png">
     <link rel="canonical" href="https://wearekido.com/about" />
     <script src="../code/headerScroll.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            var mobileMenuClose = document.getElementById('mobileMenuClose');
+            var mobileMenu = document.getElementById('mobileMenu');
+            mobileMenuBtn.addEventListener('click', function() { mobileMenu.classList.add('open'); });
+            mobileMenuClose.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
+
+            var indexServicesBtn = document.getElementById('indexServicesBtn');
+            var indexServicesDropdown = document.getElementById('indexServicesDropdown');
+            function positionDropdown() {
+                var rect = indexServicesBtn.getBoundingClientRect();
+                indexServicesDropdown.style.top = (rect.bottom + 8) + 'px';
+                indexServicesDropdown.style.left = rect.left + 'px';
+            }
+            function closeServicesDropdown() { indexServicesDropdown.classList.remove('open'); }
+            indexServicesBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = indexServicesDropdown.classList.toggle('open');
+                if (isOpen) positionDropdown();
+            });
+            document.addEventListener('click', closeServicesDropdown);
+            window.addEventListener('scroll', closeServicesDropdown, { passive: true });
+        });
+    </script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 
@@ -44,6 +69,32 @@
 
 <body onscroll="scrollCheck();" class="whitePage">
     <div id="wrapper">
+        <!-- Mobile menu overlay -->
+        <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+            <div class="mobile-menu__top">
+                <div class="mobile-menu__logo"><a href="../" aria-label="Kido home"></a></div>
+                <button class="mobile-menu-btn mobile-menu-btn--open" id="mobileMenuClose" type="button">MENU</button>
+            </div>
+            <nav class="mobile-menu__nav">
+                <a href="../about" class="selected">ABOUT</a>
+                <span class="mobile-menu__services-label">SERVICES</span>
+                <div class="mobile-menu__sub">
+                    <a href="../services/design_infrastructure.html">AI-READY DESIGN INFRASTRUCTURE</a>
+                    <a href="../services/product_design.html">PRODUCT DESIGN</a>
+                    <a href="../services/design_ops.html">DESIGNOPS</a>
+                    <a href="../services/lean_branding.html">LEAN BRANDING</a>
+                    <a href="../services/frontend_dev.html">FRONT-END DEVELOPMENT</a>
+                </div>
+                <a href="../case-studies">CASE STUDIES</a>
+                <a href="mailto:hello@wearekido.com">LET'S TALK</a>
+            </nav>
+        </div>
+        <!-- Mobile sticky header -->
+        <header class="mobile-header" id="mobileHeader">
+            <div class="mobile-header__logo"><a href="../" aria-label="Kido home"></a></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" type="button">MENU</button>
+        </header>
+
         <header id="mainHeader" class="invertHeader">
             <div class="logoDiv">
                 <lottie-player src="https://lottie.host/cb8e6687-f930-46ef-8dd5-459e38953552/psZ0aMJEeD.json"
@@ -52,13 +103,20 @@
             </div>
             <div class="logoText"><a href="/"></a></div>
             <nav class="linksDiv center-flex">
+                <button class="svc-nav-btn" id="indexServicesBtn" type="button">SERVICES</button>
                 <a href="../case-studies">CASE STUDIES</a>
                 <a href="#" class="selected">ABOUT</a>
-                <!-- <a href="design.html">DESIGN AT SCALE</a> -->
             </nav>
             <a class="roundButton invertButton" href="mailto:hello@wearekido.com">LET'S
                 TALK</a>
         </header>
+        <div class="index-svc-dropdown" id="indexServicesDropdown">
+            <a href="../services/design_infrastructure.html">AI-READY DESIGN INFRASTRUCTURE</a>
+            <a href="../services/product_design.html">PRODUCT DESIGN</a>
+            <a href="../services/design_ops.html">DESIGNOPS</a>
+            <a href="../services/lean_branding.html">LEAN BRANDING</a>
+            <a href="../services/frontend_dev.html">FRONT-END DEVELOPMENT</a>
+        </div>
 
         <section class="iconSection rowDiv less-bottom almost-full-mobile">
             <h2 class="left-align line-double team-title">We Are the A-team</h2>

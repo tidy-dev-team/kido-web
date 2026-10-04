@@ -15,6 +15,31 @@
     <link rel="canonical" href="https://wearekido.com/case-studies" />
     <script src="../code/headerScroll.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            var mobileMenuClose = document.getElementById('mobileMenuClose');
+            var mobileMenu = document.getElementById('mobileMenu');
+            mobileMenuBtn.addEventListener('click', function() { mobileMenu.classList.add('open'); });
+            mobileMenuClose.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
+
+            var indexServicesBtn = document.getElementById('indexServicesBtn');
+            var indexServicesDropdown = document.getElementById('indexServicesDropdown');
+            function positionDropdown() {
+                var rect = indexServicesBtn.getBoundingClientRect();
+                indexServicesDropdown.style.top = (rect.bottom + 8) + 'px';
+                indexServicesDropdown.style.left = rect.left + 'px';
+            }
+            function closeServicesDropdown() { indexServicesDropdown.classList.remove('open'); }
+            indexServicesBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = indexServicesDropdown.classList.toggle('open');
+                if (isOpen) positionDropdown();
+            });
+            document.addEventListener('click', closeServicesDropdown);
+            window.addEventListener('scroll', closeServicesDropdown, { passive: true });
+        });
+    </script>
 
     <!-- Hotjar Tracking Code for wearekido.com -->
     <script>
@@ -45,6 +70,32 @@
 
 <body onscroll="scrollCheck();">
     <div id="wrapper">
+        <!-- Mobile menu overlay -->
+        <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+            <div class="mobile-menu__top">
+                <div class="mobile-menu__logo"><a href="../" aria-label="Kido home"></a></div>
+                <button class="mobile-menu-btn mobile-menu-btn--open" id="mobileMenuClose" type="button">MENU</button>
+            </div>
+            <nav class="mobile-menu__nav">
+                <a href="../about">ABOUT</a>
+                <span class="mobile-menu__services-label">SERVICES</span>
+                <div class="mobile-menu__sub">
+                    <a href="../services/design_infrastructure.html">AI-READY DESIGN INFRASTRUCTURE</a>
+                    <a href="../services/product_design.html">PRODUCT DESIGN</a>
+                    <a href="../services/design_ops.html">DESIGNOPS</a>
+                    <a href="../services/lean_branding.html">LEAN BRANDING</a>
+                    <a href="../services/frontend_dev.html">FRONT-END DEVELOPMENT</a>
+                </div>
+                <a href="../case-studies" class="selected">CASE STUDIES</a>
+                <a href="mailto:hello@wearekido.com">LET'S TALK</a>
+            </nav>
+        </div>
+        <!-- Mobile sticky header -->
+        <header class="mobile-header mobile-header--invert" id="mobileHeader" style="background: transparent">
+            <div class="mobile-header__logo"><a href="../" aria-label="Kido home"></a></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" type="button">MENU</button>
+        </header>
+
         <header id="mainHeader">
             <div class="logoDiv">
                 <lottie-player src="https://lottie.host/cb8e6687-f930-46ef-8dd5-459e38953552/psZ0aMJEeD.json"
@@ -53,14 +104,22 @@
             </div>
             <div class="logoText"><a href="/"></a></div>
             <nav class="linksDiv center-flex">
+                <button class="svc-nav-btn" id="indexServicesBtn" type="button">SERVICES</button>
                 <a href="#" class="selected">CASE STUDIES</a>
                 <a href="../about">ABOUT</a>
             </nav>
             <a class="roundButton invertButton realWhite" href="mailto:hello@wearekido.com">LET'S TALK</a>
         </header>
+        <div class="index-svc-dropdown" id="indexServicesDropdown">
+            <a href="../services/design_infrastructure.html">AI-READY DESIGN INFRASTRUCTURE</a>
+            <a href="../services/product_design.html">PRODUCT DESIGN</a>
+            <a href="../services/design_ops.html">DESIGNOPS</a>
+            <a href="../services/lean_branding.html">LEAN BRANDING</a>
+            <a href="../services/frontend_dev.html">FRONT-END DEVELOPMENT</a>
+        </div>
 
         <section class="columnDiv margin-48 secondSection paddingSection" style="max-width: 100%; width: 100%;">
-            <h2 class="noselect" style="font-size: 4.5em;"><br />We play a pivotal role in optimizing our partners design processes, fostering
+            <h2 class="noselect" style="font-size: clamp(2.8em, 4.5vw, 4.5em);"><br />We play a pivotal role in optimizing our partners design processes, fostering
                 collaboration, within the design org.<br />
                 and outside of it while driving the efficiency of the design and fine-tuning the prioritization at the
                 product level under the system first approach constrains.</h2>
