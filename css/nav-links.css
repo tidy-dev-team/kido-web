@@ -1,0 +1,20 @@
+.linksDiv a {
+  position: relative;
+  font-family: 'haas';
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #1C1C1C;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+}
+
+.linksDiv a:hover {
+  color: #888888;
+}
+
+@media screen and (max-width: 900px) {
+  .linksDiv a {
+    font-size: 0.8em;
+  }
+}

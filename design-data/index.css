@@ -4,6 +4,7 @@ Thin: 100 200 300, Light: 400, Regular: 500, Bold: 700 800 */
 @import url(../font-kepler.css);
 @import url(../font-haas.css);
 @import url(../font-haas-text.css);
+@import url(../css/nav-links.css);
 
 body {
     background-color: #FFFFFF;
@@ -529,20 +530,6 @@ header .roundButton {
     padding-top: 36px;
 }
 
-.linksDiv a {
-    position: relative;
-    font-family: 'haas';
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #1C1C1C;
-    text-decoration: none;
-    height: 100%;
-}
-
-.linksDiv a:hover {
-    color: #888888;
-}
-
 hr {
     border: none;
     border-bottom: 1px solid #C7C7C7;
@@ -906,10 +893,6 @@ h2.small-text {
 @media screen and (max-width: 900px) {
     .heroSection h2 {
         font-size: 3em;
-    }
-
-    .linksDiv a {
-        font-size: 0.8em;
     }
 
     .rowDiv {
