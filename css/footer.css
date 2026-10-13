@@ -1,4 +1,4 @@
-.footerDiv {
+div.footerDiv {
   font-family: 'haas-text';
   font-weight: 600;
   font-size: 0.8em;
@@ -51,7 +51,7 @@
 }
 
 @media screen and (max-width:900px) {
-  .footerDiv {
+  div.footerDiv {
     gap: 0;
     width: 90%;
     margin: 0 !important;
