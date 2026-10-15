@@ -266,5 +266,6 @@ section.svc-section {
 
   .svc-t {
     font-size: 2.2em;
+    min-width: 251px;
   }
 }
